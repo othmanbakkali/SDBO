@@ -18,11 +18,10 @@
     <!--====== Animate CSS ======-->
     <link rel="stylesheet" href="assets/css/animate.css">
         
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
         
     <!--====== Line Icons CSS ======-->
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
-    
         
     <!--====== Bootstrap CSS ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.4.5.2.min.css">
@@ -117,14 +116,19 @@
                                         <a class="page-scroll" href="#home">Accueil</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Nos Solutions</a>
+                                        <a class="page-scroll" href="#features">À propos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#about">À propos</a>
+                                        <a class="page-scroll" href="#about">Nos Services</a>
                                     </li>
-                                                                     
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#contact">Contact</a>
+                                        <a class="page-scroll" href="#screenshot">Solutions</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#pricing">Produits</a>
+                                    </li>                                    
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#blog">Contact</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -134,211 +138,78 @@
             </div> <!-- container -->
         </div> <!-- header navbar -->
 
-        <div id="home" class="header_hero">
-        <div id="particles-js"></div>
-        <script>
-            particlesJS("particles-js", {
-            particles: {
-                number: { value: 40 },
-                size: { value: 3 },
-                move: { speed: 1 },
-                opacity: { value: 0.2 }
-            }
-            });
-        </script>
-    <div class="container">
-        
+        <div id="home" class="header_hero d-lg-flex align-items-center">
+            <img class="shape shape-1" src="assets/images/shape-1.svg" alt="shape">
+            <img class="shape shape-2" src="assets/images/shape-2.svg" alt="shape">
+            <img class="shape shape-3" src="assets/images/shape-3.svg" alt="shape">
+            
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="header_hero_content mt-45">
+                            <h2 class="header_title wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.2s">
+							
+                    <span>S</span>MART <span>D</span>IGITAL  <br><span> B</span>USINESS <span>O</span>FFICE</h2>
+                            <p class="wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.6s">SDBO Solutions est une société spécialisée dans les solutions informatiques et digitales sur mesure.
+Nous accompagnons les entreprises dans la vente et l’achat de matériels informatiques, l’intégration de systèmes de caisse, ainsi que le déploiement de solutions digitales performantes adaptées à leurs besoins.
 
-        <!-- ROW 2 : TEXT + IMAGE -->
-        <div class="row align-items-center">
-
-            <!-- TEXT -->
-            <div class="col-lg-6">
-                <div class="header_hero_content mt-4">
-                    <h1 class="header_title wow fadeInLeftBig"
-                    data-wow-duration="1.3s"
-                    data-wow-delay="0.2s">
-                    <span>S</span>MART <span>D</span>IGITAL  <br><span> B</span>USINESS <span>O</span>FFICE
-                </h1>
-                <span class="hero-label">SOLUTIONS DIGITALES SUR MESURE</span>
-                    <p class="wow fadeInLeftBig"
-                       data-wow-duration="1.3s"
-                       data-wow-delay="0.6s">
-                        SDBO Solutions accompagne les entreprises avec des solutions informatiques et 
-                        systèmes de caisse sur mesure. Nous optimisons vos outils pour améliorer votre 
-                        performance et sécuriser votre croissance digitale.
-                    </p>
-
-                    <ul>
-                        <li>
-                            <a class="main-btn wow fadeInUp"
-                               data-wow-duration="1.3s"
-                               data-wow-delay="1s"
-                               href="#">
-                               Contactez-nous
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- IMAGE -->
-            <div class="col-lg-6 text-center">
-                <div class="image wow fadeInRightBig"
-                     data-wow-duration="1.3s"
-                     data-wow-delay="1.8s">
-                    <img src="assets/images/header_app.png"
-                         alt="header App"
-                         class="app-image">
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
+Notre objectif est simple : optimiser vos outils, améliorer votre performance et sécuriser votre croissance digitale..</p>
+                            <ul>
+                                <li><a class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1s" href="#">Discover More</a></li>
+                            </ul>
+                        </div> <!-- header hero content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="header_image d-flex align-items-end">
+                <div class="image wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="1.8s">
+					<img src="assets/images/header_app.png" alt="header App" class="app-image">
+					<img src="assets/images/dots.svg" alt="dots" class="dots">
+				</div> <!-- image -->
+            </div> <!-- header image -->
+        </div> <!-- header hero -->
     </section>
 
     <!--====== HEADER PART ENDS ======-->
     
-    <!--====== nos service PART START ======-->
+    <!--====== FEATURES PART START ======-->
 
     <section id="features" class="features_area pt-35 pb-80">
-        <div class="server_title wow fadeInLeftBig">
-                <h1 class="nos_service_title gradient-text wow fadeInLeftBig"
-                    data-wow-duration="1.3s"
-                    data-wow-delay="0.2s">Nos Solutions</h1>
-        </div>
         <div class="container">
             <div class="row justify-content-center">
-
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single_features mt-30 features_1 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                         <div class="features_icon">
-                            <i class="lni lni-laptop"></i>
+                            <i class="lni lni-code"></i>
                         </div>
                         <div class="features_content">
-                            <h4 class="features_title">Ventes et achats de matériel informatique</h4>
-                            <p>Nous fournissons et installons tout votre matériel informatique.</p>
+                            <h4 class="features_title">Bootstrap</h4>
+                            <p>Lorem ipsum dolor sit ame consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
                         </div>
                     </div> <!-- single featuresow -->
                 </div>
-
-
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single_features mt-30 features_2 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
                         <div class="features_icon">
-                            <i class="lni lni-credit-cards"></i>
+                            <i class="lni lni-layers"></i>
                         </div>
                         <div class="features_content">
-                            <h4 class="features_title">programme de caisse</h4>
-                            <p>Logiciel simple pour gérer vos ventes et votre stock efficacement.</p>
+                            <h4 class="features_title">HTML5</h4>
+                            <p>Lorem ipsum dolor sit ame consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
                         </div>
                     </div> <!-- single featuresow -->
                 </div>
-
-
                 <div class="col-lg-4 col-md-7 col-sm-8">
                     <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
                         <div class="features_icon">
-                            <i class="lni lni-dinner"></i>
+                            <i class="lni lni-exit-down"></i>
                         </div>
                         <div class="features_content">
-                            <h4 class="features_title">Restaurant</h4>
-                            <p>Solutions complètes pour gérer vos commandes et votre personnel.</p>
+                            <h4 class="features_title">Free</h4>
+                            <p>Lorem ipsum dolor sit ame consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</p>
                         </div>
                     </div> <!-- single featuresow -->
                 </div>
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <div class="features_icon">
-                            <i class="lni lni-cart"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Supermarché</h4>
-                            <p>Optimisez vos rayons, stocks et ventes avec notre système.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <div class="features_icon">
-                            <i class="lni lni-leaf"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Spa</h4>
-                            <p>Gestion complète de rendez-vous, services et clients facilement.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-                <!--REPEAT FOR INFINITE-->
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_1 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <div class="features_icon">
-                            <i class="lni lni-laptop"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Ventes et achats de matériel informatique</h4>
-                            <p>Nous fournissons et installons tout votre matériel informatique.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_2 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="features_icon">
-                            <i class="lni lni-credit-cards"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">programme de caisse</h4>
-                            <p>Logiciel simple pour gérer vos ventes et votre stock efficacement.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <div class="features_icon">
-                            <i class="lni lni-dinner"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Restaurant</h4>
-                            <p>Solutions complètes pour gérer vos commandes et votre personnel.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <div class="features_icon">
-                            <i class="lni lni-cart"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Supermarché</h4>
-                            <p>Optimisez vos rayons, stocks et ventes avec notre système.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-                <div class="col-lg-4 col-md-7 col-sm-8">
-                    <div class="single_features mt-30 features_3 text-center wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.9s">
-                        <div class="features_icon">
-                            <i class="lni lni-leaf"></i>
-                        </div>
-                        <div class="features_content">
-                            <h4 class="features_title">Spa</h4>
-                            <p>Gestion complète de rendez-vous, services et clients facilement.</p>
-                        </div>
-                    </div> <!-- single featuresow -->
-                </div>
-
-
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -349,199 +220,301 @@
 
     <section id="about" class="about_area pt-30 pb-80">
         <div class="container">
-        <div class="about_title text-center wow fadeInLeftBig">
-            <h2 class="gradient-text wow fadeInLeftBig"
-                        data-wow-duration="1.3s"
-                        data-wow-delay="0.2s">À propos</h2>
-        </div>
-
-        <!-- ROW 2 : TEXT + IMAGE -->
-        <div class="row align-items-center">
-
-
-            <!-- ITEM 1 -->
-            <div class="col-lg-6 service-item">
-            <!-- IMAGE -->
-                <div class="service-img">
-                    <img src="assets/css/POS V2.jfif" alt="POS system">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-9">
+                    <div class="about_image mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                        <img class="image" src="assets/images/about.png" alt="about">
+                        <img class="dots" src="assets/images/dots.svg" alt="dots">
+                    </div> <!-- about image -->
                 </div>
-
-                <!-- TEXT -->
-                <div class="service-text">
-                    <h3>Solutions complètes de caisse</h3>
-
-                    <p>
-                        Nous concevons et installons des systèmes de
-                        caisse complets pour les commerces et restaurants.
-                    </p>
-
-                    <ul class="service-list">
-                        <li>Logiciel de caisse</li>
-                        <li>Vente de matériel POS</li>
-                        <li>Installation et déploiement</li>
-                        <li>Support technique</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="about_content mt-45 wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                        <div class="section_title">
+                            <h4 class="title">Discover New Experience!</h4>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore malquyam erat, sed diam voluptua. At vero eos et accusam et justo doloes et ea rebum. Stet clita kasd gubergren, nod sea takmaa santus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sitdse ametr consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+                        </div>
+                        <a class="main-btn" href="#">Discover</a>
+                        
+                    </div> <!-- about image -->
                 </div>
-
-                
-
-            </div>
-
-
-            <!-- ITEM 2 -->
-            <div class="col-lg-6 service-item" id="i2">
-                <!-- IMAGE -->
-                <div class="service-img">
-                    <img src="assets/css/Smart_Restaurant.jfif" alt="POS restaurant">
-                </div>
-
-                <!-- TEXT -->
-                <div class="service-text">
-                    <h3>Solutions de caisse pour restaurants</h3>
-
-                    <p>
-                        Solutions de caisse pour restaurants et cafés,
-                        facilitant la gestion des commandes et des paiements.
-                    </p>
-
-                    <ul class="service-list">
-                        <li>Logiciel de caisse pour restauration</li>
-                        <li>Gestion des commandes et menus</li>
-                        <li>Paiement rapide et sécurisé</li>
-                        <li>Installation et configuration du système</li>
-                    </ul>
-                </div>
-
-            </div>
-
-
-
-            <!-- ITEM 3 -->
-            <div class="col-lg-6 service-item ali" style="margin-left: 26%;">
-
-                <!-- IMAGE -->
-                <div class="service-img">
-                    <img src="assets/css/digital_marketing.jfif" alt="POS matériel">
-                </div>
-
-                <!-- TEXT -->
-                <div class="service-text">
-                    <h3>Vente et achat de matériel informatique</h3>
-
-                    <p>
-                        SDBO Solutions propose du matériel informatique fiable
-                        et performant pour équiper les commerces et entreprises.
-                    </p>
-
-                    <ul class="service-list">
-                        <li>Ordinateurs et écrans</li>
-                        <li>Matériel POS (scanners, imprimantes, terminaux)</li>
-                        <li>Installation et configuration</li>
-                        <li>Conseil et accompagnement technique</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-    </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
     </section>
 
     <!--====== ABOUT PART ENDS ======-->
     
+    <!--====== APP FEATURES PART START ======-->
 
-   
+    <section id="app_features">
+
+    </section>
+
+    <!--====== APP FEATURES PART ENDS ======-->
+    
+    <!--====== VIDEO PART START ======-->
+
+    <section id="video" class="video_area pt-80 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h4 class="title">You are using free lite version</h4>
+                        <p>Please, purchase full version of the template to get all sections, features and permission to remove footer credits.</p></br>
+
+                        <a href="https://rebrand.ly/advanced-ud" rel="nofollow" class="main-btn">Purchase Now</a>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+<section id="screenshot">
+    
+</section>
+    
+    <!--====== PRICNG PART START ======-->
+
+    <section id="pricing" class="pricing_area mt-80 pt-75 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center pb-25">
+                        <h4 class="title">Choose a Plan</h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single_pricing text-center pricing_color_1 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                        <div class="pricing_top_bar">
+                            <h5 class="pricing_title">Startup</h5>
+                            <i class="lni lni-coffee-cup"></i>
+                            <span class="price">$9.00</span>
+                        </div>
+                        <div class="pricing_list">
+                            <ul>
+                                <li>24/7 Support</li>
+                                <li>Free Update</li>
+                                <li>unimited download</li>
+                            </ul>
+                        </div>
+                        <div class="pricing_btn">
+                            <a href="#" class="main-btn main-btn-2">Get Started</a>
+                        </div>
+                    </div>  <!-- single pricing -->
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single_pricing text-center pricing_active pricing_color_2 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                        <div class="pricing_top_bar">
+                            <h5 class="pricing_title">Standard</h5>
+                            <i class="lni lni-crown"></i>
+                            <span class="price">$15.00</span>
+                        </div>
+                        <div class="pricing_list">
+                            <ul>
+                                <li>24/7 Support</li>
+                                <li>Free Update</li>
+                                <li>unimited download</li>
+                            </ul>
+                        </div>
+                        <div class="pricing_btn">
+                            <a href="#" class="main-btn">Get Started</a>
+                        </div>
+                    </div>  <!-- single pricing -->
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single_pricing text-center pricing_color_3 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                        <div class="pricing_top_bar">
+                            <h5 class="pricing_title">Premium</h5>
+                            <i class="lni lni-diamond-alt"></i>
+                            <span class="price">$20.00</span>
+                        </div>
+                        <div class="pricing_list">
+                            <ul>
+                                <li>24/7 Support</li>
+                                <li>Free Update</li>
+                                <li>unimited download</li>
+                            </ul>
+                        </div>
+                        <div class="pricing_btn">
+                            <a href="#" class="main-btn main-btn-2">Get Started</a>
+                        </div>
+                    </div>  <!-- single pricing -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== PRICNG PART ENDS ======-->
+    
+    <!--====== DOWNLOAD APP PART START ======-->
+
+    <section id="download" class="download_app_area pt-80 mb-80">
+        <div class="container">
+            <div class="download_app">
+                <div class="download_shape">
+                    <img src="assets/images/shape-5.svg" alt="shape">
+                </div>
+                <div class="download_shape_2">
+                    <img src="assets/images/shape-6.png" alt="shape">
+                </div>
+                <div class="download_app_content">
+                    <h3 class="download_title">Download The App</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod.</p>
+                    <ul>
+                        <li>
+                            <a class="d-flex align-items-center" href="#">
+                                <span class="icon">
+                                    <i class="lni lni-play-store"></i>
+                                </span>
+                                <span class="content media-body">
+                                    <h6 class="title">Play Store</h6>
+                                    <p>Download Now</p>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex align-items-center" href="#">
+                                <span class="icon">
+                                    <i class="lni lni-apple"></i>
+                                </span>
+                                <span class="content">
+                                    <h6 class="title">App Store</h6>
+                                    <p>Download Now</p>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>  <!-- download app content -->
+            </div> <!-- download app -->
+        </div> <!-- container -->
+        <div class="download_app_image d-none d-lg-flex align-items-end">
+            <div class="image wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                <img src="assets/images/download.png" alt="download">
+            </div> <!-- image -->
+        </div> <!-- download app image -->
+    </section>
+
+    <!--====== DOWNLOAD APP PART ENDS ======-->
+    
+    <!--====== BLOG PART START ======-->
+
+    <section id="blog" class="blog_area pt-80 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center pb-25">
+                        <h4 class="title">From The Blog</h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8">
+                    <div class="single_blog blog_1 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                        <div class="blog_image">
+                            <img src="assets/images/blog-1.jpg" alt="blog">
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_meta d-flex justify-content-between">
+                                <div class="meta_date">
+                                    <span>20 December, 2023</span>
+                                </div>
+                                <div class="meta_like">
+                                    <ul>
+                                        <li><a href="#"><i class="lni lni-comments-alt"></i> 20</a></li>
+                                        <li><a href="#"><i class="lni lni-heart"></i> 15</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4 class="blog_title"><a href="#">Unlimited featrues with free updates.</a></h4>
+                            <a href="#" class="main-btn">Read More</a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="single_blog blog_2 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                        <div class="blog_image">
+                            <img src="assets/images/blog-2.jpg" alt="blog">
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_meta d-flex justify-content-between">
+                                <div class="meta_date">
+                                    <span>20 December, 2023</span>
+                                </div>
+                                <div class="meta_like">
+                                    <ul>
+                                        <li><a href="#"><i class="lni lni-comments-alt"></i> 20</a></li>
+                                        <li><a href="#"><i class="lni lni-heart"></i> 15</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4 class="blog_title"><a href="#">Easy to use and customize the App.</a></h4>
+                            <a href="#" class="main-btn">Read More</a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div>
+                <div class="col-lg-4 col-md-8">
+                    <div class="single_blog blog_3 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                        <div class="blog_image">
+                            <img src="assets/images/blog-3.jpg" alt="blog">
+                        </div>
+                        <div class="blog_content">
+                            <div class="blog_meta d-flex justify-content-between">
+                                <div class="meta_date">
+                                    <span>20 December, 2023</span>
+                                </div>
+                                <div class="meta_like">
+                                    <ul>
+                                        <li><a href="#"><i class="lni lni-comments-alt"></i> 20</a></li>
+                                        <li><a href="#"><i class="lni lni-heart"></i> 15</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4 class="blog_title"><a href="#">Super fast and strong security.</a></h4>
+                            <a href="#" class="main-btn">Read More</a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== BLOG PART ENDS ======-->
     
     <!--====== FOOTER PART START ======-->
 
-<section id="contact" class="contact_area pt-120 pb-120">
-
-    <div class="container">
-
-        <!-- TITLE -->
-        <div class="contact_title text-center wow fadeInLeftBig">
-            <h2 class="gradient-text">Contactez-nous</h2>
-            <p>Besoin d’une solution de caisse ou de matériel informatique ?  
-            Notre équipe est prête à vous accompagner.</p>
-        </div>
-
-        <div class="row mt-60">
-
-            <!-- CONTACT INFO -->
-            <div class="col-lg-5">
-
-                <div class="contact_info">
-
-                    <div class="contact_item">
-                        <h5>Téléphone</h5>
-                        <p>+212 6 00 00 00 00</p>
-                    </div>
-
-                    <div class="contact_item">
-                        <h5>Email</h5>
-                        <p>contact@sdbosolutions.com</p>
-                    </div>
-
-                    <div class="contact_item">
-                        <h5>Adresse</h5>
-                        <p>Tanger, Maroc</p>
-                    </div>
-
+    <section id="footer" class="footer_area pt-75 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="footer_subscribe text-center">
+                        <h3 class="subscribe_title">Subscribe our newsletter</h3>
+                        <p>Join thousands of users who believe this is the one app.</p>
+                        
+                        <div class="subscribe_form">
+                            <form action="#">
+                                <input type="text" placeholder="Enter Email...">
+                                <button class="main-btn">Subscribe</button>
+                            </form>
+                        </div>  <!-- subscribe form -->
+                    </div> <!-- footer subscribe -->
+                    <div class="footer_social text-center mt-60">
+                        <ul>
+                            <li><a href="#"><span class="lni lni-facebook-filled"></span></a></li>
+                            <li><a href="#"><span class="lni lni-twitter-original"></span></a></li>
+                            <li><a href="#"><span class="lni lni-instagram-filled"></span></a></li>
+                            <li><a href="#"><span class="lni lni-linkedin-original"></span></a></li>
+                        </ul>
+                    </div> <!-- footer social -->
+                    <div class="footer_copyright text-center mt-55">
+                        <p>Copyright &copy; 2023. Designed and Developed by <a href="https://uideck.com" target="_blank" rel="nofollow">UIdeck</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
+                    </div> <!-- footer copyright -->
                 </div>
-
-            </div>
-
-            <!-- CONTACT FORM -->
-            <div class="col-lg-7">
-
-                <div class="contact_form">
-
-                    <form>
-
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Votre nom">
-                            </div>
-
-                            <div class="col-md-6">
-                                <input type="email" placeholder="Votre email">
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Sujet">
-                            </div>
-
-                            <div class="col-md-12">
-                                <textarea placeholder="Votre message"></textarea>
-                            </div>
-
-                            <div class="col-md-12">
-                                <button class="main-btn">Envoyer</button>
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer class="site-footer">
-  <p>© 2026 SMART DIGITAL BUSINESS OFFICE. All Rights Reserved.</p>
-</footer>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
 
     <!--====== FOOTER PART ENDS ======-->
     
