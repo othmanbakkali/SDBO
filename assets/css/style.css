@@ -1484,6 +1484,170 @@ p {
 }
 
 /*===========================
+        CONTACT
+===========================*/
+
+.contact_area {
+    position: relative;
+    z-index: 999; /* Higher z-index to stay above footer shape */
+    background: #ffffff; /* Keep white background */
+    padding: 120px 0;
+}
+
+/* TITLE */
+.contact_title p {
+    color: #4a5568; /* Dark gray for visibility on white */
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.contact_title h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a202c; /* Dark color for white bg */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact_title h2::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 15px;
+    background: rgba(54, 152, 238, 0.2); /* Lighter blue overlay */
+    bottom: -10px;
+    left: -10%;
+    filter: blur(15px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Optional animated gradient text effect */
+.contact_title h2.gradient-text {
+    background: linear-gradient(90deg, #00c6ff, #277495);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* CONTACT INFO */
+.contact_info {
+    margin-top: 40px;
+}
+
+.contact_item {
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0; /* Light gray border */
+    background: #f8fafc; /* Light gray background for visibility */
+    transition: all 0.3s ease;
+    border-left: 3px solid #3698EE;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* hover effect */
+.contact_item:hover {
+    transform: translateY(-4px);
+    border-color: #3698EE;
+    box-shadow: 0 10px 25px rgba(54, 152, 238, 0.15);
+    background: #ffffff;
+}
+
+.contact_item h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c; /* Dark color */
+    margin-bottom: 8px;
+}
+
+.contact_item p {
+    color: #4a5568; /* Dark gray */
+    margin: 0;
+    font-size: 16px;
+}
+
+/* CONTACT FORM */
+.contact_form {
+    margin-top: 35px;
+}
+
+.contact_form input,
+.contact_form textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0; /* Add visible border */
+    color: black;
+    padding: 0 30px;
+    height: 60px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    border: 1px solid #3698EE;
+}
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  color: rgb(75, 75, 75) !important;
+}
+.contact_form textarea {
+    height: 150px;
+    padding-top: 20px;
+    resize: none;
+}
+
+.contact_form input:focus,
+.contact_form textarea:focus {
+    border-color: #3698EE;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(54, 152, 238, 0.1);
+}
+
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+    color: #a0aec0; /* Light gray placeholder */
+    opacity: 1;
+}
+
+/* Submit button */
+
+
+.contact_form .main-btn:hover {
+    background: #2a7ac8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(54, 152, 238, 0.4);
+}
+
+/* Make sure section stays above purple footer */
+.contact_area {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact_title h2 {
+        font-size: 36px;
+    }
+    
+    .contact_item {
+        padding: 20px 25px;
+    }
+    
+    .contact_form input,
+    .contact_form textarea {
+        height: 55px;
+    }
+}
+
+
+/*===========================
         12.FOOTER css 
 ===========================*/
 .footer_area {
