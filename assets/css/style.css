@@ -569,6 +569,15 @@ p {
   transition: all 0.3s ease-out 0s;
   padding: 4px 10px;
   position: relative;
+  background-color: rgba(38, 36, 39, 0.329);
+    -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  -webkit-transform: skewX(13deg);
+          transform: skewX(13deg);
+            left: 110%;
+  left: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -588,7 +597,7 @@ p {
   content: '';
   width: 0;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(125, 67, 179, 0.274);
   left: 110%;
   left: 0;
   bottom: 0;

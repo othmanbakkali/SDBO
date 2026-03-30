@@ -31,8 +31,12 @@ $(function() {
         var scrollbarLocation = $(this).scrollTop();
 
         scrollLink.each(function () {
+            var target = $(this.hash);
+            if (!target.length) {
+                return; // skip links without a valid anchor section
+            }
 
-            var sectionOffset = $(this.hash).offset().top - 73;
+            var sectionOffset = target.offset().top - 73;
 
             if (sectionOffset <= scrollbarLocation) {
                 $(this).parent().addClass('active');
