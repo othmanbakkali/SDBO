@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO | Engineering & Conseil</title>
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+
+    <header id="header" class="sticky">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.svg" alt="SDBO Logo">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#approach">Approche</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-action">
+                    <a href="index.html#contact" class="btn btn-primary">Devis Gratuit</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="container">
+            <span class="badge">Pôle Ingénierie</span>
+            <h1>Engineering & Accompagnement</h1>
+            <p>De l'étude à la maîtrise d'ouvrage, nous façonnons vos projets technologiques les plus ambitieux.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Une Expertise Multidimensionnelle</h2>
+                    <p>Notre pôle Engineering accompagne les entreprises dans la conception et la réalisation de leurs systèmes complexes. Nous apportons une vision stratégique et une rigueur technique à chaque étape de votre cycle de vie digital.</p>
+                    <br>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Étude & Analyse :</strong> Études de faisabilité, cahier des charges et analyse d'impact.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Conseil Stratégique :</strong> Orientation technologique et optimisation des processus métier.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Développement :</strong> Création de solutions logicielles et intégrations systèmes de pointe.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Délégation de Maîtrise d’Ouvrage :</strong> Pilotage de vos projets et coordination des prestataires.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Accompagnement :</strong> Support au changement et formation continue de vos équipes.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="glass" style="padding: 60px; text-align: center;">
+                         <i class="lni lni-cog" style="font-size: 10rem; color: var(--primary); filter: drop-shadow(0 0 20px var(--primary));"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>Partenaire de confiance pour vos grands projets d'ingénierie numérique.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertises</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-engineering.html">Engineering</a></li>
+                        <li><a href="service-infrastructure.html">Infrastructure</a></li>
+                        <li><a href="service-ia.html">IA Avançée</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>contact@sdbosolutions.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO. <a href="index.html" style="color: var(--primary);">Accueil</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const follower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

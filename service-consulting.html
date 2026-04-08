@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO | Consulting & Audit</title>
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <header id="header" class="sticky">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#approach">Approche</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="container">
+            <h1>Consulting & Audit</h1>
+            <p>Accompagnement stratégique pour votre transformation numérique.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Expertise Stratégique</h2>
+                    <p>SDBO vous aide à naviguer dans la complexité du paysage numérique actuel. Nos experts auditeront vos systèmes existants pour identifier les gains d'efficacité et les opportunités d'innovation.</p>
+                    <br>
+                    <ul style="list-style: none;">
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Audit IT :</strong> Analyse complète de votre infrastructure et sécurité.</li>
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Stratégie Digitale :</strong> Plan de route pour votre transformation numérique.</li>
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Gestion de Projet :</strong> Accompagnement dans le déploiement de solutions complexes.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="glass" style="padding: 40px; text-align: center;">
+                        <i class="lni lni-consulting" style="font-size: 8rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>Smart Digital Business Office est votre partenaire de confiance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertises</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-ia.html">IA</a></li>
+                        <li><a href="service-hardware.html">Hardware</a></li>
+                        <li><a href="service-solutions.html">Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>contact@sdbosolutions.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO. <a href="index.html" style="color: var(--primary);">Accueil</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO | Intégration de SI & Gestion</title>
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+
+    <header id="header" class="sticky">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#approach">Approche</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-action"><a href="index.html#contact" class="btn btn-primary">Devis Gratuit</a></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="container">
+            <span class="badge">Pôle Intégration</span>
+            <h1>Intégration de SI & Gestion</h1>
+            <p>De l'équipement informatique à la gestion RH, nous intégrons vos outils pour une productivité maximale.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Une Vision Intégrée du Métier</h2>
+                    <p>Nous ne nous contentons pas de fournir du matériel, nous construisons des écosystèmes logiciels et matériels cohérents pour piloter votre performance.</p>
+                    <br>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Équipement Informatique :</strong> Postes de travail, serveurs et périphériques de dernière génération.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Solutions de Gestion :</strong> Implémentation de logiciels de Comptabilité, RH et Pointage.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Téléphonie IP :</strong> Solutions de communication modernes et intégrées au SI.</li>
+                        <li style="margin-bottom: 20px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 15px;"></i> <strong>Bureautique & Consommables :</strong> Fourniture et gestion de vos outils de travail quotidiens.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="glass" style="padding: 60px; text-align: center;">
+                         <i class="lni lni-library" style="font-size: 10rem; color: var(--primary); filter: drop-shadow(0 0 20px var(--primary));"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>L'excellence opérationnelle par l'intégration.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertises</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-integration.html">Matériel Pro</a></li>
+                        <li><a href="service-integration.html">Logiciels Gestion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>contact@sdbosolutions.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const follower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

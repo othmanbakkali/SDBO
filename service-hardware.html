@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO | Vente & Achat IT</title>
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header id="header" class="sticky">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#approach">Approche</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="container">
+            <h1>Vente & Achat IT</h1>
+            <p>Équipements informatiques de haute performance pour votre infrastructure.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Matériel de Pointe</h2>
+                    <p>SDBO vous fournit une large gamme de matériels informatiques sélectionnés parmi les meilleures marques. Que ce soit pour équiper vos bureaux ou renforcer votre datacenter, nous avons la solution.</p>
+                    <br>
+                    <ul style="list-style: none;">
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Serveurs & Datacenters :</strong> Solutions de stockage et de calcul haute disponibilité.</li>
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Postes de Travail :</strong> PC performants, laptops et solutions de mobilité.</li>
+                        <li><i class="lni lni-checkmark-circle" style="color: var(--primary);"></i> <strong>Réseaux & Télécoms :</strong> Routeurs, switchs et sécurité périmétrique.</li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="glass" style="padding: 40px; text-align: center;">
+                        <i class="lni lni-laptop-phone" style="font-size: 8rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>Smart Digital Business Office est votre partenaire de confiance.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Expertises</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-ia.html">IA</a></li>
+                        <li><a href="service-hardware.html">Hardware</a></li>
+                        <li><a href="service-solutions.html">Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>contact@sdbosolutions.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO. <a href="index.html" style="color: var(--primary);">Accueil</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Custom Cursor Follower
+        const follower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        // Intersection Observer for Reveal Animations
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
