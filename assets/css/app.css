@@ -213,6 +213,7 @@ nav ul li.dropdown .dropdown-menu a:hover {
 
 .hero-secondary-btn {
     margin-left: 15px;
+    color: var(--primary);
 }
 
 @keyframes float {
