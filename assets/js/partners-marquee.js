@@ -13,7 +13,7 @@
         { src: 'assets/images/partners/UnitedService.png', alt: 'United Service' }
     ];
 
-    var DEFAULT_DURATION_S = 22;
+    var DEFAULT_DURATION_S = 80;
     var WIDTH_FACTOR = 1.15;
     var MAX_EXTRA_SETS = 12;
 
