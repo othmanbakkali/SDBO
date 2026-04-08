@@ -12,14 +12,23 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
-                <nav>
+                                <nav>
                     <ul>
                         <li><a href="index.html#home">Accueil</a></li>
                         <li><a href="index.html#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#">D&eacute;veloppement</a>
+                            <div class="dropdown-menu">
+                                <a href="offres-web.html">Site Web</a>
+                                <a href="creation-crm.html">Cr&eacute;ation de CRM</a>
+                                <a href="creation-erp.html">Cr&eacute;ation d'ERP</a>
+                            </div>
+                        </li>
+                        <li><a href="service-ia.html">IA</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
-            </div>
+                <div class="header-action"><a href="index.html#contact" class="btn btn-primary">Devis Gratuit</a></div></div>
         </div>
     </header>
 
@@ -51,15 +60,51 @@
             </div>
         </div>
     </section>
-
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/212661605369" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span class="tooltip">Discuter sur WhatsApp</span>
     </a>
-    <footer class="section-padding" style="background: var(--darker); border-top: 1px solid var(--glass-border);">
-        <div class="container" style="text-align: center;">
-            <p style="opacity: 0.6;">© 2026 SDBO. <a href="index.html" style="color: var(--primary);">Retour à l'accueil</a></p>
+
+    <!-- Professional Footer -->
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation num&eacute;rique et l'int&eacute;gration de solutions d'IA avanc&eacute;es.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="offres-web.html">Offres Web</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>D&eacute;veloppement</h4>
+                    <ul class="footer-links">
+                        <li><a href="offres-web.html">Site Web</a></li>
+                        <li><a href="creation-crm.html">Cr&eacute;ation de CRM</a></li>
+                        <li><a href="creation-erp.html">Cr&eacute;ation d'ERP</a></li>
+                        <li><a href="service-ia.html">Intelligence Artificielle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>sdbocontact@gmail.com<br>+212 6 61 60 53 69</p>
+                    <div class="social-links" style="margin-top: 15px;">
+                        <a href="#"><i class="lni lni-facebook-filled"></i></a>
+                        <a href="#"><i class="lni lni-linkedin-original"></i></a>
+                        <a href="#"><i class="lni lni-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">&copy; 2026 SDBO - SMART DIGITAL BUSINESS OFFICE. Tous droits r&eacute;serv&eacute;s.</p>
+            </div>
         </div>
     </footer>
 

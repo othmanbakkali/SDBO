@@ -8,6 +8,130 @@
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <style>
+        .content-section { padding: 100px 0; }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .content-grid.reverse { direction: rtl; }
+        .content-grid.reverse > * { direction: ltr; }
+        .content-grid h2 { font-size: 2.4rem; margin-bottom: 20px; line-height: 1.2; }
+        .content-grid p { opacity: 0.8; line-height: 1.8; margin-bottom: 15px; }
+        .content-img {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .content-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .content-img:hover img { transform: scale(1.03); }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .advantage-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .advantage-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .advantage-card h4 { margin-bottom: 10px; font-size: 1.05rem; }
+        .advantage-card p { font-size: 0.85rem; opacity: 0.6; }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 60px 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-item .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-item .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 8px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--indigo));
+            opacity: 0.3;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+        .timeline-content {
+            flex: 1;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+        .timeline-content h3 { color: var(--primary); margin-bottom: 10px; }
+        .timeline-content p { font-size: 0.9rem; opacity: 0.7; }
+        @media (max-width: 768px) {
+            .content-grid, .content-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; text-align: left; }
+            .timeline::before { left: 10px; }
+        }
+    </style>
 </head>
 <body>
     <div class="cursor-follower"></div>
@@ -38,11 +162,35 @@
     </header>
 
     <!-- Hero -->
-    <section class="sub-hero">
+    <section class="sub-hero" style="background: linear-gradient(rgba(10,14,23,0.6), var(--darker)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80') center/cover no-repeat;">
         <div class="container">
             <span class="badge">Solutions CRM</span>
             <h1>Création de CRM sur Mesure</h1>
-            <p>Centralisez vos données clients, automatisez vos processus et boostez votre performance commerciale.</p>
+            <p>Centralisez vos données clients, automatisez vos processus et boostez votre performance commerciale avec un CRM conçu pour votre métier.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section style="background: var(--darker); border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="stats-bar reveal">
+                <div class="stat-item">
+                    <div class="stat-number">+40%</div>
+                    <div class="stat-label">Productivité commerciale</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">360°</div>
+                    <div class="stat-label">Vision client unifiée</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">-60%</div>
+                    <div class="stat-label">Tâches manuelles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Accessibilité cloud</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -52,47 +200,91 @@
             <div class="content-grid">
                 <div class="reveal">
                     <h2>Pourquoi un CRM <span style="color: var(--primary);">sur mesure</span> ?</h2>
-                    <p>Un CRM générique ne correspond jamais parfaitement à vos processus métier. Chez SDBO, nous concevons des solutions CRM taillées sur mesure pour votre entreprise, garantissant une adoption rapide par vos équipes et un retour sur investissement maximal.</p>
-                    <br>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Base de données clients unifiée</strong> — Centralisez toutes les informations en un seul endroit accessible.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Suivi des interactions</strong> — Historique complet de chaque échange avec vos clients.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Automatisation marketing</strong> — Campagnes email, segmentation et scoring automatisés.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Intégration ERP & outils</strong> — Connectez votre CRM à votre système de gestion existant.</li>
-                    </ul>
-                </div>
-                <div class="reveal">
-                    <div class="glass" style="padding: 60px; text-align: center;">
-                        <i class="lni lni-users" style="font-size: 10rem; color: var(--primary); filter: drop-shadow(0 0 20px var(--primary));"></i>
+                    <p>Pour une entreprise, gérer les relations avec ses clients est essentiel. Un CRM sur mesure permet de centraliser toutes les informations importantes dans une base de données unique et accessible. Cela facilite le suivi des interactions, optimise la relation client et améliore la communication.</p>
+                    <p>À la différence des solutions standard, un CRM sur mesure est configuré pour s'intégrer parfaitement à votre système de gestion existant et s'adapter à vos processus internes spécifiques.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20CRM%20sur%20mesure" class="btn btn-primary">Demander un Devis</a>
                     </div>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="CRM Dashboard Analytics">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
+    <!-- Advantages -->
     <section class="section-padding" style="background: var(--darker);">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Notre Process de Développement</h2>
+                <h2>Les Avantages d'un CRM Personnalisé</h2>
                 <div class="underline"></div>
-                <p style="margin-top: 20px; opacity: 0.7;">Une approche structurée pour un CRM qui vous ressemble.</p>
+                <p style="margin-top: 20px; opacity: 0.7;">Un outil conçu pour votre métier, pas l'inverse.</p>
             </div>
-            <div class="process-grid">
-                <div class="process-item reveal">
-                    <div class="process-count">01</div>
-                    <h3>Analyse des besoins</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Ateliers de travail avec vos équipes pour comprendre vos objectifs, vos flux et vos contraintes.</p>
+            <div class="advantages-grid">
+                <div class="advantage-card reveal">
+                    <i class="lni lni-target"></i>
+                    <h4>Adaptabilité</h4>
+                    <p>S'ajuste exactement aux besoins évolutifs de votre entreprise.</p>
                 </div>
-                <div class="process-item reveal">
-                    <div class="process-count">02</div>
-                    <h3>Conception UX/UI</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Maquettes et prototypes interactifs soumis à validation avant le développement.</p>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-link"></i>
+                    <h4>Intégration</h4>
+                    <p>Se connecte à vos outils : ERP, comptabilité, e-commerce.</p>
                 </div>
-                <div class="process-item reveal">
-                    <div class="process-count">03</div>
-                    <h3>Développement & Tests</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Codage avec technologies modernes, tests rigoureux et intégration avec vos systèmes existants.</p>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-bolt"></i>
+                    <h4>Automatisation</h4>
+                    <p>Campagnes marketing et processus automatisés.</p>
+                </div>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-graph"></i>
+                    <h4>Transformation</h4>
+                    <p>Vue complète de vos opérations et relations clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalisation Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid reverse">
+                <div class="reveal">
+                    <h2>Personnalisation <span style="color: var(--primary);">avancée</span></h2>
+                    <p>Nous comprenons que chaque entreprise a des exigences uniques. C'est pourquoi nous proposons des services personnalisés, allant de l'analyse des besoins à la conception UX/UI spécifique.</p>
+                    <p>Notre but est de créer une interface utilisateur intuitive qui soit facile à utiliser par tous vos collaborateurs. Vous pourrez suivre vos leads, gérer vos opportunités de vente, planifier des tâches et générer des rapports détaillés selon vos critères.</p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Suivi des leads et pipeline de vente visuel</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Gestion des opportunités et scoring client</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Rapports détaillés et KPIs personnalisés</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Tableaux de bord interactifs</li>
+                    </ul>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="Equipe développement CRM">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration & ERP -->
+    <section class="content-section" style="background: var(--darker);">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Intégration CRM <span style="color: var(--primary);">& ERP</span></h2>
+                    <p>L'intégration CRM avec d'autres systèmes comme les solutions ERP est un aspect fondamental pour maximiser l'efficacité de votre environnement digital.</p>
+                    <p>Chez SDBO, nous assurons une intégration fluide entre votre nouveau CRM et les autres outils logiciels utilisés par votre entreprise. Une intégration réussie permet de synchroniser les données instantanément, d'éviter les doublons et de minimiser les erreurs humaines.</p>
+                    <div style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span class="badge" style="display:inline-block;">API REST</span>
+                        <span class="badge" style="display:inline-block;">Webhooks</span>
+                        <span class="badge" style="display:inline-block;">OAuth 2.0</span>
+                        <span class="badge" style="display:inline-block;">SSO</span>
+                    </div>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Infrastructure serveurs et intégration">
                 </div>
             </div>
         </div>
@@ -104,6 +296,7 @@
             <div class="section-title reveal">
                 <h2>Fonctionnalités Clés</h2>
                 <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">Un CRM complet pour couvrir tous vos besoins métier.</p>
             </div>
             <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="service-card glass reveal" style="cursor: default;">
@@ -114,7 +307,7 @@
                 <div class="service-card glass reveal" style="cursor: default;">
                     <div class="service-icon"><i class="lni lni-funnel"></i></div>
                     <h3>Pipeline de vente</h3>
-                    <p>Suivez vos opportunités de la prospection à la conclusion avec un pipeline visuel.</p>
+                    <p>Suivez vos opportunités de la prospection à la conclusion grâce à un pipeline visuel.</p>
                 </div>
                 <div class="service-card glass reveal" style="cursor: default;">
                     <div class="service-icon"><i class="lni lni-envelope"></i></div>
@@ -127,7 +320,7 @@
                     <p>Gestion des rôles, chiffrement des données et conformité RGPD.</p>
                 </div>
                 <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-phone"></i></div>
+                    <div class="service-icon"><i class="lni lni-mobile"></i></div>
                     <h3>Mobile-friendly</h3>
                     <p>Accédez à votre CRM depuis n'importe quel appareil, où que vous soyez.</p>
                 </div>
@@ -140,11 +333,68 @@
         </div>
     </section>
 
+    <!-- Process Timeline -->
+    <section class="section-padding" style="background: var(--darker);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Notre Process de Développement</h2>
+                <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">De l'analyse à la mise en production, un accompagnement rigoureux.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>01 — Analyse des besoins</h3>
+                        <p>Ateliers de travail avec vos équipes pour comprendre vos objectifs et identifier les fonctionnalités essentielles. Audit de vos processus existants.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>02 — Conception & Prototypage</h3>
+                        <p>Maquettes UX/UI et prototypes interactifs soumis à vos équipes pour validation. Approche collaborative pour ajuster les éléments avant le développement.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>03 — Développement & Tests</h3>
+                        <p>Codage avec technologies modernes. Tests rigoureux couvrant divers scénarios d'utilisation pour garantir la fiabilité du système.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>04 — Mise en Production & Formation</h3>
+                        <p>Migration des données, configuration des accès utilisateurs et sessions de formation pour une adoption rapide et efficace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relation Client -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid reverse">
+                <div class="reveal">
+                    <h2>Optimisation de la <span style="color: var(--primary);">relation client</span></h2>
+                    <p>La gestion de la relation client est au cœur de nos préoccupations. Grâce à des interfaces conviviales et des modules spécifiquement pensés, notre solution CRM vous aide à renforcer vos liens avec votre clientèle.</p>
+                    <p>Vous pouvez suivre l'historique de chaque interaction, prioriser les actions et proposer des offres personnalisées basées sur l'analyse des comportements d'achat. Un CRM bien conçu permet d'améliorer la satisfaction client en facilitant la résolution rapide de problèmes.</p>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80" alt="Réunion relation client">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="section-padding" style="background: radial-gradient(circle at center, rgba(99,102,241,0.15), transparent); text-align: center;">
         <div class="container reveal">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Prêt à centraliser votre gestion client ?</h2>
-            <p style="opacity: 0.7; max-width: 600px; margin: 0 auto 30px;">Discutons de votre projet CRM. Étude gratuite et devis sous 24h.</p>
+            <p style="opacity: 0.7; max-width: 700px; margin: 0 auto 30px;">Nous croyons que chaque entreprise mérite un outil performant qui lui permet de prospérer. Discutons de votre projet CRM.</p>
             <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d%27un%20CRM%20sur%20mesure" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Discuter sur WhatsApp</a>
             <a href="index.html#contact" class="btn glass" style="margin-left: 15px; padding: 16px 40px;">Formulaire de Contact</a>
         </div>
@@ -156,13 +406,22 @@
         <span class="tooltip">Discuter sur WhatsApp</span>
     </a>
 
-    <!-- Footer -->
+    <!-- Professional Footer -->
     <footer class="pro-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
-                    <p>Expert en solutions CRM sur mesure pour les entreprises marocaines.</p>
+                    <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation numérique et l'intégration de solutions d'IA avancées.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="offres-web.html">Offres Web</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Développement</h4>
@@ -170,11 +429,17 @@
                         <li><a href="offres-web.html">Site Web</a></li>
                         <li><a href="creation-crm.html">Création de CRM</a></li>
                         <li><a href="creation-erp.html">Création d'ERP</a></li>
+                        <li><a href="service-ia.html">Intelligence Artificielle</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <p>Tanger, Maroc<br>sdbocontact@gmail.com<br>+212 6 61 60 53 69</p>
+                    <div class="social-links" style="margin-top: 15px;">
+                        <a href="#"><i class="lni lni-facebook-filled"></i></a>
+                        <a href="#"><i class="lni lni-linkedin-original"></i></a>
+                        <a href="#"><i class="lni lni-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
