@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO | Création Site Web - Offres & Tarifs</title>
+    <meta name="description" content="Création de site web professionnel au Maroc. Offres Basic, Essentiel et Pro à partir de 2500 DH. SDBO Tanger.">
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <style>
+        /* Pricing Page Specific Styles */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 50px 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.15);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-card .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, var(--primary), var(--indigo));
+            color: #fff;
+            padding: 6px 45px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transform: rotate(45deg);
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card .plan-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card .price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin: 15px 0;
+            line-height: 1;
+        }
+
+        .pricing-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .pricing-card .price-note {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        .pricing-card .features-list li {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-card .features-list li i {
+            color: var(--primary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .pricing-card .features-list li.disabled {
+            opacity: 0.3;
+            text-decoration: line-through;
+        }
+
+        .pricing-card .features-list li.disabled i {
+            color: var(--gray);
+        }
+
+        .pricing-card .btn-pricing {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--glass-border);
+            color: var(--light);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .btn-filled {
+            background: linear-gradient(135deg, var(--secondary), var(--indigo));
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-filled:hover {
+            box-shadow: 0 8px 35px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .guarantee-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .guarantee-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .guarantee-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .guarantee-item p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .pricing-card.featured {
+                transform: none;
+            }
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-follower"></div>
+
+    <header id="header" class="sticky">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#">Développement</a>
+                            <div class="dropdown-menu">
+                                <a href="offres-web.html">Site Web</a>
+                                <a href="creation-crm.html">Création de CRM</a>
+                                <a href="creation-erp.html">Création d'ERP</a>
+                            </div>
+                        </li>
+                        <li><a href="service-ia.html">IA</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-action"><a href="index.html#contact" class="btn btn-primary">Devis Gratuit</a></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="sub-hero" style="background: linear-gradient(rgba(10,14,23,0.7), var(--darker)), radial-gradient(circle at 30% 50%, rgba(99,102,241,0.2), transparent 70%);">
+        <div class="container">
+            <span class="badge">Création Web</span>
+            <h1>Votre Site Web Professionnel</h1>
+            <p>Design premium, responsive et optimisé SEO. Choisissez l'offre adaptée à vos ambitions.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section-padding" style="background: var(--darker);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Nos Formules</h2>
+                <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">Création de site web clé en main, responsive et optimisé pour la conversion.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic -->
+                <div class="pricing-card reveal">
+                    <div class="plan-name">Basic</div>
+                    <div class="price">2 500 <small>DH</small></div>
+                    <div class="price-note">à partir de</div>
+                    <ul class="features-list">
+                        <li><i class="lni lni-checkmark-circle"></i> Site vitrine (1-3 pages)</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Design responsive mobile</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Formulaire de contact</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Hébergement 1 an inclus</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Certificat SSL (HTTPS)</li>
+                        <li class="disabled"><i class="lni lni-close"></i> SEO avancé</li>
+                        <li class="disabled"><i class="lni lni-close"></i> Intégration réseaux sociaux</li>
+                        <li class="disabled"><i class="lni lni-close"></i> Maintenance mensuelle</li>
+                    </ul>
+                    <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27offre%20Basic%20Site%20Web" class="btn-pricing btn-outline">Demander un Devis</a>
+                </div>
+
+                <!-- Essentiel -->
+                <div class="pricing-card featured reveal">
+                    <div class="popular-badge">Populaire</div>
+                    <div class="plan-name">Essentiel</div>
+                    <div class="price">6 500 <small>DH</small></div>
+                    <div class="price-note">à partir de</div>
+                    <ul class="features-list">
+                        <li><i class="lni lni-checkmark-circle"></i> Site professionnel (5-10 pages)</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Design premium sur mesure</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Responsive + animations</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Hébergement 1 an + domaine</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Optimisation SEO de base</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Intégration réseaux sociaux</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Google Analytics</li>
+                        <li class="disabled"><i class="lni lni-close"></i> Maintenance mensuelle</li>
+                    </ul>
+                    <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27offre%20Essentiel%20Site%20Web" class="btn-pricing btn-filled">Demander un Devis</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card reveal">
+                    <div class="plan-name">Pro</div>
+                    <div class="price">9 500 <small>DH</small></div>
+                    <div class="price-note">à partir de</div>
+                    <ul class="features-list">
+                        <li><i class="lni lni-checkmark-circle"></i> Site avancé (pages illimitées)</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Design haut de gamme</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Animations & interactions</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Hébergement + domaine + emails</li>
+                        <li><i class="lni lni-checkmark-circle"></i> SEO avancé + sitemap</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Intégration CMS (back-office)</li>
+                        <li><i class="lni lni-checkmark-circle"></i> E-commerce ou réservation</li>
+                        <li><i class="lni lni-checkmark-circle"></i> Maintenance 3 mois incluse</li>
+                    </ul>
+                    <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27offre%20Pro%20Site%20Web" class="btn-pricing btn-outline">Demander un Devis</a>
+                </div>
+            </div>
+
+            <!-- Guarantees -->
+            <div class="guarantees-grid">
+                <div class="guarantee-item reveal">
+                    <i class="lni lni-timer"></i>
+                    <h4>Devis sous 24h</h4>
+                    <p>Rapide et sans engagement</p>
+                </div>
+                <div class="guarantee-item reveal">
+                    <i class="lni lni-calendar"></i>
+                    <h4>Deadline Assurée</h4>
+                    <p>Engagés sur vos délais</p>
+                </div>
+                <div class="guarantee-item reveal">
+                    <i class="lni lni-support"></i>
+                    <h4>Support Continu</h4>
+                    <p>Assistance après livraison</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Notre Process</h2>
+                <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">De l'idée à la mise en ligne, un accompagnement à chaque étape.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-item reveal">
+                    <div class="process-count">01</div>
+                    <h3>Définition des besoins</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">Échange approfondi pour comprendre vos objectifs, votre cible et vos inspirations.</p>
+                </div>
+                <div class="process-item reveal">
+                    <div class="process-count">02</div>
+                    <h3>Design & Développement</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">Maquettes UX/UI, développement responsive et optimisation des performances.</p>
+                </div>
+                <div class="process-item reveal">
+                    <div class="process-count">03</div>
+                    <h3>Mise en ligne & Support</h3>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">Déploiement, formation à la gestion du site et accompagnement post-lancement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: radial-gradient(circle at center, rgba(99,102,241,0.15), transparent); text-align: center;">
+        <div class="container reveal">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Prêt à lancer votre projet web ?</h2>
+            <p style="opacity: 0.7; max-width: 600px; margin: 0 auto 30px;">Contactez-nous pour une étude personnalisée. Devis gratuit sous 24h.</p>
+            <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20de%20mon%20site%20web" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Discuter sur WhatsApp</a>
+            <a href="index.html#contact" class="btn glass" style="margin-left: 15px; padding: 16px 40px;">Formulaire de Contact</a>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/212661605369" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="tooltip">Discuter sur WhatsApp</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="pro-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <p>Votre partenaire pour une présence web professionnelle et performante.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="offres-web.html">Offres Web</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Offres</h4>
+                    <ul class="footer-links">
+                        <li><a href="offres-web.html">Basic - 2 500 DH</a></li>
+                        <li><a href="offres-web.html">Essentiel - 6 500 DH</a></li>
+                        <li><a href="offres-web.html">Pro - 9 500 DH</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Tanger, Maroc<br>sdbocontact@gmail.com<br>+212 6 61 60 53 69</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO - SMART DIGITAL BUSINESS OFFICE. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const follower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
