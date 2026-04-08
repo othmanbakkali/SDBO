@@ -35,7 +35,10 @@
                     </a>
                 </div>
                 <nav>
-                    <ul>
+                    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul id="mainNav">
                         <li><a href="index.html#home">Accueil</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li class="dropdown">
@@ -67,7 +70,7 @@
                     Artificielle et des Solutions IT sur mesure.</p>
                 <div class="hero-btns">
                     <a href="#services" class="btn btn-primary">Explorer nos solutions</a>
-                    <a href="#contact" class="btn glass" style="margin-left:15px;">Démarrer un projet</a>
+                    <a href="#contact" class="btn glass hero-secondary-btn">Démarrer un projet</a>
                 </div>
             </div>
         </div>
@@ -221,24 +224,9 @@
                 <h2 style="font-size: 1.8rem; margin-bottom: 50px; text-align: center; color: var(--primary);">Nos
                     Partenaires de Confiance</h2>
             </div>
-            <div class="partners-grid"
-                style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 40px; opacity: 1;">
-                <div class="partner-item">
-                    <img src="assets/images/partners/BSI.jpeg" alt="BSI Logo"
-                        style="height: 60px; filter: none; opacity: 1;">
-                </div>
-                <div class="partner-item">
-                    <img src="assets/images/partners/RMH.jpeg" alt="RMH Logo"
-                        style="height: 60px; filter: none; opacity: 1;">
-                </div>
-                <div class="partner-item">
-                    <img src="assets/images/partners/Techniscan.png" alt="Techniscan Logo"
-                        style="height: 60px; filter: none; opacity: 1;">
-                </div>
-                <div class="partner-item">
-                    <img src="assets/images/partners/UnitedService.jpeg" alt="UnitedService Logo"
-                        style="height: 60px; filter: none; opacity: 1;">
-                </div>
+            <div class="partners-marquee" id="partnersMarquee" data-marquee-duration="22"
+                aria-label="Défilement infini des logos partenaires">
+                <div class="partners-track"></div>
             </div>
         </div>
     </section>
@@ -258,35 +246,47 @@
 
                     <div style="margin-bottom: 20px;">
                         <i class="lni lni-phone" style="color: var(--primary); margin-right: 15px;"></i>
-                        <span>+212 6 61 60 53 69</span>
+                        <a  style="color: var(--light); text-decoration: none;" href="tel:+212661605369">+212 6 61 60 53 69</a>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <i class="lni lni-envelope" style="color: var(--primary); margin-right: 15px;"></i>
-                        <span>sdbocontact@gmail.com</span>
+                        <a style="color: var(--light); text-decoration: none;" href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <i class="lni lni-map-marker" style="color: var(--primary); margin-right: 15px;"></i>
                         <span>Tanger, Maroc</span>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Nom Complet" required>
-                    <input type="email" placeholder="Email Professionnel" required>
-                    <select
-                        style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--gray);">
+                <form class="contact-form" id="contactForm" method="post"
+                    data-web3forms-access-key="">
+                    <!-- Collez ici votre clé https://web3forms.com (destination : sdbocontact@gmail.com) -->
+                    <div class="contact-form__hp" aria-hidden="true">
+                        <label for="contactWebsite">Ne pas remplir ce champ</label>
+                        <input type="text" id="contactWebsite" name="botcheck" tabindex="-1"
+                            autocomplete="off">
+                    </div>
+                    <label class="visually-hidden" for="contact-name">Nom complet</label>
+                    <input id="contact-name" name="name" type="text" placeholder="Nom Complet" required
+                        autocomplete="name" maxlength="200">
+                    <label class="visually-hidden" for="contact-email">Email professionnel</label>
+                    <input id="contact-email" name="email" type="email" placeholder="Email Professionnel" required
+                        autocomplete="email" maxlength="320">
+                    <label class="visually-hidden" for="contact-service">Service</label>
+                    <select id="contact-service" name="service" required>
                         <option value="">Sélectionnez un service</option>
                         <option value="ai">Intelligence Artificielle</option>
                         <option value="hardware">Matériel Informatique</option>
                         <option value="software">Solutions sur Mesure</option>
                         <option value="consulting">Consulting / Audit</option>
                     </select>
-                    <textarea rows="5" placeholder="Votre Message" required></textarea>
+                    <label class="visually-hidden" for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Votre Message" required
+                        maxlength="8000"></textarea>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer la demande</button>
-                    <div id="formSuccess"
-                        style="display:none; margin-top:20px; padding:15px; background:rgba(0,210,255,0.1); border:1px solid var(--primary); border-radius:8px; text-align:center; color:var(--primary);">
-                        <i class="lni lni-checkmark-circle"></i> Message envoyé avec succès ! Nous vous recontacterons
-                        sous 24h.
-                    </div>
+                    <div id="formSuccess" class="contact-form__feedback contact-form__feedback--success" role="status"
+                        aria-live="polite" hidden></div>
+                    <div id="formError" class="contact-form__feedback contact-form__feedback--error" role="alert"
+                        aria-live="assertive" hidden></div>
                 </form>
             </div>
         </div>
@@ -307,7 +307,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
                     <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation numérique et l'intégration de solutions d'IA avancées.</p>
                 </div>
                 <div class="footer-col">
@@ -344,6 +344,9 @@
         </div>
     </footer>
 
+    <script src="assets/js/partners-marquee.js" defer></script>
+    <script src="assets/js/contact-form.js" defer></script>
+
     <!-- Scripts -->
     <script>
         // Sticky Header
@@ -352,10 +355,23 @@
             header.classList.toggle('sticky', window.scrollY > 50);
         });
 
+        // Mobile navigation
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!expanded));
+                mainNav.classList.toggle('is-open');
+            });
+        }
+
         // Custom Cursor Follower
         const follower = document.querySelector('.cursor-follower');
         document.addEventListener('mousemove', (e) => {
-            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            if (follower) {
+                follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            }
         });
 
         // Intersection Observer for Reveal Animations
@@ -377,34 +393,6 @@
             revealObserver.observe(el);
         });
 
-        // Contact Form Handler
-        const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const btn = contactForm.querySelector('button');
-                const originalText = btn.innerHTML;
-
-                btn.innerHTML = '<i class="lni lni-spinner-arrow spinning"></i> Envoi en cours...';
-                btn.style.opacity = '0.7';
-                btn.disabled = true;
-
-                // Simulate API call
-                setTimeout(() => {
-                    contactForm.reset();
-                    btn.innerHTML = originalText;
-                    btn.style.opacity = '1';
-                    btn.disabled = false;
-                    formSuccess.style.display = 'block';
-
-                    setTimeout(() => {
-                        formSuccess.style.display = 'none';
-                    }, 5000);
-                }, 1500);
-            });
-        }
     </script>
 </body>
 
