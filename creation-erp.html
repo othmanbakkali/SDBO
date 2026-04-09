@@ -8,6 +8,130 @@
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <style>
+        .content-section { padding: 100px 0; }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .content-grid.reverse { direction: rtl; }
+        .content-grid.reverse > * { direction: ltr; }
+        .content-grid h2 { font-size: 2.4rem; margin-bottom: 20px; line-height: 1.2; }
+        .content-grid p { opacity: 0.8; line-height: 1.8; margin-bottom: 15px; }
+        .content-img {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .content-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .content-img:hover img { transform: scale(1.03); }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .advantage-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .advantage-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .advantage-card h4 { margin-bottom: 10px; font-size: 1.05rem; }
+        .advantage-card p { font-size: 0.85rem; opacity: 0.6; }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 60px 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-item .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-item .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 8px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--indigo));
+            opacity: 0.3;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+        .timeline-content {
+            flex: 1;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+        .timeline-content h3 { color: var(--primary); margin-bottom: 10px; }
+        .timeline-content p { font-size: 0.9rem; opacity: 0.7; }
+        @media (max-width: 768px) {
+            .content-grid, .content-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; text-align: left; }
+            .timeline::before { left: 10px; }
+        }
+    </style>
 </head>
 <body>
     <div class="cursor-follower"></div>
@@ -16,16 +140,20 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
-                                <nav>
-                    <ul>
+                <nav>
+                    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul id="mainNav">
                         <li><a href="index.html#home">Accueil</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li class="dropdown">
-                            <a href="#">D&eacute;veloppement</a>
+                            <a href="#">Développement</a>
                             <div class="dropdown-menu">
                                 <a href="offres-web.html">Site Web</a>
-                                <a href="creation-crm.html">Cr&eacute;ation de CRM</a>
-                                <a href="creation-erp.html">Cr&eacute;ation d'ERP</a>
+                                <a href="offre-ecommerce.html">E-commerce</a>
+                                <a href="creation-crm.html">Création de CRM</a>
+                                <a href="creation-erp.html">Création d'ERP</a>
                             </div>
                         </li>
                         <li><a href="service-ia.html">IA</a></li>
@@ -38,11 +166,35 @@
     </header>
 
     <!-- Hero -->
-    <section class="sub-hero">
+    <section class="sub-hero" style="background: linear-gradient(rgba(10,14,23,0.6), var(--darker)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80') center/cover no-repeat;">
         <div class="container">
             <span class="badge">Solutions ERP</span>
             <h1>Création d'ERP sur Mesure</h1>
-            <p>Pilotez l'ensemble de vos opérations avec un système intégré conçu pour votre métier.</p>
+            <p>Unifiez vos opérations (ventes, achats, stock, RH, comptabilité) dans un système fiable, évolutif et adapté à votre métier.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section style="background: var(--darker); border-bottom: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="stats-bar reveal">
+                <div class="stat-item">
+                    <div class="stat-number">-30%</div>
+                    <div class="stat-label">Temps de traitement</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Source de vérité</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+20%</div>
+                    <div class="stat-label">Maîtrise des coûts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Accès sécurisé</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -51,90 +203,176 @@
         <div class="container">
             <div class="content-grid">
                 <div class="reveal">
-                    <h2>Pourquoi un ERP <span style="color: var(--primary);">personnalisé</span> ?</h2>
-                    <p>Un ERP sur mesure unifie tous vos processus métier en une seule plateforme. Fini les logiciels éparpillés et les données en silos : gestion commerciale, comptabilité, stocks, RH — tout est interconnecté pour une efficacité maximale.</p>
-                    <br>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Vision 360° de l'entreprise</strong> — Tableaux de bord unifiés pour piloter chaque département.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Automatisation des processus</strong> — Réduisez les tâches manuelles et les erreurs humaines.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Traçabilité complète</strong> — Historique de chaque opération pour un audit simplifié.</li>
-                        <li style="margin-bottom: 18px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> <strong>Évolutivité garantie</strong> — Votre ERP grandit avec votre entreprise, module par module.</li>
-                    </ul>
-                </div>
-                <div class="reveal">
-                    <div class="glass" style="padding: 60px; text-align: center;">
-                        <i class="lni lni-layers" style="font-size: 10rem; color: var(--primary); filter: drop-shadow(0 0 20px var(--primary));"></i>
+                    <h2>Pourquoi un ERP <span style="color: var(--primary);">sur mesure</span> ?</h2>
+                    <p>Un ERP est le cœur opérationnel de l’entreprise : il centralise les données, harmonise les processus et aligne vos équipes sur une même réalité (stock, ventes, achats, finance, RH).</p>
+                    <p>À la différence d’un outil générique, un ERP sur mesure s’intègre à votre organisation, respecte vos workflows et peut évoluer module par module, sans vous imposer des contraintes inutiles.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20ERP%20sur%20mesure" class="btn btn-primary">Demander un Devis</a>
                     </div>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="ERP dashboard">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modules -->
+    <!-- Advantages -->
     <section class="section-padding" style="background: var(--darker);">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Modules ERP Disponibles</h2>
+                <h2>Les Avantages d'un ERP Personnalisé</h2>
                 <div class="underline"></div>
-                <p style="margin-top: 20px; opacity: 0.7;">Composez votre ERP avec les modules adaptés à votre activité.</p>
+                <p style="margin-top: 20px; opacity: 0.7;">Une solution construite autour de vos opérations.</p>
             </div>
-            <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-calculator"></i></div>
-                    <h3>Comptabilité & Finance</h3>
-                    <p>Facturation, suivi des paiements, bilans financiers et reporting automatisé.</p>
+            <div class="advantages-grid">
+                <div class="advantage-card reveal">
+                    <i class="lni lni-layers"></i>
+                    <h4>Centralisation</h4>
+                    <p>Données unifiées et cohérentes entre services.</p>
                 </div>
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-users"></i></div>
-                    <h3>Ressources Humaines</h3>
-                    <p>Gestion des employés, paie, congés, pointage et évaluations de performance.</p>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-bolt"></i>
+                    <h4>Automatisation</h4>
+                    <p>Moins de tâches manuelles, moins d’erreurs.</p>
                 </div>
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-package"></i></div>
-                    <h3>Gestion des Stocks</h3>
-                    <p>Inventaire en temps réel, mouvements de stock, alertes de réapprovisionnement.</p>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-shield"></i>
+                    <h4>Contrôle</h4>
+                    <p>Rôles, permissions et traçabilité complète.</p>
                 </div>
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-cart"></i></div>
-                    <h3>Ventes & Achats</h3>
-                    <p>Bons de commande, devis, suivi fournisseurs et gestion du cycle de vente.</p>
-                </div>
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-cog"></i></div>
-                    <h3>Production</h3>
-                    <p>Planification de production, ordres de fabrication et contrôle qualité.</p>
-                </div>
-                <div class="service-card glass reveal" style="cursor: default;">
-                    <div class="service-icon"><i class="lni lni-bar-chart"></i></div>
-                    <h3>Business Intelligence</h3>
-                    <p>Rapports avancés, KPIs personnalisés et tableaux de bord décisionnels.</p>
+                <div class="advantage-card reveal">
+                    <i class="lni lni-graph"></i>
+                    <h4>Pilotage</h4>
+                    <p>KPIs, reporting et dashboards décisionnels.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
+    <!-- Personalisation Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid reverse">
+                <div class="reveal">
+                    <h2>Modules <span style="color: var(--primary);">sur mesure</span></h2>
+                    <p>Nous concevons des modules ERP adaptés à votre activité : ventes, achats, stock, production, RH, finance, SAV. Chaque module peut évoluer indépendamment selon votre croissance.</p>
+                    <p>L’objectif : une interface claire, une saisie minimale, des validations contrôlées et des workflows qui reflètent votre réalité terrain.</p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Stocks, lots, seuils et inventaires</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Ventes, devis, factures et relances</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Achats, fournisseurs et réappro</li>
+                        <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle" style="color: var(--primary); margin-right: 12px;"></i> Reporting et exports comptables</li>
+                    </ul>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="Equipe développement ERP">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration & CRM -->
+    <section class="content-section" style="background: var(--darker);">
+        <div class="container">
+            <div class="content-grid">
+                <div class="reveal">
+                    <h2>Intégration ERP <span style="color: var(--primary);">& CRM</span></h2>
+                    <p>Un ERP devient encore plus puissant quand il se connecte à vos autres outils : CRM, e-commerce, comptabilité, BI, email, et solutions métier.</p>
+                    <p>Nous mettons en place une intégration propre (API, webhooks, SSO) afin de synchroniser les données et réduire la double saisie.</p>
+                    <div style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span class="badge" style="display:inline-block;">API REST</span>
+                        <span class="badge" style="display:inline-block;">Webhooks</span>
+                        <span class="badge" style="display:inline-block;">OAuth 2.0</span>
+                        <span class="badge" style="display:inline-block;">SSO</span>
+                    </div>
+                </div>
+                <div class="content-img reveal">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="Intégration systèmes ERP">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
     <section class="section-padding">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Notre Méthodologie</h2>
+                <h2>Fonctionnalités Clés</h2>
                 <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">Un ERP complet pour piloter vos opérations.</p>
             </div>
-            <div class="process-grid">
-                <div class="process-item reveal">
-                    <div class="process-count">01</div>
-                    <h3>Audit & Cadrage</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Cartographie de vos processus existants et identification des axes d'optimisation.</p>
+            <div class="service-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-dashboard"></i></div>
+                    <h3>Tableaux de bord</h3>
+                    <p>KPIs opérationnels : ventes, marges, stock, trésorerie, performance.</p>
                 </div>
-                <div class="process-item reveal">
-                    <div class="process-count">02</div>
-                    <h3>Architecture & Design</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Conception modulaire de l'ERP et prototypage de l'interface utilisateur.</p>
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-package"></i></div>
+                    <h3>Stock & inventaire</h3>
+                    <p>Entrées/sorties, alertes, inventaires, traçabilité par lots.</p>
                 </div>
-                <div class="process-item reveal">
-                    <div class="process-count">03</div>
-                    <h3>Déploiement & Formation</h3>
-                    <p style="opacity: 0.6; font-size: 0.9rem;">Migration des données, mise en production et formation de vos équipes.</p>
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-cart"></i></div>
+                    <h3>Ventes & achats</h3>
+                    <p>Devis, commandes, facturation, fournisseurs et réappro.</p>
+                </div>
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-calculator"></i></div>
+                    <h3>Finance</h3>
+                    <p>Suivi paiements, exports comptables et reporting financier.</p>
+                </div>
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-users"></i></div>
+                    <h3>RH</h3>
+                    <p>Gestion employés, congés, pointage, accès et habilitations.</p>
+                </div>
+                <div class="service-card glass reveal" style="cursor: default;">
+                    <div class="service-icon"><i class="lni lni-protection"></i></div>
+                    <h3>Sécurité</h3>
+                    <p>Rôles, permissions, logs et sauvegardes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="section-padding" style="background: var(--darker);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Notre Process de Développement</h2>
+                <div class="underline"></div>
+                <p style="margin-top: 20px; opacity: 0.7;">De l'audit à la mise en production, un accompagnement rigoureux.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>01 — Audit & cadrage</h3>
+                        <p>Cartographie des processus, définition des modules, règles métiers et priorités.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>02 — Conception</h3>
+                        <p>UX/UI, architecture, modèle de données, intégrations et sécurité.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>03 — Développement & tests</h3>
+                        <p>Itérations, tests fonctionnels, performance et validation avec vos équipes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>04 — Déploiement & formation</h3>
+                        <p>Migration des données, mise en production, formation et support d’adoption.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,12 +381,13 @@
     <!-- CTA -->
     <section class="section-padding" style="background: radial-gradient(circle at center, rgba(99,102,241,0.15), transparent); text-align: center;">
         <div class="container reveal">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Modernisez votre gestion d'entreprise</h2>
-            <p style="opacity: 0.7; max-width: 600px; margin: 0 auto 30px;">Un ERP sur mesure pour unifier vos opérations. Étude gratuite et devis sous 48h.</p>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Prêt à unifier vos opérations ?</h2>
+            <p style="opacity: 0.7; max-width: 700px; margin: 0 auto 30px;">Discutons de votre projet ERP et définissons les modules prioritaires. Étude gratuite et devis sous 48h.</p>
             <a href="https://wa.me/212661605369?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20la%20cr%C3%A9ation%20d%27un%20ERP%20sur%20mesure" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Discuter sur WhatsApp</a>
             <a href="index.html#contact" class="btn glass" style="margin-left: 15px; padding: 16px 40px;">Formulaire de Contact</a>
         </div>
     </section>
+
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/212661605369" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -160,8 +399,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
-                    <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation num&eacute;rique et l'int&eacute;gration de solutions d'IA avanc&eacute;es.</p>
+                    <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
+                    <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation numérique et l'intégration de solutions d'IA avancées.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
@@ -173,11 +412,11 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>D&eacute;veloppement</h4>
+                    <h4>Développement</h4>
                     <ul class="footer-links">
                         <li><a href="offres-web.html">Site Web</a></li>
-                        <li><a href="creation-crm.html">Cr&eacute;ation de CRM</a></li>
-                        <li><a href="creation-erp.html">Cr&eacute;ation d'ERP</a></li>
+                        <li><a href="creation-crm.html">Création de CRM</a></li>
+                        <li><a href="creation-erp.html">Création d'ERP</a></li>
                         <li><a href="service-ia.html">Intelligence Artificielle</a></li>
                     </ul>
                 </div>
@@ -192,14 +431,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">&copy; 2026 SDBO - SMART DIGITAL BUSINESS OFFICE. Tous droits r&eacute;serv&eacute;s.</p>
+                <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO - SMART DIGITAL BUSINESS OFFICE. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
+    <script src="assets/js/site.js" defer></script>
     <script>
         const follower = document.querySelector('.cursor-follower');
-        document.addEventListener('mousemove', (e) => { follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`; });
+        document.addEventListener('mousemove', (e) => { if (follower) follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`; });
         const revealObserver = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     </script>

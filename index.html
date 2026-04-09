@@ -45,6 +45,7 @@
                             <a href="#">Développement</a>
                             <div class="dropdown-menu">
                                 <a href="offres-web.html">Site Web</a>
+                                <a href="offre-ecommerce.html">E-commerce</a>
                                 <a href="creation-crm.html">Création de CRM</a>
                                 <a href="creation-erp.html">Création d'ERP</a>
                             </div>
@@ -346,6 +347,7 @@
 
     <script src="assets/js/partners-marquee.js" defer></script>
     <script src="assets/js/contact-form.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
 
     <!-- Scripts -->
     <script>
@@ -354,17 +356,6 @@
             const header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 50);
         });
-
-        // Mobile navigation
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', () => {
-                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', String(!expanded));
-                mainNav.classList.toggle('is-open');
-            });
-        }
 
         // Custom Cursor Follower
         const follower = document.querySelector('.cursor-follower');
