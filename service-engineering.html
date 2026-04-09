@@ -19,13 +19,17 @@
                     </a>
                 </div>
                                 <nav>
-                    <ul>
+                    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul id="mainNav">
                         <li><a href="index.html#home">Accueil</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li class="dropdown">
                             <a href="#">D&eacute;veloppement</a>
                             <div class="dropdown-menu">
                                 <a href="offres-web.html">Site Web</a>
+                                <a href="offre-ecommerce.html">E-commerce</a>
                                 <a href="creation-crm.html">Cr&eacute;ation de CRM</a>
                                 <a href="creation-erp.html">Cr&eacute;ation d'ERP</a>
                             </div>
@@ -81,7 +85,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img src="assets/images/logo.svg" alt="SDBO" style="height: 50px; margin-bottom: 20px;">
+                    <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
                     <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation num&eacute;rique et l'int&eacute;gration de solutions d'IA avanc&eacute;es.</p>
                 </div>
                 <div class="footer-col">
@@ -118,10 +122,11 @@
         </div>
     </footer>
 
+    <script src="assets/js/site.js" defer></script>
     <script>
         const follower = document.querySelector('.cursor-follower');
         document.addEventListener('mousemove', (e) => {
-            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+            if (follower) follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
         });
 
         const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
