@@ -24,6 +24,21 @@
       navToggle.setAttribute('aria-expanded', 'false');
       mainNav.classList.remove('is-open');
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      var isOpen = mainNav.classList.contains('is-open');
+      if (!isOpen) return;
+
+      var target = e.target;
+      var isClickInsideMenu = mainNav.contains(target);
+      var isClickInsideToggle = navToggle.contains(target);
+
+      if (!isClickInsideMenu && !isClickInsideToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        mainNav.classList.remove('is-open');
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
