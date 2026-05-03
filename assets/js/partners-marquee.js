@@ -10,7 +10,9 @@
         { src: 'assets/images/partners/BSI.png', alt: 'BSI' },
         { src: 'assets/images/partners/RMH.png', alt: 'RMH' },
         { src: 'assets/images/partners/Techniscan.png', alt: 'Techniscan' },
-        { src: 'assets/images/partners/UnitedService.png', alt: 'United Service' }
+        { src: 'assets/images/partners/UnitedService.png', alt: 'United Service' },
+        { src: 'assets/images/partners/ItTech.png', alt: 'ItTech' },
+        { src: 'assets/images/partners/institut-ciel.png', alt: 'institut-ciel' },
     ];
 
     var DEFAULT_DURATION_S = 80;
