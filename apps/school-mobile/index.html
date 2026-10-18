@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إقرأ — AIQRAE | نحو تعليم أذكى، لمستقبل أفضل</title>
+    <meta name="description" content="منظومة إقرأ — AIQRAE: نحو تعليم أذكى، لمستقبل أفضل. La solution mobile éducative complète et intelligente propulsée par l'IA.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="assets/logo_transparent.png" alt="AIQRAE — إقرأ Logo" class="logo-img">
+                <span class="logo-text">AIQRAE <span class="accent-color">إقرأ</span></span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#ai-performance" class="nav-link" data-fr="IA & Réussite" data-ar="الذكاء الاصطناعي والنجاح">IA & Réussite</a>
+                <a href="#brochures" class="nav-link" data-fr="Brochures" data-ar="الكتيبات">Brochures</a>
+                <a href="#features" class="nav-link" data-fr="Fonctionnalités" data-ar="المميزات">Fonctionnalités</a>
+                <a href="#audience" class="nav-link" data-fr="Pour Qui ?" data-ar="لمن هذا ؟">Pour Qui ?</a>
+                <a href="#pricing" class="nav-link" data-fr="Tarifs" data-ar="الأسعار">Tarifs</a>
+                <a href="#contact" class="nav-link" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle Theme">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.07 7.07l-2.828-2.828z"></path></svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                
+                <button class="lang-toggle" id="lang-toggle-btn">
+                    <span class="lang-text">العربية</span>
+                    <svg class="globe-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2m4-3.5a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </button>
+
+                <a href="#contact" class="btn btn-secondary nav-cta" data-fr="Demander une Démo" data-ar="طلب عرض توضيحي">Demander une Démo</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <nav class="mobile-nav-menu">
+            <a href="#features" class="mobile-nav-link" data-fr="Fonctionnalités" data-ar="المميزات">Fonctionnalités</a>
+            <a href="#audience" class="mobile-nav-link" data-fr="Pour Qui ?" data-ar="لمن هذا ؟">Pour Qui ?</a>
+            <a href="#pricing" class="mobile-nav-link" data-fr="Tarifs" data-ar="الأسعار">Tarifs</a>
+            <a href="#contact" class="mobile-nav-link" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
+            <a href="#contact" class="btn btn-primary" data-fr="Demander une Démo" data-ar="طلب عرض توضيحي">Demander une Démo</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge" data-fr="🎓 AIQRAE — إقرأ | نحو تعليم أذكى، لمستقبل أفضل" data-ar="🎓 إقرأ — AIQRAE | نحو تعليم أذكى، لمستقبل أفضل">🎓 AIQRAE — إقرأ | نحو تعليم أذكى، لمستقبل أفضل</div>
+                <h1 data-fr="AIQRAE (إقرأ) — L'écosystème scolaire intelligent propulsé par l'IA" data-ar="إقرأ (AIQRAE) — المنظومة المدرسية الذكية نحو تعليم أذكى، لمستقبل أفضل">AIQRAE (إقرأ) — L'écosystème scolaire intelligent propulsé par l'IA</h1>
+                <p class="hero-description" data-fr="Nets scolaires, cahiers de transmission, cantine, transport et suivi prédictif par l'IA : découvrez AIQRAE (إقرأ)، نحو تعليم أذكى، لمستقبل أفضل." data-ar="دفاتر المراسلات الرقمية، مدفوعات المطعم والنقل، والتأطير التوقعي بالذكاء الاصطناعي: اكتشف منصة إقرأ (AIQRAE)، نحو تعليم أذكى، لمستقبل أفضل.">Nets scolaires, cahiers de transmission, cantine, transport et suivi prédictif par l'IA : découvrez AIQRAE (إقرأ)، نحو تعليم أذكى، لمستقبل أفضل.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary" data-fr="Planifier une Démo" data-ar="خطط لعرض توضيحي">Planifier une Démo</a>
+                    <a href="#ai-performance" class="btn btn-outline" data-fr="Découvrir l'IA Éducative" data-ar="اكتشف الذكاء الاصطناعي">Découvrir l'IA Éducative</a>
+                </div>
+                <div class="hero-badges-container">
+                    <div class="badge-item">
+                        <svg class="badge-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <span data-fr="Suivi & Tutorat IA Intégré" data-ar="تأطير وتتبع بالذكاء الاصطناعي">Suivi & Tutorat IA Intégré</span>
+                    </div>
+                    <div class="badge-item">
+                        <svg class="badge-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 18c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>
+                        <span data-fr="100% Conforme RGPD" data-ar="100% متوافق مع حماية البيانات">100% Conforme RGPD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Simulator Hero Column -->
+            <div class="hero-visual">
+                <div class="phone-frame-container">
+                    <div class="phone-frame">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-camera"></div>
+                        <div class="phone-screen" id="app-screen">
+                            <!-- Screen Content: Dashboard (Default) -->
+                            <div class="screen-content active" id="screen-dashboard">
+                                <div class="app-header">
+                                    <div class="user-avatar-row">
+                                        <div class="avatar">YA</div>
+                                        <div class="user-text">
+                                            <span class="user-welcome" data-fr="Bonjour, Parent 👋" data-ar="مرحباً، ولي الأمر 👋">Bonjour, Parent 👋</span>
+                                            <span class="user-student" data-fr="Yassine Alami (CE5)" data-ar="ياسين العلمي (المستوى الخامس)">Yassine Alami (CE5)</span>
+                                        </div>
+                                    </div>
+                                    <button class="app-notification-btn">
+                                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path></svg>
+                                        <span class="pulse-dot"></span>
+                                    </button>
+                                </div>
+                                <div class="app-body">
+                                    <!-- Stats Cards Row -->
+                                    <div class="app-grid-2">
+                                        <div class="app-card stat-card">
+                                            <span class="stat-label" data-fr="Moyenne" data-ar="المعدل">Moyenne</span>
+                                            <span class="stat-value">16.85<span class="stat-max">/20</span></span>
+                                            <span class="stat-trend positive" data-fr="↑ Rang: 3ème" data-ar="↑ المرتبة: الثالثة">↑ Rang: 3ème</span>
+                                        </div>
+                                        <div class="app-card stat-card">
+                                            <span class="stat-label" data-fr="Wallet" data-ar="المحفظة">Wallet</span>
+                                            <span class="stat-value">185.00 <span class="stat-currency">DH</span></span>
+                                            <span class="stat-status ok" data-fr="Solde OK" data-ar="رصيد كافٍ">Solde OK</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Actions -->
+                                    <h4 class="app-section-title" data-fr="Raccourcis" data-ar="روابط سريعة">Raccourcis</h4>
+                                    <div class="app-quick-actions">
+                                        <div class="quick-action-item">
+                                            <div class="quick-icon-bg bg-purple">
+                                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+                                            </div>
+                                            <span data-fr="Devoirs" data-ar="الواجبات">Devoirs</span>
+                                        </div>
+                                        <div class="quick-action-item">
+                                            <div class="quick-icon-bg bg-orange">
+                                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"></path></svg>
+                                            </div>
+                                            <span data-fr="Agenda" data-ar="الجدول">Agenda</span>
+                                        </div>
+                                        <div class="quick-action-item">
+                                            <div class="quick-icon-bg bg-green">
+                                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                                            </div>
+                                            <span data-fr="Messages" data-ar="الرسائل">Messages</span>
+                                        </div>
+                                        <div class="quick-action-item">
+                                            <div class="quick-icon-bg bg-blue">
+                                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 12c0-1.1.9-2 2-2V8c0-1.1-.9-2-2-2h-1c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2H4c-1.1 0-2 .9-2 2v2c1.1 0 2 .9 2 2s-0.9 2-2 2v2c0 1.1.9 2 2 2h1c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2h1c0-1.1.9-2 2-2v-2c-1.1 0-2-.9-2-2z"></path></svg>
+                                            </div>
+                                            <span data-fr="Transport" data-ar="النقل">Transport</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Recent Event Card -->
+                                    <div class="app-card list-card mt-3">
+                                        <div class="list-card-icon-wrapper bg-soft-green">
+                                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                                        </div>
+                                        <div class="list-card-content">
+                                            <h5 data-fr="Cahier de transmission" data-ar="دفتر المراسلات">Cahier de transmission</h5>
+                                            <p data-fr="1 message en attente de signature" data-ar="رسالة واحدة بانتظار التوقيع">1 message en attente de signature</p>
+                                        </div>
+                                        <span class="chevron-r">➔</span>
+                                    </div>
+                                    
+                                    <!-- Recent Grade -->
+                                    <div class="app-card list-card mt-2">
+                                        <div class="list-card-icon-wrapper bg-soft-purple">
+                                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.49 12L3 10.64l9 4.9 9-4.9-2.49 1.36L12 16.5 5.49 12z"></path></svg>
+                                        </div>
+                                        <div class="list-card-content">
+                                            <h5 data-fr="Note ajoutée : Mathématiques" data-ar="تمت إضافة نقطة: الرياضيات">Note ajoutée : Mathématiques</h5>
+                                            <p data-fr="Contrôle Continu 2 - 18.5/20" data-ar="المراقبة المستمرة 2 - 18.5/20">Contrôle Continu 2 - 18.5/20</p>
+                                        </div>
+                                        <span class="grade-pill positive">18.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Screen Content: Transmission -->
+                            <div class="screen-content" id="screen-transmission">
+                                <div class="app-header-back">
+                                    <button class="btn-back">←</button>
+                                    <span class="header-back-title" data-fr="Cahier de transmission" data-ar="دفتر المراسلات">Cahier de transmission</span>
+                                    <span style="width: 24px"></span>
+                                </div>
+                                <div class="app-body">
+                                    <div class="app-card transmission-card">
+                                        <div class="teacher-info">
+                                            <div class="avatar-small">MA</div>
+                                            <div>
+                                                <h6 class="teacher-name">Mme. Alami</h6>
+                                                <span class="teacher-role" data-fr="Prof. de Français" data-ar="أستاذة اللغة الفرنسية">Prof. de Français</span>
+                                            </div>
+                                            <span class="post-time" data-fr="Aujourd'hui" data-ar="اليوم">Aujourd'hui</span>
+                                        </div>
+                                        
+                                        <div class="post-message">
+                                            <div class="original-text">
+                                                <h5 data-fr="Sortie pédagogique Musée de Rabat" data-ar="رحلة تعليمية إلى متحف الرباط">Sortie pédagogique Musée de Rabat</h5>
+                                                <p data-fr="Chers parents, nous organisons ce vendredi une sortie éducative au Musée d'Art Moderne de Rabat. Départ prévu à 08h30. Veuillez signer l'autorisation." data-ar="أعزائي الآباء، ننظم هذا الجمعة رحلة تعليمية إلى متحف الفن الحديث بالرباط. الانطلاق على الساعة 8:30 صباحاً. يرجى توقيع الترخيص.">Chers parents, nous organisons ce vendredi une sortie éducative au Musée d'Art Moderne de Rabat. Départ prévu à 08h30. Veuillez signer l'autorisation.</p>
+                                            </div>
+                                            <div class="ai-translate-box">
+                                                <span class="ai-badge">★ Traduit par IA</span>
+                                                <p class="arabic-translation" dir="rtl">أولياء الأمور الأعزاء، ننظم يوم الجمعة المقبل رحلة تعليمية إلى متحف الفن الحديث بالرباط. المغادرة على الساعة 08:30 صباحًا. يرجى التوقيع على الإذن بالخروج.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="sign-section" id="sign-action-area">
+                                            <div class="sign-status-warning" id="sign-status-text">
+                                                <span class="dot-warn"></span>
+                                                <span data-fr="Signature obligatoire requise" data-ar="التوقيع الإلزامي مطلوب">Signature obligatoire requise</span>
+                                            </div>
+                                            <button class="btn btn-primary btn-block mt-2" id="btn-sign-app-message" data-fr="Signer électroniquement" data-ar="التوقيع إلكترونياً">Signer électroniquement</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Content: Wallet -->
+                            <div class="screen-content" id="screen-wallet">
+                                <div class="app-header-back">
+                                    <button class="btn-back">←</button>
+                                    <span class="header-back-title" data-fr="Pay Scolaire & Wallet" data-ar="الدفع المدرسي والمحفظة">Pay Scolaire & Wallet</span>
+                                    <span style="width: 24px"></span>
+                                </div>
+                                <div class="app-body">
+                                    <!-- Virtual Card -->
+                                    <div class="virtual-card">
+                                        <div class="card-chip-row">
+                                            <span class="card-chip"></span>
+                                            <span class="card-type">Student Pass</span>
+                                        </div>
+                                        <div class="card-number">•••• •••• •••• 5698</div>
+                                        <div class="card-holder-row">
+                                            <div>
+                                                <span class="card-label" data-fr="ÉLÈVE" data-ar="الطالب">ÉLÈVE</span>
+                                                <div class="card-holder">Yassine Alami</div>
+                                            </div>
+                                            <div>
+                                                <span class="card-label" data-fr="SOLDE" data-ar="الرصيد">SOLDE</span>
+                                                <div class="card-balance">185.00 DH</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Topup -->
+                                    <div class="app-card topup-card mt-3">
+                                        <h5 data-fr="Recharge rapide" data-ar="شحن سريع">Recharge rapide</h5>
+                                        <div class="topup-amount-buttons">
+                                            <button class="topup-btn">50 DH</button>
+                                            <button class="topup-btn active">100 DH</button>
+                                            <button class="topup-btn">200 DH</button>
+                                        </div>
+                                        <button class="btn btn-primary btn-block mt-2" data-fr="Recharger par Carte / GIMAC" data-ar="شحن عبر البطاقة">Recharger par Carte / GIMAC</button>
+                                    </div>
+
+                                    <!-- Transaction List -->
+                                    <h4 class="app-section-title mt-3" data-fr="Dernières transactions" data-ar="آخر المعاملات">Dernières transactions</h4>
+                                    <div class="app-card list-card mt-2">
+                                        <div class="list-card-icon-wrapper bg-soft-green">
+                                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"></path></svg>
+                                        </div>
+                                        <div class="list-card-content">
+                                            <h5 data-fr="Cantine - Déjeuner" data-ar="المطعم - وجبة غداء">Cantine - Déjeuner</h5>
+                                            <p data-fr="Hier, 12h45" data-ar="أمس، 12:45">Hier, 12h45</p>
+                                        </div>
+                                        <span class="transaction-value negative">-25.00 DH</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Content: Transport -->
+                            <div class="screen-content" id="screen-transport">
+                                <div class="app-header-back">
+                                    <button class="btn-back">←</button>
+                                    <span class="header-back-title" data-fr="Transport Scolaire" data-ar="النقل المدرسي">Transport Scolaire</span>
+                                    <span style="width: 24px"></span>
+                                </div>
+                                <div class="app-body-no-padding">
+                                    <!-- Map Mockup -->
+                                    <div class="map-mockup">
+                                        <!-- School Point -->
+                                        <div class="map-point school-point">
+                                            <span class="map-tooltip" data-fr="École" data-ar="المدرسة">École</span>
+                                        </div>
+                                        <!-- Bus Point -->
+                                        <div class="map-point bus-point" id="live-bus-point">
+                                            🚌
+                                            <span class="map-tooltip active" data-fr="En route" data-ar="في الطريق">En route</span>
+                                        </div>
+                                        <!-- Home Point -->
+                                        <div class="map-point home-point">
+                                            🏠
+                                            <span class="map-tooltip" data-fr="Maison" data-ar="المنزل">Maison</span>
+                                        </div>
+                                        <!-- SVG Path for Bus -->
+                                        <svg class="map-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                            <path d="M 15 85 Q 50 85 50 50 T 85 15" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-dasharray="4,4"></path>
+                                        </svg>
+                                    </div>
+                                    
+                                    <div class="transport-info-panel">
+                                        <div class="transport-driver">
+                                            <div class="avatar-small">AM</div>
+                                            <div>
+                                                <h6 class="driver-name" data-fr="Chauffeur: M. Ahmed" data-ar="السائق: ع. أحمد">Chauffeur: M. Ahmed</h6>
+                                                <span class="bus-plate">Bus N° 12 - Rabat Agdal</span>
+                                            </div>
+                                        </div>
+                                        <hr class="divider">
+                                        <div class="eta-box">
+                                            <div>
+                                                <span class="eta-label" data-fr="Prochain arrêt" data-ar="المحطة القادمة">Prochain arrêt</span>
+                                                <div class="eta-location" data-fr="Résidence Riad" data-ar="إقامة رياض">Résidence Riad</div>
+                                            </div>
+                                            <div class="eta-time-container">
+                                                <span class="eta-time-label" data-fr="Arrivée dans" data-ar="الوصول خلال">Arrivée dans</span>
+                                                <div class="eta-time">~ 5 min</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Bar inside app -->
+                        <div class="phone-navbar">
+                            <button class="app-nav-item active" data-target="dashboard">
+                                <svg class="app-nav-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+                            </button>
+                            <button class="app-nav-item" data-target="transmission">
+                                <svg class="app-nav-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"></path></svg>
+                            </button>
+                            <button class="app-nav-item" data-target="wallet">
+                                <svg class="app-nav-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path></svg>
+                            </button>
+                            <button class="app-nav-item" data-target="transport">
+                                <svg class="app-nav-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3v12h14v-4h3v8h2v-8c0-2.21-1.79-4-4-4zm-3 6H5V6h12v8z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="audience-section" id="audience">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 data-fr="Une solution adaptée à tout l'écosystème" data-ar="حل ملائم لجميع الفاعلين في المنظومة">Une solution adaptée à tout l'écosystème</h2>
+                <p data-fr="Smart School Mobile apporte des bénéfices concrets à chaque acteur de la vie scolaire." data-ar="يقدم تطبيق سمارت سكول موبايل فوائد ملموسة لكل متدخل في الحياة المدرسية.">Smart School Mobile apporte des bénéfices concrets à chaque acteur de la vie scolaire.</p>
+            </div>
+            
+            <div class="tabs-container">
+                <div class="tabs-list">
+                    <button class="tab-btn active" data-tab="tab-schools" data-fr="Pour les Établissements" data-ar="للمؤسسات التعليمية">Pour les Établissements</button>
+                    <button class="tab-btn" data-tab="tab-parents" data-fr="Pour les Parents" data-ar="لأولياء الأمور">Pour les Parents</button>
+                    <button class="tab-btn" data-tab="tab-students" data-fr="Pour les Élèves" data-ar="للطلاب">Pour les Élèves</button>
+                </div>
+                
+                <div class="tab-content active" id="tab-schools">
+                    <div class="tab-grid">
+                        <div class="tab-text">
+                            <h3 data-fr="Modernisez la gestion de votre école et valorisez votre image" data-ar="قم برقمنة إدارة مدرستك وعزز صورتك">Modernisez la gestion de votre école et valorisez votre image</h3>
+                            <p data-fr="Centralisez tous vos canaux de communication, réduisez le gaspillage de papier et offrez à vos familles une expérience mobile digne des plus grands standards technologiques." data-ar="اجمع كل قنوات التواصل الخاصة بك، قلل من استهلاك الورق ووفر للعائلات تجربة هاتف تضاهي أكبر المعايير التكنولوجية.">Centralisez tous vos canaux de communication, réduisez le gaspillage de papier et offrez à vos familles une expérience mobile digne des plus grands standards technologiques.</p>
+                            <ul class="benefits-list">
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Gain de temps administratif :" data-ar="توفير الوقت الإداري :">Gain de temps administratif :</strong> <span data-fr="Saisie unique des absences, retards et notes." data-ar="إدخال واحد للغياب والتأخر والنقاط.">Saisie unique des absences, retards et notes.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Zéro papier :" data-ar="صفر ورق :">Zéro papier :</strong> <span data-fr="Cahier de transmission et de liaison 100% digitalisé." data-ar="دفتر مراسلات وتواصل رقمي 100%.">Cahier de transmission et de liaison 100% digitalisé.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Branding personnalisé :" data-ar="شعار مخصص :">Branding personnalisé :</strong> <span data-fr="Application aux couleurs et logo de votre école." data-ar="تطبيق بألوان وشعار مدرستك الخاصة.">Application aux couleurs et logo de votre école.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-visual bg-soft-primary">
+                            <div class="feature-tagline">
+                                <span class="tagline-icon">🏫</span>
+                                <span data-fr="Portail Administration web complet pour piloter l'application." data-ar="بوابة إدارة ويب كاملة لتوجيه التطبيق.">Portail Administration web complet pour piloter l'application.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-parents">
+                    <div class="tab-grid">
+                        <div class="tab-text">
+                            <h3 data-fr="Suivez la scolarité de vos enfants en toute sérénité" data-ar="تابع مسار طفلك الدراسي بكل طمأنينة">Suivez la scolarité de vos enfants en toute sérénité</h3>
+                            <p data-fr="Recevez des notifications instantanées pour les retards, consultez le cahier de transmission, suivez le bus scolaire en temps réel et gérez la cantine de vos enfants sans espèces." data-ar="تلقى إشعارات فورية للتأخر، واطلع على دفتر المراسلات، وتتبع الحافلة المدرسية في الوقت الفعلي وادير وجبات طفلك بدون نقود.">Recevez des notifications instantanées pour les retards, consultez le cahier de transmission, suivez le bus scolaire en temps réel et gérez la cantine de vos enfants sans espèces.</p>
+                            <ul class="benefits-list">
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Tranquillité d'esprit :" data-ar="راحة بال مطلقة :">Tranquillité d'esprit :</strong> <span data-fr="Savoir exactement à quelle heure le bus arrive à la maison." data-ar="معرفة وقت وصول الحافلة للمنزل بدقة.">Savoir exactement à quelle heure le bus arrive à la maison.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Liaison directe avec l'école :" data-ar="ارتباط مباشر بالمدرسة :">Liaison directe avec l'école :</strong> <span data-fr="Signez numériquement les mots des enseignants." data-ar="وقّع رقمياً على ملاحظات المعلمين.">Signez numériquement les mots des enseignants.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Contrôle financier :" data-ar="رقابة مالية كاملة :">Contrôle financier :</strong> <span data-fr="Gérez l'argent de poche de la cantine à distance." data-ar="ادير مصروف جيب المطعم عن بعد.">Gérez l'argent de poche de la cantine à distance.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-visual bg-soft-green-box">
+                            <div class="feature-tagline">
+                                <span class="tagline-icon">📱</span>
+                                <span data-fr="Traduction instantanée par IA pour les parents ne parlant pas le français." data-ar="ترجمة فورية بالذكاء الاصطناعي لأولياء الأمور الذين لا يتحدثون الفرنسية.">Traduction instantanée par IA pour les parents ne parlant pas le français.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="tab-students">
+                    <div class="tab-grid">
+                        <div class="tab-text">
+                            <h3 data-fr="Un compagnon mobile pour mieux s'organiser" data-ar="مساعد محمول لتنظيم أفضل">Un compagnon mobile pour mieux s'organiser</h3>
+                            <p data-fr="Suivez vos devoirs à faire au jour le jour, gérez votre emploi du temps et utilisez votre bracelet ou carte étudiante connectée pour payer à la cantine sans argent physique." data-ar="تابع واجباتك اليومية، ونظم جدولك الدراسي، واستخدم سوار الطالب أو بطاقتك الذكية للدفع في المطعم بدون نقود ورقية.">Suivez vos devoirs à faire au jour le jour, gérez votre emploi du temps et utilisez votre bracelet ou carte étudiante connectée pour payer à la cantine sans argent physique.</p>
+                            <ul class="benefits-list">
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Autonomie :" data-ar="الاستقلالية :">Autonomie :</strong> <span data-fr="Suivi de ses devoirs à rendre avec rappels intégrés." data-ar="متابعة الواجبات المدرسية مع تذكيرات متكاملة.">Suivi de ses devoirs à rendre avec rappels intégrés.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Wallet Sans Contact :" data-ar="محفظة لا تلامسية :">Wallet Sans Contact :</strong> <span data-fr="Pas de risque de perte d'espèces dans la cour d'école." data-ar="لا خوف من ضياع النقود في ساحة المدرسة.">Pas de risque de perte d'espèces dans la cour d'école.</span>
+                                </li>
+                                <li>
+                                    <svg class="benefit-check" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                                    <strong data-fr="Ludique & Interactif :" data-ar="تفاعلي وممتع :">Ludique & Interactif :</strong> <span data-fr="Accès à des jeux éducatifs et un espace réussite." data-ar="الوصول إلى ألعاب تعليمية ومساحة للتفوق.">Accès à des jeux éducatifs et un espace réussite.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-visual bg-soft-orange-box">
+                            <div class="feature-tagline">
+                                <span class="tagline-icon">🎓</span>
+                                <span data-fr="Espace Réussite dédié pour valoriser les progrès des élèves." data-ar="مساحة تفوق مخصصة لتثمين تقدم الطلاب.">Espace Réussite dédié pour valoriser les progrès des élèves.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Student Performance & Intelligence Section -->
+    <section class="ai-section" id="ai-performance">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="ai-badge-header" data-fr="🤖 Intelligence Artificielle Éducative" data-ar="🤖 الذكاء الاصطناعي التعليمي">🤖 Intelligence Artificielle Éducative</div>
+                <h2 data-fr="L'IA au service du rendement et de la réussite de chaque élève" data-ar="الذكاء الاصطناعي في خدمة أداء ونجاح كل طالب">L'IA au service du rendement et de la réussite de chaque élève</h2>
+                <p data-fr="Notre moteur d'intelligence artificielle analyse le niveau de l'étudiant en continu pour lui offrir un apprentissage personnalisé et maximiser ses notes." data-ar="يقوم محرك الذكاء الاصطناعي الخاص بنا بتحليل مستوى الطالب بشكل مستمر لتقديم تعلم مخصص ورفع درجاته.">Notre moteur d'intelligence artificielle analyse le niveau de l'étudiant en continu pour lui offrir un apprentissage personnalisé et maximiser ses notes.</p>
+            </div>
+            
+            <div class="ai-card-grid">
+                <!-- AI Feature 1 -->
+                <div class="ai-feature-card">
+                    <div class="ai-card-icon">🧠</div>
+                    <h3 class="ai-card-title" data-fr="Diagnostic & Parcours Personnalisé" data-ar="تشخيص ومسار مخصص">Diagnostic & Parcours Personnalisé</h3>
+                    <p class="ai-card-text" data-fr="L'IA identifie automatiquement les forces et les lacunes par matière et génère un programme de révision ciblé pour combler les retards rapidement." data-ar="يطبق الذكاء الاصطناعي تشخيصاً آلياً لنقاط القوة والضعف في كل مادة وينشئ برنامج مراجعة مستهدف لتدارك التعثرات بسرعة.">L'IA identifie automatiquement les forces et les lacunes par matière et génère un programme de révision ciblé pour combler les retards rapidement.</p>
+                    <span class="ai-card-highlight" data-fr="Gain moyen de +2.5 points sur la moyenne" data-ar="زيادة متوسطة بـ +2.5 نقطة في المعدل">Gain moyen de +2.5 points sur la moyenne</span>
+                </div>
+
+                <!-- AI Feature 2 -->
+                <div class="ai-feature-card">
+                    <div class="ai-card-icon">⚡</div>
+                    <h3 class="ai-card-title" data-fr="Tuteur Virtuel & Fiches Adaptatives" data-ar="مؤطر افتراضي وجذاذات تكيُّفية">Tuteur Virtuel & Fiches Adaptatives</h3>
+                    <p class="ai-card-text" data-fr="Accès à un assistant virtuel 24/7 qui explique les cours complexes, formule des fiches de synthèse adaptées et propose des exercices graduels." data-ar="وصول إلى مساعد افتراضي 24/7 يشرح الدروس المعقدة، يصيغ ملخصات مركزة ويقترح تمارين متدرجة حسب مستوى الطالب.">Accès à un assistant virtuel 24/7 qui explique les cours complexes, formule des fiches de synthèse adaptées et propose des exercices graduels.</p>
+                    <span class="ai-card-highlight" data-fr="Accompagnement continu aux devoirs" data-ar="مرافقة مستمرة في الواجبات">Accompagnement continu aux devoirs</span>
+                </div>
+
+                <!-- AI Feature 3 -->
+                <div class="ai-feature-card">
+                    <div class="ai-card-icon">📊</div>
+                    <h3 class="ai-card-title" data-fr="Alertes Prédictives pour Parents & Profs" data-ar="تنبيهات توقعية للأولياء والمعلمين">Alertes Prédictives pour Parents & Profs</h3>
+                    <p class="ai-card-text" data-fr="Anticipation des risques de baisse de régime avant les examens. Des notifications automatisées conseillent les parents sur les actions clés à mener." data-ar="توقع مخاطر تراجع المستوى قبل الامتحانات. إشعارات آلية توجه أولياء الأمور نحو الخطوات العلاجية الكفيلة بضمان التفوق.">Anticipation des risques de baisse de régime avant les examens. Des notifications automatisées conseillent les parents sur les actions clés à mener.</p>
+                    <span class="ai-card-highlight" data-fr="Prévention précoce des difficultés" data-ar="وقاية مبكرة من الصعوبات">Prévention précoce des difficultés</span>
+                </div>
+
+                <!-- AI Feature 4 -->
+                <div class="ai-feature-card">
+                    <div class="ai-card-icon">🌍</div>
+                    <h3 class="ai-card-title" data-fr="Traduction & Support Multilingue IA" data-ar="ترجمة واستيعاب متعدد اللغات">Traduction & Support Multilingue IA</h3>
+                    <p class="ai-card-text" data-fr="Traduction instantanée FR/AR des consignes de devoirs et cahiers de transmission pour garantir une totale assimilation par l'élève et sa famille." data-ar="ترجمة فورية فرنسي/عربي لتوجيهات الواجبات ودفاتر المراسلات لضمان الفهم التام والمتابعة السليمة من الطالب وعائلته.">Traduction instantanée FR/AR des consignes de devoirs et cahiers de transmission pour garantir une totale assimilation par l'élève et sa famille.</p>
+                    <span class="ai-card-highlight" data-fr="100% d'inclusion pour les familles" data-ar="إدماج شامل لجميع العائلات">100% d'inclusion pour les familles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloadable Brochures & PDF Documents Section -->
+    <section class="brochures-section" id="brochures">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge" data-fr="📄 Centre de Documentation & PDF" data-ar="📄 مركز الوثائق والكتيبات الرسمية">📄 Centre de Documentation & PDF</div>
+                <h2 data-fr="Brochures & Documents AIQRAE (إقرأ) à télécharger" data-ar="تحميل كتيبات ووثائق إقرأ (AIQRAE)">Brochures & Documents AIQRAE (إقرأ) à télécharger</h2>
+                <p data-fr="Téléchargez l'ensemble de nos brochures officielles, guides pratiques et fiches techniques en version PDF HD." data-ar="قم بتحميل جميع كتيباتنا الرسمية والدلائل العملية والبطاقات التقنية بصيغة PDF عالية الجودة.">Téléchargez l'ensemble de nos brochures officielles, guides pratiques et fiches techniques en version PDF HD.</p>
+
+                <!-- Category Filters -->
+                <div class="brochures-filter-tabs">
+                    <button class="doc-filter-btn active" data-filter="all" data-fr="Tous les Documents" data-ar="جميع الوثائق">Tous les Documents</button>
+                    <button class="doc-filter-btn" data-filter="official" data-fr="Brochures Officielles" data-ar="الكتيبات الرسمية">Brochures Officielles</button>
+                    <button class="doc-filter-btn" data-filter="guides" data-fr="Guides & Sécurité" data-ar="الدلائل والأمان">Guides & Sécurité</button>
+                </div>
+            </div>
+            
+            <div class="brochures-grid">
+                <!-- Brochure 1 (FEATURED): User Official PDF -->
+                <div class="brochure-card featured-card" data-category="official">
+                    <div class="brochure-image-wrapper btn-preview-brochure" data-img="assets/brochure-officielle-aiqrae.jpg" data-title="Brochure Officielle AIQRAE (إقرأ) — Édition Complète">
+                        <img src="assets/brochure-officielle-aiqrae.jpg" alt="Brochure Officielle AIQRAE (إقرأ) 12 Pages" class="brochure-img">
+                        <span class="brochure-overlay-badge featured-badge" data-fr="⭐ Brochure Officielle (12 Pages)" data-ar="⭐ الكتيب الرسمي (12 صفحة)">⭐ Brochure Officielle (12 Pages)</span>
+                        <button class="brochure-zoom-btn" aria-label="Agrandir">🔍</button>
+                    </div>
+                    <div class="brochure-content">
+                        <div class="doc-meta-tags">
+                            <span class="meta-tag pdf-tag">PDF</span>
+                            <span class="meta-tag size-tag">23.3 Mo</span>
+                            <span class="meta-tag lang-tag" data-fr="FR / AR" data-ar="فرنسية / عربية">FR / AR</span>
+                        </div>
+                        <h3 class="brochure-title" data-fr="Brochure Officielle Établissements AIQRAE (إقرأ) — Édition Complète" data-ar="الكتيب الرسمي الكامل لمؤسسات إقرأ (AIQRAE) التعليمية">Brochure Officielle Établissements AIQRAE (إقرأ) — Édition Complète</h3>
+                        <p class="brochure-desc" data-fr="Présentation officielle complète d'AIQRAE (إقرأ) : gestion administrative, suivi des élèves, cahier de transmission, cantine, transport et intelligence artificielle intégrée." data-ar="العرض الرسمي الشامل لمنظومة إقرأ (AIQRAE): الإدارة المدرسية، تتبع الطلاب، دفتر المراسلات، المطعم، النقل والذكاء الاصطناعي المدمج.">Présentation officielle complète d'AIQRAE (إقرأ) : gestion administrative, suivi des élèves, cahier de transmission, cantine, transport et intelligence artificielle intégrée.</p>
+                        <div class="brochure-actions">
+                            <a href="assets/brochure-officielle-aiqrae.pdf" download="Brochure-Officielle-AIQRAE-School.pdf" class="btn-download-pdf" data-fr="📥 Télécharger PDF" data-ar="📥 تحميل الكتيب PDF">
+                                📥 Télécharger PDF
+                            </a>
+                            <button class="btn-view-brochure btn-preview-brochure" data-img="assets/brochure-officielle-aiqrae.jpg" data-title="Brochure Officielle AIQRAE (إقرأ) — Édition Complète" data-fr="👁️ Aperçu" data-ar="👁️ معاينة">
+                                👁️ Aperçu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brochure 2: Solution Tout-en-un -->
+                <div class="brochure-card" data-category="official">
+                    <div class="brochure-image-wrapper btn-preview-brochure" data-img="assets/brochure-smart-school-presentation.jpg" data-title="Plaquette Présentation AIQRAE (إقرأ)">
+                        <img src="assets/brochure-smart-school-presentation.jpg" alt="Plaquette Présentation AIQRAE (إقرأ)" class="brochure-img">
+                        <span class="brochure-overlay-badge" data-fr="Plaquette Écosystème" data-ar="كتيب المنظومة">Plaquette Écosystème</span>
+                        <button class="brochure-zoom-btn" aria-label="Agrandir">🔍</button>
+                    </div>
+                    <div class="brochure-content">
+                        <div class="doc-meta-tags">
+                            <span class="meta-tag pdf-tag">PDF</span>
+                            <span class="meta-tag size-tag">145 Ko</span>
+                            <span class="meta-tag lang-tag" data-fr="FR / AR" data-ar="فرنسية / عربية">FR / AR</span>
+                        </div>
+                        <h3 class="brochure-title" data-fr="Plaquette Présentation — Écosystème Éducatif AIQRAE (إقرأ)" data-ar="كتيب العرض المختصر - المنظومة التعليمية إقرأ (AIQRAE)">Plaquette Présentation — Écosystème Éducatif AIQRAE (إقرأ)</h3>
+                        <p class="brochure-desc" data-fr="Pour les écoles, les parents, les élèves et les enseignants : suivre, communiquer, organiser et accompagner la scolarité en toute simplicité." data-ar="للمدارس والأولياء والطلاب والمعلمين: متابعة وتواصل وتنظيم ومرافقة لمسار دراسي متميز بكل بساطة.">Pour les écoles, les parents, les élèves et les enseignants : suivre, communiquer, organiser et accompagner la scolarité en toute simplicité.</p>
+                        <div class="brochure-actions">
+                            <a href="assets/brochure-smart-school-presentation.pdf" download="Plaquette-AIQRAE-Presentation.pdf" class="btn-download-pdf" data-fr="📥 Télécharger PDF" data-ar="📥 تحميل الكتيب PDF">
+                                📥 Télécharger PDF
+                            </a>
+                            <button class="btn-view-brochure btn-preview-brochure" data-img="assets/brochure-smart-school-presentation.jpg" data-title="Plaquette Présentation AIQRAE (إقرأ)" data-fr="👁️ Aperçu" data-ar="👁️ معاينة">
+                                👁️ Aperçu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brochure 3: Intelligence Artificielle Éducative -->
+                <div class="brochure-card" data-category="official">
+                    <div class="brochure-image-wrapper btn-preview-brochure" data-img="assets/brochure-smart-school-ia.jpg" data-title="Brochure IA & Réussite Éducative AIQRAE (إقرأ)">
+                        <img src="assets/brochure-smart-school-ia.jpg" alt="Brochure AIQRAE (إقرأ) Intelligence Artificielle" class="brochure-img">
+                        <span class="brochure-overlay-badge" data-fr="Spécial IA & Réussite" data-ar="خاص بالذكاء الاصطناعي والتفوق">Spécial IA & Réussite</span>
+                        <button class="brochure-zoom-btn" aria-label="Agrandir">🔍</button>
+                    </div>
+                    <div class="brochure-content">
+                        <div class="doc-meta-tags">
+                            <span class="meta-tag pdf-tag">PDF</span>
+                            <span class="meta-tag size-tag">127 Ko</span>
+                            <span class="meta-tag lang-tag" data-fr="FR / AR" data-ar="فرنسية / عربية">FR / AR</span>
+                        </div>
+                        <h3 class="brochure-title" data-fr="Brochure Spéciale — L'IA au Service de la Réussite Éducative" data-ar="كتيب خاص - الذكاء الاصطناعي في خدمة التفوق الدراسي">Brochure Spéciale — L'IA au Service de la Réussite Éducative</h3>
+                        <p class="brochure-desc" data-fr="AIQRAE (إقرأ) : analyse prédictive des données, détection des difficultés, tutorat personnalisé et accompagnement sur-mesure pour chaque élève." data-ar="حل ذكي وشامل: تحليل البيانات، توقع التعثرات، المرافقة المخصصة، أمان البيانات ومتابعة شاملة لجميع الأطفال.">AIQRAE (إقرأ) : analyse prédictive des données, détection des difficultés, tutorat personnalisé et accompagnement sur-mesure pour chaque élève.</p>
+                        <div class="brochure-actions">
+                            <a href="assets/brochure-smart-school-ia.pdf" download="Brochure-AIQRAE-Intelligence-Artificielle.pdf" class="btn-download-pdf" data-fr="📥 Télécharger PDF" data-ar="📥 تحميل الكتيب PDF">
+                                📥 Télécharger PDF
+                            </a>
+                            <button class="btn-view-brochure btn-preview-brochure" data-img="assets/brochure-smart-school-ia.jpg" data-title="Brochure IA & Réussite Éducative AIQRAE (إقرأ)" data-fr="👁️ Aperçu" data-ar="👁️ معاينة">
+                                👁️ Aperçu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brochure 4: Guide Parents -->
+                <div class="brochure-card" data-category="guides">
+                    <div class="brochure-image-wrapper btn-preview-brochure" data-img="assets/guide-parents-aiqrae.jpg" data-title="Guide Pratique Parents AIQRAE (إقرأ)">
+                        <img src="assets/guide-parents-aiqrae.jpg" alt="Guide Pratique Parents AIQRAE (إقرأ)" class="brochure-img">
+                        <span class="brochure-overlay-badge" data-fr="Guide Pratique Parents" data-ar="دليل الاستعمال للأولياء">Guide Pratique Parents</span>
+                        <button class="brochure-zoom-btn" aria-label="Agrandir">🔍</button>
+                    </div>
+                    <div class="brochure-content">
+                        <div class="doc-meta-tags">
+                            <span class="meta-tag pdf-tag">PDF</span>
+                            <span class="meta-tag size-tag">Guide</span>
+                            <span class="meta-tag lang-tag" data-fr="FR / AR" data-ar="فرنسية / عربية">FR / AR</span>
+                        </div>
+                        <h3 class="brochure-title" data-fr="Guide Pratique Parents & Mères d'Élèves — Application Mobile" data-ar="دليل الاستعمال العملي للأولياء - التطبيق الهاتفي">Guide Pratique Parents & Mères d'Élèves — Application Mobile</h3>
+                        <p class="brochure-desc" data-fr="Manuel d'utilisation rapide pour les parents : prise en main du cahier de texte, recharge du portefeuille cantine, suivi du transport et alertes de présence." data-ar="دليل شامل خطوة بخطوة للأولياء: متابعة كراس الواجبات، شحن حساب المطعم، تتبع حافلات النقل وتنبيهات الذكاء الاصطناعي.">Manuel d'utilisation rapide pour les parents : prise en main du cahier de texte, recharge du portefeuille cantine, suivi du transport et alertes de présence.</p>
+                        <div class="brochure-actions">
+                            <a href="assets/guide-parents-aiqrae.pdf" download="Guide-Parents-AIQRAE.pdf" class="btn-download-pdf" data-fr="📥 Télécharger PDF" data-ar="📥 تحميل الكتيب PDF">
+                                📥 Télécharger PDF
+                            </a>
+                            <button class="btn-view-brochure btn-preview-brochure" data-img="assets/guide-parents-aiqrae.jpg" data-title="Guide Pratique Parents AIQRAE (إقرأ)" data-fr="👁️ Aperçu" data-ar="👁️ معاينة">
+                                👁️ Aperçu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brochure 5: Sécurité & RGPD -->
+                <div class="brochure-card" data-category="guides">
+                    <div class="brochure-image-wrapper btn-preview-brochure" data-img="assets/securite-rgpd-aiqrae.jpg" data-title="Livre Blanc Sécurité & RGPD AIQRAE (إقرأ)">
+                        <img src="assets/securite-rgpd-aiqrae.jpg" alt="Livre Blanc Sécurité & RGPD AIQRAE (إقرأ)" class="brochure-img">
+                        <span class="brochure-overlay-badge" data-fr="Sécurité & Conformité" data-ar="الأمان والامتثال القانوني">Sécurité & Conformité</span>
+                        <button class="brochure-zoom-btn" aria-label="Agrandir">🔍</button>
+                    </div>
+                    <div class="brochure-content">
+                        <div class="doc-meta-tags">
+                            <span class="meta-tag pdf-tag">PDF</span>
+                            <span class="meta-tag size-tag">Sécurité</span>
+                            <span class="meta-tag lang-tag" data-fr="FR / AR" data-ar="فرنسية / عربية">FR / AR</span>
+                        </div>
+                        <h3 class="brochure-title" data-fr="Livre Blanc — Sécurité des Données & Conformité RGPD / CNDP" data-ar="الكتاب الأبيض - أمان البيانات والامتثال لحماية المعطيات">Livre Blanc — Sécurité des Données & Conformité RGPD / CNDP</h3>
+                        <p class="brochure-desc" data-fr="Fiche technique détaillée sur la protection des données scolaires, le chiffrement AES-256, la souveraineté d'hébergement et la gestion des droits." data-ar="وثيقة تقنية توضح الهندسة الأمنية، التشفير العالي، سيادة البيانات والامتثال التام لقوانين حماية المعطيات الشخصية.">Fiche technique détaillée sur la protection des données scolaires, le chiffrement AES-256, la souveraineté d'hébergement et la gestion des droits.</p>
+                        <div class="brochure-actions">
+                            <a href="assets/securite-rgpd-aiqrae.pdf" download="Livre-Blanc-Securite-RGPD-AIQRAE.pdf" class="btn-download-pdf" data-fr="📥 Télécharger PDF" data-ar="📥 تحميل الكتيب PDF">
+                                📥 Télécharger PDF
+                            </a>
+                            <button class="btn-view-brochure btn-preview-brochure" data-img="assets/securite-rgpd-aiqrae.jpg" data-title="Livre Blanc Sécurité & RGPD AIQRAE (إقرأ)" data-fr="👁️ Aperçu" data-ar="👁️ معاينة">
+                                👁️ Aperçu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Lightbox Modal -->
+    <div class="brochure-modal" id="brochure-modal">
+        <button class="brochure-modal-close" id="brochure-modal-close" aria-label="Fermer">✕</button>
+        <div class="brochure-modal-content">
+            <img src="" alt="Aperçu Brochure HD" id="brochure-modal-img" class="brochure-modal-img">
+        </div>
+    </div>
+
+    <!-- Interactive Feature Explorer Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 data-fr="Explorez les modules de l'application" data-ar="استكشف واجهة التطبيق التفاعلية">Explorez les modules de l'application</h2>
+                <p data-fr="Cliquez sur les fonctionnalités ci-dessous pour voir la démonstration en direct sur l'écran du simulateur." data-ar="اضغط على الميزات أدناه لرؤية العرض المباشر على شاشة المحاكاة.">Cliquez sur les fonctionnalités ci-dessous pour voir la démonstration en direct sur l'écran du simulateur.</p>
+            </div>
+            
+            <div class="features-interactive-grid">
+                <div class="features-list-wrapper">
+                    <!-- Feature Item 1 -->
+                    <div class="feature-item-trigger active" data-target="dashboard">
+                        <div class="feature-trigger-icon bg-purple-soft">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+                        </div>
+                        <div class="feature-trigger-text">
+                            <h4 data-fr="Tableau de Bord Parent/Élève" data-ar="لوحة التحكم لولي الأمر والطالب">Tableau de Bord Parent/Élève</h4>
+                            <p data-fr="Vue d'ensemble sur la moyenne, les devoirs urgents et les dernières alertes." data-ar="نظرة عامة على المعدل، الواجبات العاجلة وآخر التنبيهات.">Vue d'ensemble sur la moyenne, les devoirs urgents et les dernières alertes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Item 2 -->
+                    <div class="feature-item-trigger" data-target="transmission">
+                        <div class="feature-trigger-icon bg-green-soft">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.36 10.04L20.5 9.17c.4-.3.92-.17 1.15.27.24.44.11.98-.28 1.22l-1.63 1.25c-.24.18-.4.46-.43.76-.08.67-.61 1.21-1.28 1.28-.3.03-.58.19-.76.43l-1.25 1.63c-.24.39-.78.52-1.22.28-.44-.23-.57-.75-.27-1.15l.87-1.14c.2-.26.24-.61.12-.91-.25-.62-.05-1.33.48-1.74l1.63-1.25c.34-.26.54-.67.54-1.1 0-.77.62-1.4 1.4-1.4.15 0 .3.02.45.07.45.16.7.63.54 1.08zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                        </div>
+                        <div class="feature-trigger-text">
+                            <h4 data-fr="Cahier de Liaison & Traduction IA" data-ar="دفتر التواصل والترجمة بالذكاء الاصطناعي">Cahier de Liaison & Traduction IA</h4>
+                            <p data-fr="Signez électroniquement les mots d'école. Traduction instantanée FR/AR intégrée." data-ar="وقّع رقمياً على ملاحظات المدرسة. مع ترجمة فورية مدمجة فرنسي/عربي.">Signez électroniquement les mots d'école. Traduction instantanée FR/AR intégrée.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Item 3 -->
+                    <div class="feature-item-trigger" data-target="wallet">
+                        <div class="feature-trigger-icon bg-orange-soft">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path></svg>
+                        </div>
+                        <div class="feature-trigger-text">
+                            <h4 data-fr="Wallet Étudiant & Cantine" data-ar="محفظة الطالب والمطعم المدرسي">Wallet Étudiant & Cantine</h4>
+                            <p data-fr="Recharge par carte bancaire. Paiement sans contact sécurisé aux bornes de l'école." data-ar="شحن المحفظة بالبطاقة البنكية والدفع اللاتلامسي الآمن بساحة المدرسة.">Recharge par carte bancaire. Paiement sans contact sécurisé aux bornes de l'école.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature Item 4 -->
+                    <div class="feature-item-trigger" data-target="transport">
+                        <div class="feature-trigger-icon bg-blue-soft">
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3v12h14v-4h3v8h2v-8c0-2.21-1.79-4-4-4zm-3 6H5V6h12v8z"></path></svg>
+                        </div>
+                        <div class="feature-trigger-text">
+                            <h4 data-fr="Suivi de Transport Scolaire" data-ar="تتبع خط الحافلة المدرسية">Suivi de Transport Scolaire</h4>
+                            <p data-fr="Géolocalisation du bus en temps réel et notifications de proximité à l'approche." data-ar="تتبع مباشر لموقع الحافلة وتنبيهات عند قرب وصولها للمنزل.">Géolocalisation du bus en temps réel et notifications de proximité à l'approche.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-simulator-sticky">
+                    <!-- Note: The JS app will control the phone simulator in the hero or duplicated here. We'll mirror interactions. -->
+                    <div class="mini-simulator-cta" data-fr="Regardez la démo ci-dessus ➔" data-ar="شاهد العرض في الأعلى ➔">Regardez la démo ci-dessus ➔</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Trust Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-num" id="stat-schools">0</div>
+                    <div class="stat-desc" data-fr="Écoles Partenaires" data-ar="مدرسة شريكة">Écoles Partenaires</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num" id="stat-parents">0</div>
+                    <div class="stat-desc" data-fr="Parents Actifs" data-ar="ولي أمر نشط">Parents Actifs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num" id="stat-satisfaction">0</div>
+                    <div class="stat-desc" data-fr="Taux de Satisfaction" data-ar="نسبة الرضا">Taux de Satisfaction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num" id="stat-time">0</div>
+                    <div class="stat-desc" data-fr="Heures Gagnées / Prof / Sem." data-ar="ساعات موفرة للأستاذ أسبوعياً">Heures Gagnées / Prof / Sem.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 data-fr="Des formules adaptées à votre établissement" data-ar="باقات مناسبة لمؤسستكم التعليمية">Des formules adaptées à votre établissement</h2>
+                <p data-fr="Quel que soit l'effectif de votre école, nous avons une formule pour digitaliser votre communication." data-ar="مهما كان عدد طلاب مدرستكم، لدينا العرض المناسب لرقمنة تواصلكم.">Quel que soit l'effectif de votre école, nous avons une formule pour digitaliser votre communication.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Plan 1 -->
+                <div class="pricing-card">
+                    <h3 class="plan-name" data-fr="Formule Initiale" data-ar="الباقة الأساسية">Formule Initiale</h3>
+                    <div class="plan-price">
+                        <span class="price-val" data-fr="Sur Devis" data-ar="حسب الطلب">Sur Devis</span>
+                    </div>
+                    <p class="plan-desc" data-fr="Idéal pour les écoles primaires souhaitant numériser le cahier de liaison." data-ar="مثالية للمدارس الابتدائية الراغبة في رقمنة دفتر المراسلات.">Idéal pour les écoles primaires souhaitant numériser le cahier de liaison.</p>
+                    <hr class="divider">
+                    <ul class="plan-features">
+                        <li data-fr="Cahier de transmission digital" data-ar="دفتر مراسلات رقمي">Cahier de transmission digital</li>
+                        <li data-fr="Gestion des absences et retards" data-ar="إدارة الغياب والتأخر">Gestion des absences et retards</li>
+                        <li data-fr="Traduction instantanée par IA (FR/AR)" data-ar="ترجمة فورية بالذكاء الاصطناعي">Traduction instantanée par IA (FR/AR)</li>
+                        <li class="disabled" data-fr="Suivi de transport scolaire en temps réel" data-ar="تتبع الحافلة المدرسية في الوقت الفعلي">Suivi de transport scolaire en temps réel</li>
+                        <li class="disabled" data-fr="Portefeuille virtuel et cantine" data-ar="المحفظة الإلكترونية والمطعم">Portefeuille virtuel et cantine</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block mt-4" data-fr="Demander un devis" data-ar="طلب عرض سعر">Demander un devis</a>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-ribbon" data-fr="Recommandé" data-ar="موصى به">Recommandé</div>
+                    <h3 class="plan-name" data-fr="Formule Intégrale" data-ar="الباقة المتكاملة">Formule Intégrale</h3>
+                    <div class="plan-price">
+                        <span class="price-val" data-fr="Sur Devis" data-ar="حسب الطلب">Sur Devis</span>
+                    </div>
+                    <p class="plan-desc" data-fr="La solution complète pour les établissements scolaires structurés." data-ar="الحل الشامل للمؤسسات التعليمية المنظمة.">La solution complète pour les établissements scolaires structurés.</p>
+                    <hr class="divider">
+                    <ul class="plan-features">
+                        <li data-fr="Cahier de transmission + Messagerie instantanée" data-ar="دفتر مراسلات + رسائل فورية">Cahier de transmission + Messagerie instantanée</li>
+                        <li data-fr="Notes, Devoirs & Evaluations" data-ar="النقاط، الواجبات والامتحانات">Notes, Devoirs & Evaluations</li>
+                        <li data-fr="Traduction instantanée par IA (FR/AR)" data-ar="ترجمة فورية بالذكاء الاصطناعي">Traduction instantanée par IA (FR/AR)</li>
+                        <li data-fr="Suivi de transport scolaire en temps réel" data-ar="تتبع الحافلة المدرسية في الوقت الفعلي">Suivi de transport scolaire en temps réel</li>
+                        <li class="disabled" data-fr="Bracelet NFC / Wallet cantine et boutique" data-ar="سوار NFC / محفظة المطعم والمتجر">Bracelet NFC / Wallet cantine et boutique</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-block mt-4" data-fr="Demander une démo" data-ar="طلب عرض توضيحي">Demander une démo</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card">
+                    <h3 class="plan-name" data-fr="Formule Réseau / Campus" data-ar="الباقة المؤسساتية / الشبكات">Formule Réseau / Campus</h3>
+                    <div class="plan-price">
+                        <span class="price-val" data-fr="Sur Devis" data-ar="حسب الطلب">Sur Devis</span>
+                    </div>
+                    <p class="plan-desc" data-fr="Pour les groupes scolaires nécessitant une marque blanche et des développements sur mesure." data-ar="للمجموعات المدرسية التي تحتاج تطبيقاً بهويتها الخاصة وتطوير مخصص.">Pour les groupes scolaires nécessitant une marque blanche et des développements sur mesure.</p>
+                    <hr class="divider">
+                    <ul class="plan-features">
+                        <li data-fr="Toutes les fonctionnalités de la formule Intégrale" data-ar="جميع مميزات الباقة المتكاملة">Toutes les fonctionnalités de la formule Intégrale</li>
+                        <li data-fr="Bracelet NFC & Wallet étudiant (Cantine, Boutique)" data-ar="سوار NFC ومحفظة الطالب (المطعم، المتجر)">Bracelet NFC & Wallet étudiant (Cantine, Boutique)</li>
+                        <li data-fr="Application personnalisée (Marque Blanche)" data-ar="تطبيق مخصص (اسم مدرستك الخاص)">Application personnalisée (Marque Blanche)</li>
+                        <li data-fr="Intégrations API ERP & Support 24/7" data-ar="ربط مع أنظمتكم ودعم 24/7">Intégrations API ERP & Support 24/7</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block mt-4" data-fr="Contacter l'équipe grand compte" data-ar="الاتصل بالفريق التجاري">Contacter l'équipe grand compte</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 data-fr="Ce qu'en disent nos partenaires" data-ar="ماذا يقول شركاؤنا عن التطبيق">Ce qu'en disent nos partenaires</h2>
+                <p data-fr="Découvrez les témoignages des écoles, parents et enseignants ayant adopté Smart School Mobile." data-ar="اكتشف آراء المدارس، الآباء والمعلمين الذين اعتمدوا تطبيق سمارت سكول موبايل.">Découvrez les témoignages des écoles, parents et enseignants ayant adopté Smart School Mobile.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text" data-fr="« Smart School Mobile a révolutionné la communication au sein de notre établissement. Les parents adorent le suivi en temps réel du bus et la signature instantanée du cahier de liaison. Notre secrétariat gagne plus de 10 heures par semaine ! »" data-ar="« أحدث تطبيق سمارت سكول موبايل ثورة في التواصل داخل مؤسستنا. نال تتبع الحافلة والتوقيع الرقمي إعجاب الآباء. الإدارة توفر أكثر من 10 ساعات عمل أسبوعياً! »">« Smart School Mobile a révolutionné la communication au sein de notre établissement. Les parents adorent le suivi en temps réel du bus et la signature instantanée du cahier de liaison. Notre secrétariat gagne plus de 10 heures par semaine ! »</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar font-bold">ML</div>
+                        <div>
+                            <h5 class="author-name">M. Latifi</h5>
+                            <span class="author-role" data-fr="Directeur de Groupe Scolaire (Rabat)" data-ar="مدير مجموعة مدرسية (الرباط)">Directeur de Groupe Scolaire (Rabat)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text" data-fr="« En tant que maman qui travaille, cette application m'a changé la vie. Je n'ai plus besoin de vérifier le sac à dos chaque soir pour voir s'il y a un mot à signer. De plus, la traduction en arabe me permet de partager facilement les messages avec les grands-parents. »" data-ar="« كأم عاملة، غير هذا التطبيق حياتي. لم أعد بحاجة للبحث في محفظة ابني كل مساء للبحث عن أوراق لتوقيعها. بالإضافة إلى ذلك، تتيح الترجمة العربية مشاركة الرسائل بسهولة مع الأجداد. »">« En tant que maman qui travaille, cette application m'a changé la vie. Je n'ai plus besoin de vérifier le sac à dos chaque soir pour voir s'il y a un mot à signer. De plus, la traduction en arabe me permet de partager facilement les messages avec les grands-parents. »</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar font-bold">YA</div>
+                        <div>
+                            <h5 class="author-name">Mme. Yasmina</h5>
+                            <span class="author-role" data-fr="Maman de Yassine & Layla" data-ar="أم ياسين وليلى">Maman de Yassine & Layla</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture Section (Contact Form) -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 data-fr="Prêt à digitaliser votre école ?" data-ar="هل أنت جاهز لرقمنة مدرستك ؟">Prêt à digitaliser votre école ?</h2>
+                <p data-fr="Demandez une démonstration gratuite personnalisée de 30 minutes avec l'un de nos conseillers. Nous analyserons ensemble les besoins spécifiques de votre établissement." data-ar="اطلب عرضاً توضيحياً مجانياً ومخصصاً لمدة 30 دقيقة مع أحد مستشارينا. سنحلل معاً الاحتياجات الخاصة بمؤسستكم.">Demandez une démonstration gratuite personnalisée de 30 minutes avec l'un de nos conseillers. Nous analyserons ensemble les besoins spécifiques de votre établissement.</p>
+                
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📞</span>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <p><a href="tel:0661605369">06 61 60 53 69</a></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🌐</span>
+                        <div>
+                            <strong>Site Web</strong>
+                            <p><a href="https://www.sdbo.ma" target="_blank">www.sdbo.ma</a></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <div>
+                            <strong>Adresse</strong>
+                            <p>Technopark, Route de Nouaceur, Casablanca, Maroc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label for="client-name" data-fr="Nom & Prénom" data-ar="الاسم الكامل">Nom & Prénom</label>
+                        <input type="text" id="client-name" placeholder="Ex: Karim Alami" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="school-name" data-fr="Nom de l'établissement scolaire" data-ar="اسم المؤسسة التعليمية">Nom de l'établissement scolaire</label>
+                        <input type="text" id="school-name" placeholder="Ex: Institution Riad" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-email" data-fr="Adresse Email" data-ar="البريد الإلكتروني">Adresse Email</label>
+                            <input type="email" id="client-email" placeholder="k.alami@ecole.ma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-phone" data-fr="Numéro de Téléphone" data-ar="رقم الهاتف">Numéro de Téléphone</label>
+                            <input type="tel" id="client-phone" placeholder="Ex: 06 61 23 45 67" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="school-size" data-fr="Nombre approximatif d'élèves" data-ar="عدد الطلاب التقريبي">Nombre approximatif d'élèves</label>
+                        <select id="school-size" required>
+                            <option value="" disabled selected data-fr="Sélectionnez..." data-ar="اختر...">Sélectionnez...</option>
+                            <option value="under-200" data-fr="Moins de 200 élèves" data-ar="أقل من 200 طالب">Moins de 200 élèves</option>
+                            <option value="200-500" data-fr="Entre 200 et 500 élèves" data-ar="بين 200 و 500 طالب">Entre 200 et 500 élèves</option>
+                            <option value="500-1000" data-fr="Entre 500 et 1000 élèves" data-ar="بين 500 و 1000 طالب">Entre 500 et 1000 élèves</option>
+                            <option value="over-1000" data-fr="Plus de 1000 élèves" data-ar="أكثر من 1000 طالب">Plus de 1000 élèves</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-message" data-fr="Message / Besoins particuliers" data-ar="الرسالة / متطلبات خاصة">Message / Besoins particuliers</label>
+                        <textarea id="client-message" rows="4" placeholder="Décrivez vos attentes..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block" data-fr="Soumettre ma demande de Démo" data-ar="ارسال طلب العرض التوضيحي">Soumettre ma demande de Démo</button>
+                </form>
+                <div class="success-message" id="form-success">
+                    <div class="success-icon">✓</div>
+                    <h4 data-fr="Merci pour votre demande !" data-ar="شكراً جزيلاً لطلبكم !">Merci pour votre demande !</h4>
+                    <p data-fr="Un de nos conseillers va vous contacter sous 24h ouvrées pour fixer le rendez-vous de démonstration." data-ar="سيتصل بكم أحد مستشارينا في غضون 24 ساعة عمل لتحديد موعد العرض.">Un de nos conseillers va vous contacter sous 24h ouvrées pour fixer le rendez-vous de démonstration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo-wrapper">
+                    <img src="assets/logo_transparent.png" alt="AIQRAE — إقرأ Logo" class="logo-img">
+                    <span class="logo-text text-white">AIQRAE <span class="accent-color">إقرأ</span></span>
+                </a>
+                <p class="footer-desc mt-3" data-fr="La solution mobile tout-en-un de référence pour les écoles primaires, collèges et lycées modernes en Afrique du Nord." data-ar="الحل المتكامل للهاتف المحمول للمدارس الابتدائية والإعدادية والثانوية الحديثة في شمال إفريقيا.">La solution mobile tout-en-un de référence pour les écoles primaires, collèges et lycées modernes en Afrique du Nord.</p>
+            </div>
+            <div>
+                <h5 class="footer-title" data-fr="Navigation" data-ar="روابط سريعة">Navigation</h5>
+                <ul class="footer-links">
+                    <li><a href="#features" data-fr="Fonctionnalités" data-ar="المميزات">Fonctionnalités</a></li>
+                    <li><a href="#audience" data-fr="Pour Qui ?" data-ar="لمن هذا ؟">Pour Qui ?</a></li>
+                    <li><a href="#pricing" data-fr="Formules" data-ar="الباقات">Formules</a></li>
+                    <li><a href="#contact" data-fr="Demande de Démo" data-ar="طلب ديمو">Demande de Démo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="footer-title" data-fr="Légal" data-ar="قانوني">Légal</h5>
+                <ul class="footer-links">
+                    <li><a href="#" data-fr="Mentions Légales" data-ar="إخلاء المسؤولية">Mentions Légales</a></li>
+                    <li><a href="#" data-fr="Confidentialité (RGPD)" data-ar="سياسة الخصوصية">Confidentialité (RGPD)</a></li>
+                    <li><a href="#" data-fr="CGU / CGV" data-ar="الشروط العامة">CGU / CGV</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 <a href="https://www.sdbo.ma" target="_blank" style="text-decoration: underline; color: inherit;">SDBO</a> - Smart School Mobile. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212661605369?text=Bonjour,%20je%20souhaite%20avoir%20plus%20d'informations%20sur%20la%20solution%20Smart%20School%20Mobile." class="whatsapp-float" target="_blank" aria-label="Contact on WhatsApp">
+        <svg viewBox="0 0 24 24" class="whatsapp-icon" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.733-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 1.966 14.12 .942 11.49.942c-5.442 0-9.866 4.372-9.87 9.802 0 1.73.46 3.42 1.33 4.916l-.985 3.597 3.692-.963zm10.177-3.712c-.273-.137-1.62-.8-1.87-.894-.252-.093-.437-.137-.62.137-.183.273-.706.894-.866 1.077-.16.183-.32.203-.593.067-.27-.137-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.273-.017-.42.12-.556.122-.122.272-.32.409-.48.136-.16.183-.273.272-.455.09-.183.046-.34-.023-.48-.069-.137-.62-1.49-.85-2.04-.224-.54-.47-.466-.62-.474-.15-.008-.32-.01-.49-.01-.17 0-.447.063-.68.32-.23.25-.89.87-.89 2.13 0 1.258.91 2.47 1.037 2.64.127.17 1.8 2.75 4.37 3.86.61.26 1.09.42 1.46.54.62.2 1.18.17 1.62.11.49-.07 1.62-.66 1.85-1.3.23-.64.23-1.18.16-1.3-.07-.12-.25-.2-.53-.33z"/>
+        </svg>
+    </a>
+
+    <!-- Main JS Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -20,6 +20,9 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Multilingual Engine -->
+  <script src="assets/js/i18n.js"></script>
 </head>
 
 <body>
@@ -35,24 +38,41 @@
             <span></span><span></span><span></span>
           </button>
           <ul id="mainNav">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="a-propos.html" data-i18n="nav_about">À propos</a></li>
             <li class="dropdown">
-              <a href="#">D&eacute;veloppement</a>
+              <a href="#solutions" style="color: var(--primary); font-weight: 700;"><span data-i18n="nav_solutions">Nos Solutions</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
               <div class="dropdown-menu">
-                <a href="offres-web.html">Site Web</a>
-                <a href="offre-ecommerce.html">E-commerce</a>
-                <a href="creation-crm.html">Cr&eacute;ation de CRM</a>
-                <a href="creation-erp.html">Cr&eacute;ation d'ERP</a>
-                <a href="https://webschool.sdbo.ma/" target="_blank" rel="noopener noreferrer">WebSchool (AIQRAE)</a>
+                <a href="solution-caisse-restaurant.html"><i class="lni lni-restaurant"></i> <span data-i18n="sol_caisse">Caisse Restauration & Textile</span></a>
+                <a href="solution-school-aiqrae.html"><i class="lni lni-graduation"></i> <span data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</span></a>
+                <a href="solution-pos-vendeur.html"><i class="lni lni-mobile"></i> <span data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</span></a>
+                <a href="offre-ecommerce.html"><i class="lni lni-cart"></i> <span data-i18n="sol_ecom">Solution E-Commerce</span></a>
+                <a href="solution-odoo-erp.html"><i class="lni lni-cog"></i> <span data-i18n="sol_odoo">Intégrateur Odoo ERP</span></a>
+                <a href="service-solutions.html"><i class="lni lni-dev"></i> <span data-i18n="sol_custom">Solutions Sur Mesure</span></a>
               </div>
             </li>
-            <li><a href="service-ia.html">IA</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#services"><span data-i18n="nav_services">Services IT</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="service-ia.html"><span data-i18n="srv_ai">Intelligence Artificielle</span></a>
+                <a href="service-hardware.html"><span data-i18n="srv_hardware">Matériel Informatique</span></a>
+                <a href="service-integration.html"><span data-i18n="srv_integration">Intégration de SI</span></a>
+                <a href="service-consulting.html"><span data-i18n="srv_consulting">Consulting & Audit</span></a>
+                <a href="service-formation.html"><span data-i18n="srv_formation">Formation IT</span></a>
+              </div>
+            </li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
           </ul>
         </nav>
-        <div class="header-action"><a href="index.html#contact" class="btn btn-primary">Devis Gratuit</a></div>
+        <div class="header-action" style="display: flex; align-items: center; gap: 12px;">
+          <!-- 3-Language Selector FR / AR / EN -->
+          <div class="lang-selector" id="langSelector" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="index.html#contact" class="btn btn-primary" data-i18n="btn_free_quote">Devis Gratuit</a>
+        </div>
       </div>
     </div>
   </header>
@@ -64,36 +84,197 @@
     <div class="hero-grid-pattern"></div>
     <div class="container">
       <div class="hero-content reveal">
-        <span class="badge"><span class="badge-dot"></span> Innovation IT & IA 2026</span>
-        <h1>Propulsez votre Business dans <span class="highlight">l'ère Digitale</span></h1>
-        <p>SDBO (Smart Digital Business Office) accompagne votre transformation numérique avec l'Intelligence
-          Artificielle de pointe, le consulting stratégique et des Solutions IT sur mesure.</p>
+        <span class="badge"><span class="badge-dot"></span> <span data-i18n="hero_badge">Innovation IT & IA 2026</span></span>
+        <h1 data-i18n="hero_title">Propulsez votre Business dans <span class="highlight">l'ère Digitale</span></h1>
+        <p data-i18n="hero_desc">SDBO (Smart Digital Business Office) accompagne votre transformation numérique avec l'Intelligence Artificielle de pointe, le consulting stratégique et des Solutions IT sur mesure.</p>
         <div class="hero-btns">
-          <a href="#services" class="btn btn-primary"><i class="lni lni-rocket"></i> Explorer nos solutions</a>
-          <a href="#contact" class="btn glass hero-secondary-btn"><i class="lni lni-comments"></i> Démarrer un projet</a>
+          <a href="#services" class="btn btn-primary"><i class="lni lni-rocket"></i> <span data-i18n="hero_btn_explore">Explorer nos solutions</span></a>
+          <a href="#contact" class="btn glass hero-secondary-btn"><i class="lni lni-comments"></i> <span data-i18n="hero_btn_contact">Démarrer un projet</span></a>
         </div>
       </div>
       <!-- Hero Key Metrics Bar -->
       <div class="hero-metrics-bar reveal">
         <div class="metric-item">
-          <span class="metric-val">99.9%</span>
-          <span class="metric-lbl">Fiabilité & Disponibilité</span>
+          <span class="metric-val" data-i18n="metric_1_val">99.9%</span>
+          <span class="metric-lbl" data-i18n="metric_1_lbl">Fiabilité & Disponibilité</span>
         </div>
         <div class="metric-sep"></div>
         <div class="metric-item">
-          <span class="metric-val">+50</span>
-          <span class="metric-lbl">Projets Déployés</span>
+          <span class="metric-val" data-i18n="metric_2_val">+50</span>
+          <span class="metric-lbl" data-i18n="metric_2_lbl">Projets Déployés</span>
         </div>
         <div class="metric-sep"></div>
         <div class="metric-item">
-          <span class="metric-val">100%</span>
-          <span class="metric-lbl">Sur-Mesure & Sécurisé</span>
+          <span class="metric-val" data-i18n="metric_3_val">100%</span>
+          <span class="metric-lbl" data-i18n="metric_3_lbl">Sur-Mesure & Sécurisé</span>
         </div>
         <div class="metric-sep"></div>
         <div class="metric-item">
-          <span class="metric-val">24/7</span>
-          <span class="metric-lbl">Support & Maintenance</span>
+          <span class="metric-val" data-i18n="metric_4_val">24/7</span>
+          <span class="metric-lbl" data-i18n="metric_4_lbl">Support & Maintenance</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Solutions Showcase Hub -->
+  <section class="solutions-hub section-padding" id="solutions">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> <span data-i18n="hub_badge">Écosystème Logiciel Métier</span></span>
+        <h2 data-i18n="hub_title">Nos Solutions Applicatives Clés en Main</h2>
+        <div class="underline"></div>
+        <p data-i18n="hub_desc" style="margin-top: 15px; color: var(--gray); max-width: 750px; margin-left: auto; margin-right: auto;">
+          Découvrez nos applications prêtes à l'emploi conçues pour digitaliser et automatiser vos opérations quotidiennes : caisse tactile, éducation intelligente, vente mobile, e-commerce et ERP Odoo.
+        </p>
+      </div>
+
+      <div class="solutions-showcase-grid">
+        
+        <!-- Solution 1: Caisse Restaurant & Textile -->
+        <div class="flagship-card featured-glow reveal">
+          <div>
+            <div class="flagship-card-header">
+              <div class="flagship-icon-box">
+                <i class="lni lni-restaurant"></i>
+              </div>
+              <span class="badge-pill blue" data-i18n="sol1_badge">Caisse & WhatsApp</span>
+            </div>
+            <h3 class="flagship-title" data-i18n="sol1_title">SDBO SMART GEST</h3>
+            <div style="font-size: 0.88rem; font-weight: 700; color: #0284c7; margin-bottom: 12px; display: flex; gap: 8px; align-items: center;">
+              <span class="badge-pill blue" style="font-size: 0.75rem; padding: 3px 10px;" data-i18n="sol1_price_badge">Dès 1 200 DH</span>
+              <span style="color: var(--neon-purple); font-size: 0.8rem;" data-i18n="sol1_price_sub">• Tarifs Revendeurs IT</span>
+            </div>
+            <p class="flagship-desc" data-i18n="sol1_desc">Logiciel de caisse tactile professionnel pour Restaurants, Snacks, Cafés et Boutiques Textile. Commandes, stocks, et envoi automatique de tickets et remises par WhatsApp.</p>
+            <ul class="flagship-features">
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol1_f1">Prise de commande tactile ultra-rapide</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol1_f2">Module fidélité & tickets par WhatsApp</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol1_f3">Décompte des stocks par ingrédient</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol1_f4">Compatible PC tactile & Tablettes/Smartphones</span></li>
+            </ul>
+          </div>
+          <div class="flagship-actions">
+            <a href="solution-caisse-restaurant.html" class="btn-sm-action btn-sm-primary">
+              <i class="lni lni-arrow-right"></i> <span data-i18n="sol1_btn">Découvrir la Caisse</span>
+            </a>
+            <a href="apps/caisse-restaurant/index.html" target="_blank" class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-play"></i> <span data-i18n="sol1_demo">Démo Web</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution 2: WebSchool AIQRAE -->
+        <div class="flagship-card reveal">
+          <div>
+            <div class="flagship-card-header">
+              <div class="flagship-icon-box purple">
+                <i class="lni lni-graduation"></i>
+              </div>
+              <span class="badge-pill purple" data-i18n="sol2_badge">Éducation & IA</span>
+            </div>
+            <h3 class="flagship-title" data-i18n="sol2_title">WebSchool — AIQRAE</h3>
+            <p class="flagship-desc" data-i18n="sol2_desc">L'écosystème scolaire nouvelle génération propulsé par l'IA : gestion des élèves, cahier de transmission, cantine, transport géolocalisé et suivi prédictif de réussite.</p>
+            <ul class="flagship-features">
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol2_f1">IA d'analyse prédictive et remédiation</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol2_f2">4 Espaces : Direction, Profs, Parents, Élèves</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol2_f3">Transport scolaire avec suivi GPS en direct</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol2_f4">100% bilingue Français & Arabe (RTL)</span></li>
+            </ul>
+          </div>
+          <div class="flagship-actions">
+            <a href="solution-school-aiqrae.html" class="btn-sm-action btn-sm-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary));">
+              <i class="lni lni-arrow-right"></i> <span data-i18n="sol2_btn">Découvrir WebSchool</span>
+            </a>
+            <a href="https://webschool.sdbo.ma/" target="_blank" rel="noopener noreferrer" class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-enter"></i> <span data-i18n="sol2_portal">Accès Portail</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution 3: POS Mobile Vendeur -->
+        <div class="flagship-card reveal">
+          <div>
+            <div class="flagship-card-header">
+              <div class="flagship-icon-box emerald">
+                <i class="lni lni-mobile"></i>
+              </div>
+              <span class="badge-pill emerald" data-i18n="sol3_badge">Android APK</span>
+            </div>
+            <h3 class="flagship-title" data-i18n="sol3_title">SDBO POS Mobile</h3>
+            <p class="flagship-desc" data-i18n="sol3_desc">Application tout-en-un sur smartphone et tablette Android pour vendeurs et commerces nomades : caisse rapide, lecture code-barres caméra, stock et tickets Bluetooth.</p>
+            <ul class="flagship-features">
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol3_f1">Vendez sur mobile sans caisse coûteuse</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol3_f2">Scan code-barres par caméra ou douchette</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol3_f3">Impression tickets Bluetooth & WhatsApp</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol3_f4">Fonctionnement 100% hors-ligne</span></li>
+            </ul>
+          </div>
+          <div class="flagship-actions">
+            <a href="solution-pos-vendeur.html" class="btn-sm-action btn-sm-primary" style="background: #059669;">
+              <i class="lni lni-arrow-right"></i> <span data-i18n="sol3_btn">Découvrir l'App</span>
+            </a>
+            <a href="downloads/SDBO_POS_Mobile.apk" download class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-download"></i> <span data-i18n="sol3_apk">Télécharger APK</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution 4: Solution E-Commerce -->
+        <div class="flagship-card reveal">
+          <div>
+            <div class="flagship-card-header">
+              <div class="flagship-icon-box amber">
+                <i class="lni lni-cart"></i>
+              </div>
+              <span class="badge-pill amber" data-i18n="sol4_badge">E-Commerce Maroc</span>
+            </div>
+            <h3 class="flagship-title" data-i18n="sol4_title">Boutiques E-Commerce</h3>
+            <p class="flagship-desc" data-i18n="sol4_desc">Création de boutiques en ligne performantes et sécurisées : paiement CMI & cartes bancaires, WhatsApp Shopping direct, livraison marocaine et synchronisation des stocks.</p>
+            <ul class="flagship-features">
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol4_f1">Passerelle paiement CMI & Cash on Delivery</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol4_f2">Commande directe WhatsApp Shopping</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol4_f3">Synchronisation stock avec caisses SDBO</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol4_f4">Packs complets dès 7 500 DH</span></li>
+            </ul>
+          </div>
+          <div class="flagship-actions">
+            <a href="offre-ecommerce.html" class="btn-sm-action btn-sm-primary" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+              <i class="lni lni-arrow-right"></i> <span data-i18n="sol4_btn">Voir les Packs E-Com</span>
+            </a>
+            <a href="offre-ecommerce.html#tarifs" class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-tag"></i> <span data-i18n="sol4_tarifs">Tarifs</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solution 5: Intégrateur Odoo ERP -->
+        <div class="flagship-card featured-glow reveal">
+          <div>
+            <div class="flagship-card-header">
+              <div class="flagship-icon-box indigo">
+                <i class="lni lni-cog"></i>
+              </div>
+              <span class="badge-pill blue" data-i18n="sol5_badge">Odoo Partner Maroc</span>
+            </div>
+            <h3 class="flagship-title" data-i18n="sol5_title">Intégrateur Odoo ERP</h3>
+            <p class="flagship-desc" data-i18n="sol5_desc">Déploiement certifié d'Odoo ERP adapté au contexte marocain : Comptabilité & TVA marocaine, Ventes, Stocks, et nos modules exclusifs d'impression chèques et direct print.</p>
+            <ul class="flagship-features">
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol5_f1">Comptabilité marocaine normalisée</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol5_f2">Module exclusif : Impression chèques banques Maroc</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol5_f3">Module exclusif : Odoo Direct Print silencieux</span></li>
+              <li><i class="lni lni-checkmark-circle"></i> <span data-i18n="sol5_f4">Odoo 19 Mobile pour commerciaux nomades</span></li>
+            </ul>
+          </div>
+          <div class="flagship-actions">
+            <a href="solution-odoo-erp.html" class="btn-sm-action btn-sm-primary" style="background: linear-gradient(135deg, #4f46e5, #0284c7);">
+              <i class="lni lni-arrow-right"></i> <span data-i18n="sol5_btn">Découvrir Odoo Maroc</span>
+            </a>
+            <a href="solution-odoo-erp.html#audit-odoo" class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-calendar"></i> <span data-i18n="sol5_audit">Audit Gratuit</span>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -102,20 +283,18 @@
   <section class="services-section section-padding" id="services">
     <div class="container">
       <div class="section-title reveal">
-        <h2>Nos Services Experts</h2>
+        <h2 data-i18n="srv_title">Nos Services Experts</h2>
         <div class="underline"></div>
-        <p style="margin-top: 20px; opacity: 0.7;">Des solutions innovantes adaptées à vos besoins
-          professionnels.</p>
+        <p data-i18n="srv_desc" style="margin-top: 20px; opacity: 0.7;">Des solutions innovantes adaptées à vos besoins professionnels.</p>
       </div>
 
       <div class="service-grid">
         <!-- Hardware -->
         <a href="service-hardware.html" class="service-card glass">
           <div class="service-icon"><i class="lni lni-laptop-phone"></i></div>
-          <h3>Vente & Achat IT</h3>
-          <p>Équipez votre entreprise avec le meilleur du matériel informatique : serveurs, postes de travail,
-            réseaux et équipements spécialisés.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_hw_title">Vente & Achat IT</h3>
+          <p data-i18n="srv_hw_desc">Équipez votre entreprise avec le meilleur du matériel informatique : serveurs, postes de travail, réseaux et équipements spécialisés.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- AI -->
@@ -131,54 +310,49 @@
               <circle cx="12" cy="12" r="3" fill="currentColor" />
             </svg>
           </div>
-          <h3>Intelligence Artificielle</h3>
-          <p>Optimisez vos processus grâce à l'IA : analyse prédictive, automatisation intelligente et
-            intégration de modèles avancés.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_ai_title">Intelligence Artificielle</h3>
+          <p data-i18n="srv_ai_desc">Optimisez vos processus grâce à l'IA : analyse prédictive, automatisation intelligente et intégration de modèles avancés.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- Consulting -->
         <a href="service-consulting.html" class="service-card glass">
           <div class="service-icon"><i class="lni lni-consulting"></i></div>
-          <h3>Consulting & Audit</h3>
-          <p>Bénéficiez d'un accompagnement stratégique pour votre transformation digitale et l'optimisation
-            de vos infrastructures.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_cons_title">Consulting & Audit</h3>
+          <p data-i18n="srv_cons_desc">Bénéficiez d'un accompagnement stratégique pour votre transformation digitale et l'optimisation de vos infrastructures.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- Formation -->
         <a href="service-formation.html" class="service-card glass">
           <div class="service-icon"><i class="lni lni-graduation"></i></div>
-          <h3>Formation IT</h3>
-          <p>Développez les compétences de vos équipes sur les dernières technologies, la cybersécurité et les
-            outils digitaux.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_form_title">Formation IT</h3>
+          <p data-i18n="srv_form_desc">Développez les compétences de vos équipes sur les dernières technologies, la cybersécurité et les outils digitaux.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- Custom Solutions -->
         <a href="service-solutions.html" class="service-card glass">
           <div class="service-icon"><i class="lni lni-dev"></i></div>
-          <h3>Solutions sur Mesure</h3>
-          <p>Développement de logiciels, applications métiers et intégrations spécifiques pour répondre
-            précisément à vos défis.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_sol_title">Solutions sur Mesure</h3>
+          <p data-i18n="srv_sol_desc">Développement de logiciels, applications métiers et intégrations spécifiques pour répondre précisément à vos défis.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- Restaurant Management -->
         <a href="service-restauration.html" class="service-card glass">
           <div class="service-icon"><i class="lni lni-restaurant"></i></div>
-          <h3>Gestion de Restaurant</h3>
-          <p>Solution complète de caisse et de gestion pour la restauration : stocks, commandes et
-            fidélisation client.</p>
-          <span class="btn-link">En savoir plus <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_rest_title">Gestion de Restaurant</h3>
+          <p data-i18n="srv_rest_desc">Solution complète de caisse et de gestion pour la restauration : stocks, commandes et fidélisation client.</p>
+          <span class="btn-link"><span data-i18n="srv_more">En savoir plus</span> <i class="lni lni-arrow-right"></i></span>
         </a>
 
         <!-- WebSchool - AIQRAE -->
         <a href="https://webschool.sdbo.ma/" target="_blank" rel="noopener noreferrer" class="service-card glass service-featured">
           <div class="service-icon"><i class="lni lni-graduation"></i></div>
-          <h3>WebSchool — AIQRAE</h3>
-          <p>L'écosystème scolaire intelligent propulsé par l'IA : gestion des élèves, cahiers de transmission, cantine, transport et suivi prédictif.</p>
-          <span class="btn-link">Accéder à WebSchool <i class="lni lni-arrow-right"></i></span>
+          <h3 data-i18n="srv_school_title">WebSchool — AIQRAE</h3>
+          <p data-i18n="srv_school_desc">L'écosystème scolaire intelligent propulsé par l'IA : gestion des élèves, cahiers de transmission, cantine, transport et suivi prédictif.</p>
+          <span class="btn-link"><span data-i18n="srv_more">Accéder à WebSchool</span> <i class="lni lni-arrow-right"></i></span>
         </a>
       </div>
     </div>
@@ -188,30 +362,26 @@
   <section class="section-padding" id="approach" style="background: var(--darker);">
     <div class="container">
       <div class="section-title reveal">
-        <h2>Notre Approche Technique</h2>
+        <h2 data-i18n="proc_title">Notre Approche Technique</h2>
         <div class="underline"></div>
-        <p style="margin-top: 20px; opacity: 0.7;">Une méthodologie rigoureuse pour des résultats d'exception.
-        </p>
+        <p data-i18n="proc_desc" style="margin-top: 20px; opacity: 0.7;">Une méthodologie rigoureuse pour des résultats d'exception.</p>
       </div>
 
       <div class="process-grid">
         <div class="process-item reveal">
           <div class="process-count">01</div>
-          <h3>Analyse & Audit</h3>
-          <p style="opacity: 0.6; font-size: 0.9rem;">Nous plongeons dans votre écosystème pour identifier les
-            gisements de valeur et les défis techniques.</p>
+          <h3 data-i18n="proc_1_title">Analyse & Audit</h3>
+          <p data-i18n="proc_1_desc" style="opacity: 0.6; font-size: 0.9rem;">Nous plongeons dans votre écosystème pour identifier les gisements de valeur et les défis techniques.</p>
         </div>
         <div class="process-item reveal">
           <div class="process-count">02</div>
-          <h3>Design & Dev</h3>
-          <p style="opacity: 0.6; font-size: 0.9rem;">Conception sur mesure d'architectures robustes et
-            d'algorithmes intelligents adaptés à vos besoins.</p>
+          <h3 data-i18n="proc_2_title">Design & Dev</h3>
+          <p data-i18n="proc_2_desc" style="opacity: 0.6; font-size: 0.9rem;">Conception sur mesure d'architectures robustes et d'algorithmes intelligents adaptés à vos besoins.</p>
         </div>
         <div class="process-item reveal">
           <div class="process-count">03</div>
-          <h3>Déploiement & Support</h3>
-          <p style="opacity: 0.6; font-size: 0.9rem;">Mise en production sécurisée et accompagnement continu
-            pour garantir la pérennité de votre solution.</p>
+          <h3 data-i18n="proc_3_title">Déploiement & Support</h3>
+          <p data-i18n="proc_3_desc" style="opacity: 0.6; font-size: 0.9rem;">Mise en production sécurisée et accompagnement continu pour garantir la pérennité de votre solution.</p>
         </div>
       </div>
     </div>
@@ -227,20 +397,19 @@
             style="width: 100%; border-radius: 20px;">
         </div>
         <div class="ai-content reveal">
-          <h2 style="font-size: 2.8rem; margin-bottom: 20px;">L'IA au service de votre <span
+          <h2 data-i18n="ai_sec_title" style="font-size: 2.8rem; margin-bottom: 20px;">L'IA au service de votre <span
               style="color: var(--primary);">Croissance</span></h2>
-          <p style="margin-bottom: 25px; opacity: 0.8;">Nous créons des systèmes intelligents qui apprennent
+          <p data-i18n="ai_sec_desc" style="margin-bottom: 25px; opacity: 0.8;">Nous créons des systèmes intelligents qui apprennent
             et s'adaptent à votre environnement métier pour maximiser votre impact.</p>
           <ul style="list-style: none; margin-bottom: 30px;">
             <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle"
-                style="color: var(--primary); margin-right: 10px;"></i> Automatisation intelligente</li>
+                style="color: var(--primary); margin-right: 10px;"></i> <span data-i18n="ai_f1">Automatisation intelligente des processus</span></li>
             <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle"
-                style="color: var(--primary); margin-right: 10px;"></i> Business Intelligence prédictive
-            </li>
+                style="color: var(--primary); margin-right: 10px;"></i> <span data-i18n="ai_f2">Business Intelligence & Analyse prédictive</span></li>
             <li style="margin-bottom: 15px;"><i class="lni lni-checkmark-circle"
-                style="color: var(--primary); margin-right: 10px;"></i> Chatbots & NLP avancés</li>
+                style="color: var(--primary); margin-right: 10px;"></i> <span data-i18n="ai_f3">Agents conversationnels & Traitement NLP</span></li>
           </ul>
-          <a href="service-ia.html" class="btn btn-primary">En savoir plus sur l'IA</a>
+          <a href="service-ia.html" class="btn btn-primary" data-i18n="ai_btn">En savoir plus sur l'IA</a>
         </div>
       </div>
     </div>
@@ -250,7 +419,7 @@
   <section class="partners-section">
     <div class="container">
       <div class="section-title">
-        <h2 style="font-size: 1.8rem; margin-bottom: 50px; text-align: center; color: var(--primary);">Nos
+        <h2 data-i18n="partners_title" style="font-size: 1.8rem; margin-bottom: 50px; text-align: center; color: var(--primary);">Nos
           Partenaires de Confiance</h2>
       </div>
       <div class="partners-marquee" id="partnersMarquee" data-marquee-duration="22"
@@ -264,13 +433,13 @@
   <section class="section-padding" id="contact">
     <div class="container">
       <div class="section-title reveal">
-        <h2>Prêt à démarrer ?</h2>
-        <p>Contactez-nous pour une étude personnalisée de votre projet.</p>
+        <h2 data-i18n="contact_title">Prêt à démarrer ?</h2>
+        <p data-i18n="contact_sub">Contactez-nous pour une étude personnalisée de votre projet.</p>
       </div>
       <div class="contact-container reveal glass" style="padding: 50px;">
         <div class="contact-info">
-          <h3>Contactez SDBO</h3>
-          <p style="margin-bottom: 30px; opacity: 0.75;">Notre équipe d'experts est à votre écoute pour
+          <h3 data-i18n="contact_box_title">Contactez SDBO</h3>
+          <p data-i18n="contact_box_desc" style="margin-bottom: 30px; opacity: 0.75;">Notre équipe d'experts est à votre écoute pour
             transformer vos idées en réalité digitale performante.</p>
 
           <div class="contact-item">
@@ -278,7 +447,7 @@
               <i class="lni lni-phone"></i>
             </div>
             <div>
-              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Téléphone / WhatsApp</div>
+              <div data-i18n="contact_phone_lbl" style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Téléphone / WhatsApp</div>
               <a style="color: var(--light); text-decoration: none; font-weight: 600;" href="tel:+212661605369">+212 6 61 60 53 69</a>
             </div>
           </div>
@@ -287,7 +456,7 @@
               <i class="lni lni-envelope"></i>
             </div>
             <div>
-              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Email Professionnel</div>
+              <div data-i18n="contact_email_lbl" style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Email Professionnel</div>
               <a style="color: var(--light); text-decoration: none; font-weight: 600;"
                 href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a>
             </div>
@@ -297,35 +466,34 @@
               <i class="lni lni-map-marker"></i>
             </div>
             <div>
-              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Localisation</div>
-              <span style="font-weight: 600;">Tanger, Maroc</span>
+              <div data-i18n="contact_loc_lbl" style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em;">Localisation</div>
+              <span data-i18n="contact_loc_val" style="font-weight: 600;">Tanger, Maroc</span>
             </div>
           </div>
         </div>
         <form class="contact-form" id="contactForm" method="post" data-web3forms-access-key="">
-          <!-- Collez ici votre clé https://web3forms.com (destination : sdbocontact@gmail.com) -->
           <div class="contact-form__hp" aria-hidden="true">
             <label for="contactWebsite">Ne pas remplir ce champ</label>
             <input type="text" id="contactWebsite" name="botcheck" tabindex="-1" autocomplete="off">
           </div>
           <label class="visually-hidden" for="contact-name">Nom complet</label>
-          <input id="contact-name" name="name" type="text" placeholder="Nom Complet" required autocomplete="name"
+          <input id="contact-name" name="name" type="text" placeholder="Nom Complet" data-i18n-ph="form_name_ph" required autocomplete="name"
             maxlength="200">
           <label class="visually-hidden" for="contact-email">Email professionnel</label>
-          <input id="contact-email" name="email" type="email" placeholder="Email Professionnel" required
+          <input id="contact-email" name="email" type="email" placeholder="Email Professionnel" data-i18n-ph="form_email_ph" required
             autocomplete="email" maxlength="320">
           <label class="visually-hidden" for="contact-service">Service</label>
           <select id="contact-service" name="service" required>
-            <option value="">Sélectionnez un service</option>
-            <option value="ai">Intelligence Artificielle</option>
-            <option value="hardware">Matériel Informatique</option>
-            <option value="software">Solutions sur Mesure</option>
-            <option value="consulting">Consulting / Audit</option>
+            <option value="" data-i18n="form_service_ph">Sélectionnez un service</option>
+            <option value="ai" data-i18n="srv_ai">Intelligence Artificielle</option>
+            <option value="hardware" data-i18n="srv_hardware">Matériel Informatique</option>
+            <option value="software" data-i18n="sol_custom">Solutions sur Mesure</option>
+            <option value="consulting" data-i18n="srv_consulting">Consulting / Audit</option>
           </select>
           <label class="visually-hidden" for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="5" placeholder="Votre Message" required
+          <textarea id="contact-message" name="message" rows="5" placeholder="Votre Message" data-i18n-ph="form_msg_ph" required
             maxlength="8000"></textarea>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer la demande</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Demander mon Devis Gratuit</button>
           <div id="formSuccess" class="contact-form__feedback contact-form__feedback--success" role="status"
             aria-live="polite" hidden></div>
           <div id="formError" class="contact-form__feedback contact-form__feedback--error" role="alert"
@@ -341,8 +509,96 @@
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
-    <span class="tooltip">Discuter sur WhatsApp</span>
+    <span class="tooltip" data-i18n="wa_tooltip">Discuter sur WhatsApp</span>
   </a>
+
+    <!-- ==========================================
+       Espace Revendeurs IT & Partenaires
+       ========================================== -->
+  <section class="reseller-section" id="espace-revendeurs">
+    <div class="container">
+      <div class="reseller-card-wrapper reveal">
+        
+        <!-- Header -->
+        <div class="reseller-header">
+          <div class="badge-container">
+            <span class="badge-pill blue" data-i18n="reseller_badge">Programme Revendeurs IT & Installateurs</span>
+            <span class="badge-pill purple" data-i18n="reseller_wholesale_badge">Tarifs Grossistes dès 1 200 DH</span>
+          </div>
+          <h2 data-i18n="reseller_title">Devenez Revendeur Partenaire SDBO au Maroc</h2>
+          <p data-i18n="reseller_desc">
+            Vous êtes revendeur informatique, installateur réseau, intégrateur de systèmes ou agence digitale ? Développez votre chiffre d'affaires en distribuant nos logiciels phares (Caisse SMART GEST, WebSchool AIQRAE, POS Mobile, E-Commerce, Odoo ERP) avec des marges grossistes attractives, des versions démo offertes et un support technique N2 dédié.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="reseller-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-tag"></i>
+            </div>
+            <h3 data-i18n="reseller_p1_title">Prix Grossistes dès 1 200 DH</h3>
+            <p data-i18n="reseller_p1_desc">
+              Tarifs dégressifs exceptionnels dès 3 licences commandées. Maximisez votre rentabilité sur chaque installation client.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-laptop-phone"></i>
+            </div>
+            <h3 data-i18n="reseller_p2_title">Licences Démo & PLV Offertes</h3>
+            <p data-i18n="reseller_p2_desc">
+              Accès illimité aux versions de démonstration pour vos showrooms, catalogues PDF et vidéos de démonstration prêtes pour vos clients.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-headphone-alt"></i>
+            </div>
+            <h3 data-i18n="reseller_p3_title">Support Technique Prioritaire N2</h3>
+            <p data-i18n="reseller_p3_desc">
+              Assistance directe par WhatsApp et AnyDesk sous 2h, formation certifiée pour la montée en compétence de vos équipes techniques.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-shield"></i>
+            </div>
+            <h3 data-i18n="reseller_p4_title">Facturation & Mises à Jour à Vie</h3>
+            <p data-i18n="reseller_p4_desc">
+              Factures marocaines conformes (TVA), licences pérennes sans redevances cachées et mises à jour logicielles régulières.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Action Bar -->
+        <div class="reseller-action-bar">
+          <div class="reseller-action-info">
+            <h4 data-i18n="reseller_bar_title">Prêt à distribuer les solutions logicielles SDBO ?</h4>
+            <p data-i18n="reseller_bar_desc">Rejoignez notre réseau de partenaires certifiés à Tanger, Casablanca, Rabat, Fès, Marrakech et dans tout le Maroc.</p>
+          </div>
+          <div class="reseller-buttons">
+            <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20rejoindre%20le%20programme%20revendeurs%20dès%201200%20DH" target="_blank" class="btn reseller-btn-wa">
+              <i class="lni lni-whatsapp"></i> <span data-i18n="reseller_btn_wa">Contacter le Pôle Revendeurs (WhatsApp)</span>
+            </a>
+            <a href="index.html#contact" class="btn btn-outline" style="border-color: rgba(2, 132, 199, 0.4); color: var(--primary); font-weight: 700;">
+              <i class="lni lni-envelope"></i> <span data-i18n="reseller_btn_contact">Demander la Grille Tarifaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Professional Footer -->
   <footer class="pro-footer">
@@ -350,32 +606,33 @@
       <div class="footer-grid">
         <div class="footer-col">
           <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
-          <p>Smart Digital Business Office est votre partenaire de confiance pour la transformation numérique et
+          <p data-i18n="footer_desc">Smart Digital Business Office est votre partenaire de confiance pour la transformation numérique et
             l'intégration de solutions d'IA avancées.</p>
         </div>
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <h4 data-i18n="footer_col_sol">Nos Solutions</h4>
           <ul class="footer-links">
-            <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="solution-caisse-restaurant.html" data-i18n="sol_caisse">SDBO SMART GEST (Caisse)</a></li>
+            <li><a href="solution-school-aiqrae.html" data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</a></li>
+            <li><a href="solution-pos-vendeur.html" data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</a></li>
+            <li><a href="offre-ecommerce.html" data-i18n="sol_ecom">Solution E-Commerce</a></li>
+            <li><a href="solution-odoo-erp.html" data-i18n="sol_odoo">Intégrateur Odoo ERP</a></li>
+            <li><a href="service-solutions.html" data-i18n="sol_custom">Développement Sur Mesure</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Développement & Solutions</h4>
+          <h4 data-i18n="footer_col_srv">Services IT</h4>
           <ul class="footer-links">
-            <li><a href="offres-web.html">Site Web</a></li>
-            <li><a href="offre-ecommerce.html">E-commerce</a></li>
-            <li><a href="creation-crm.html">Création de CRM</a></li>
-            <li><a href="creation-erp.html">Création d'ERP</a></li>
-            <li><a href="https://webschool.sdbo.ma/" target="_blank" rel="noopener noreferrer">WebSchool — AIQRAE</a></li>
-            <li><a href="service-ia.html">Intelligence Artificielle</a></li>
+            <li><a href="service-ia.html" data-i18n="srv_ai">Intelligence Artificielle</a></li>
+            <li><a href="service-hardware.html" data-i18n="srv_hardware">Matériel Informatique</a></li>
+            <li><a href="service-integration.html" data-i18n="srv_integration">Intégration de SI</a></li>
+            <li><a href="service-consulting.html" data-i18n="srv_consulting">Consulting & Audit</a></li>
+            <li><a href="service-formation.html" data-i18n="srv_formation">Formation IT</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <p>Tanger, Maroc<br>sdbocontact@gmail.com<br>+212 6 61 60 53 69</p>
+          <h4 data-i18n="footer_col_contact">Contact</h4>
+          <p><span data-i18n="contact_loc_val">Tanger, Maroc</span><br>sdbocontact@gmail.com<br>+212 6 61 60 53 69</p>
           <div class="social-links" style="margin-top: 15px;">
             <a href="#"><i class="lni lni-facebook-filled"></i></a>
             <a href="https://www.linkedin.com/company/112590972/admin/dashboard/"><i
@@ -385,7 +642,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO - SMART DIGITAL BUSINESS OFFICE.
+        <p data-i18n="footer_copy" style="font-size: 0.85rem; color: var(--gray); opacity: 0.6;">© 2026 SDBO - SMART DIGITAL BUSINESS OFFICE.
           Tous droits réservés.</p>
       </div>
     </div>

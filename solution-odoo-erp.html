@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDBO | Intégrateur Odoo ERP au Maroc — Partenaire & Modules Sur Mesure</title>
+  <meta name="description"
+    content="Intégrateur Odoo ERP de référence à Tanger et au Maroc : Comptabilité marocaine, Ventes, Stocks, Facturation, Modules exclusifs d'impression de chèques et impression directe.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Multilingual Engine -->
+  <script src="assets/js/i18n.js"></script>
+</head>
+
+<body>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header id="header" class="sticky">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+        <nav>
+          <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="mainNav">
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="a-propos.html" data-i18n="nav_about">À propos</a></li>
+            <li class="dropdown">
+              <a href="#" style="color: var(--primary); font-weight: 700;"><span data-i18n="nav_solutions">Nos Solutions</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="solution-caisse-restaurant.html"><i class="lni lni-restaurant"></i> <span data-i18n="sol_caisse">Caisse Restauration & Textile</span></a>
+                <a href="solution-school-aiqrae.html"><i class="lni lni-graduation"></i> <span data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</span></a>
+                <a href="solution-pos-vendeur.html"><i class="lni lni-mobile"></i> <span data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</span></a>
+                <a href="offre-ecommerce.html"><i class="lni lni-cart"></i> <span data-i18n="sol_ecom">Solution E-Commerce</span></a>
+                <a href="solution-odoo-erp.html" style="font-weight: 700; color: var(--primary);"><i class="lni lni-cog"></i> <span data-i18n="sol_odoo">Intégrateur Odoo ERP</span></a>
+                <a href="service-solutions.html"><i class="lni lni-dev"></i> <span data-i18n="sol_custom">Solutions Sur Mesure</span></a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="index.html#services"><span data-i18n="nav_services">Services IT</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="service-ia.html"><span data-i18n="srv_ai">Intelligence Artificielle</span></a>
+                <a href="service-hardware.html"><span data-i18n="srv_hardware">Matériel Informatique</span></a>
+                <a href="service-integration.html"><span data-i18n="srv_integration">Intégration de SI</span></a>
+                <a href="service-consulting.html"><span data-i18n="srv_consulting">Consulting & Audit</span></a>
+                <a href="service-formation.html"><span data-i18n="srv_formation">Formation IT</span></a>
+              </div>
+            </li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-action" style="display: flex; align-items: center; gap: 12px;">
+          <!-- 3-Language Selector FR / AR / EN -->
+          <div class="lang-selector" id="langSelector" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="#audit-odoo" class="btn btn-primary"><i class="lni lni-rocket"></i> <span data-i18n="sol5_audit">Audit Gratuit</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub Hero -->
+  <section class="sub-hero">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <span class="badge-pill purple"><i class="lni lni-cog"></i> <span data-i18n="sol5_badge">Expert Odoo ERP</span></span>
+        <span class="badge-pill emerald"><i class="lni lni-shield"></i> <span data-i18n="sol5_f1">Comptabilité Marocaine</span></span>
+        <span class="badge-pill blue"><i class="lni lni-layers"></i> Modules Exclusifs SDBO</span>
+      </div>
+      <h1 data-i18n="odoo_hero_title">Intégrateur Odoo ERP au Maroc<br><span class="highlight">Unifiez & Automatisez votre Entreprise</span></h1>
+      <p data-i18n="odoo_hero_desc">SDBO vous accompagne dans le déploiement sur mesure d'Odoo ERP : Comptabilité marocaine, Facturation, Stocks, Ventes, et nos modules exclusifs d'impression de chèques bancaires et d'impression directe.</p>
+      
+      <div style="display: flex; gap: 15px; justify-content: center; margin-top: 35px; flex-wrap: wrap;">
+        <a href="#audit-odoo" class="btn btn-primary"><i class="lni lni-comments"></i> <span data-i18n="odoo_btn_audit">Demander un Audit ERP Gratuit</span></a>
+        <a href="#modules-exclusifs" class="btn glass hero-secondary-btn"><i class="lni lni-star"></i> Découvrir nos Modules Exclusifs</a>
+        <a href="#odoo-features" class="btn btn-sm-outline"><i class="lni lni-layers"></i> Modules Standards</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Odoo Exclusive Modules (Highlight Section) -->
+  <section class="section-padding" id="modules-exclusifs" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Valeur Ajoutée Unique</span>
+        <h2>Nos Modules Exclusifs pour Odoo au Maroc</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Développés par les ingénieurs SDBO pour répondre exactement aux exigences pratiques et légales des entreprises marocaines.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px;">
+        
+        <!-- Module 1: Cheque Print Morocco -->
+        <div class="flagship-card featured-glow reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box emerald">
+              <i class="lni lni-credit-cards"></i>
+            </div>
+            <span class="badge-pill emerald">Exclusivité SDBO</span>
+          </div>
+          <h3 class="flagship-title">Module Impression Chèques Marocains</h3>
+          <p class="flagship-desc">Imprimez vos chèques bancaires directement depuis Odoo sans risque d'erreur manuelle ni rature. Calibré au millimètre près pour l'ensemble des banques opérant au Maroc.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Compatible toutes banques : Attijariwafa, BCP, BMCE, CIH, CDM, SGMB, etc.</li>
+            <li><i class="lni lni-checkmark-circle"></i> Conversion automatique des montants en lettres (Français / Arabe)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Mention « Non Endossable » et sécurité anti-fraude intégrée</li>
+            <li><i class="lni lni-checkmark-circle"></i> Lettrage et rapprochement bancaire automatique dans Odoo</li>
+          </ul>
+          <div class="flagship-actions">
+            <a href="https://wa.me/212661605369?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20module%20Odoo%20Impression%20Chèque%20Maroc" target="_blank" class="btn-sm-action btn-sm-primary" style="background: #059669;">
+              <i class="lni lni-whatsapp"></i> Démo Module Chèques
+            </a>
+          </div>
+        </div>
+
+        <!-- Module 2: Direct Print -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box">
+              <i class="lni lni-printer"></i>
+            </div>
+            <span class="badge-pill blue">Gain de Temps</span>
+          </div>
+          <h3 class="flagship-title">Odoo Direct Print (Impression Silencieuse)</h3>
+          <p class="flagship-desc">Fini la boîte de dialogue d'impression du navigateur qui ralentit chaque opération. Imprimez vos bons de livraison, étiquettes codes-barres et tickets de caisse en 1 clic direct.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Impression automatique instantanée sans pop-up navigateur</li>
+            <li><i class="lni lni-checkmark-circle"></i> Routage automatique : étiquettes vers Zebra, factures vers laser</li>
+            <li><i class="lni lni-checkmark-circle"></i> Compatible imprimantes réseau, USB et thermiques</li>
+            <li><i class="lni lni-checkmark-circle"></i> Indispensable pour la logistique, les dépôts et le POS Odoo</li>
+          </ul>
+          <div class="flagship-actions">
+            <a href="https://wa.me/212661605369?text=Bonjour,%20je%20souhaite%20découvrir%20le%20module%20Odoo%20Direct%20Print" target="_blank" class="btn-sm-action btn-sm-outline">
+              <i class="lni lni-whatsapp"></i> En savoir plus
+            </a>
+          </div>
+        </div>
+
+        <!-- Module 3: Odoo 19 Mobile -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box purple">
+              <i class="lni lni-mobile"></i>
+            </div>
+            <span class="badge-pill purple">Mobilité Terrain</span>
+          </div>
+          <h3 class="flagship-title">Odoo 19 Mobile & Force de Vente</h3>
+          <p class="flagship-desc">Application mobile ergonomique et fluide connectée en direct à votre base Odoo pour vos commerciaux nomades, livreurs et préparateurs de commandes.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Prise de commandes et devis clients en déplacement</li>
+            <li><i class="lni lni-checkmark-circle"></i> Consultation des stocks disponibles en temps réel</li>
+            <li><i class="lni lni-checkmark-circle"></i> Signature électronique du client sur le smartphone</li>
+            <li><i class="lni lni-checkmark-circle"></i> Mode semi-déconnecté pour zones blanches</li>
+          </ul>
+          <div class="flagship-actions">
+            <a href="https://wa.me/212661605369?text=Bonjour,%20je%20souhaite%20une%20démo%20de%20l'application%20Odoo%20Mobile" target="_blank" class="btn-sm-action btn-sm-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary));">
+              <i class="lni lni-mobile"></i> Démo Odoo Mobile
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete ERP Modules Section -->
+  <section class="section-padding" id="odoo-features" style="background: var(--darker);">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Écosystème Intégré</span>
+        <h2>Les Modules Clés d'Odoo déployés par SDBO</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Une plateforme unique qui remplace plus de 10 logiciels disparates dans votre entreprise.</p>
+      </div>
+
+      <div class="solutions-showcase-grid">
+        <!-- Module Compta -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box emerald"><i class="lni lni-calculator"></i></div>
+            <span class="badge-pill emerald">Législation Maroc</span>
+          </div>
+          <h3 class="flagship-title">Comptabilité & Fiscalité Marocaine</h3>
+          <p class="flagship-desc">Paramétrage complet du plan comptable général marocain, déclaration de TVA (encaissement/débit), liasse fiscale, bilans et balances conformes à la DGI.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Plan comptable marocain pré-configuré</li>
+            <li><i class="lni lni-checkmark-circle"></i> États de TVA et rapprochement bancaire</li>
+            <li><i class="lni lni-checkmark-circle"></i> Échéanciers clients et relances automatisées</li>
+            <li><i class="lni lni-checkmark-circle"></i> Clôture d'exercice comptable assistée</li>
+          </ul>
+        </div>
+
+        <!-- Module Ventes & CRM -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box"><i class="lni lni-briefcase"></i></div>
+            <span class="badge-pill blue">Pipeline Commercial</span>
+          </div>
+          <h3 class="flagship-title">CRM & Gestion Commerciale</h3>
+          <p class="flagship-desc">Suivez vos opportunités d'affaires de la prospection à la signature. Émettez des devis professionnels personnalisés en quelques clics et convertissez-les en factures.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Pipeline Kanban commercial sur mesure</li>
+            <li><i class="lni lni-checkmark-circle"></i> Devis électroniques avec signature en ligne</li>
+            <li><i class="lni lni-checkmark-circle"></i> Grilles tarifaires et remises par client</li>
+            <li><i class="lni lni-checkmark-circle"></i> Suivi des performances par commercial</li>
+          </ul>
+        </div>
+
+        <!-- Module Stock & Achats -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box amber"><i class="lni lni-package"></i></div>
+            <span class="badge-pill amber">Logistique & Dépôts</span>
+          </div>
+          <h3 class="flagship-title">Inventaire & Achats Multi-Dépôts</h3>
+          <p class="flagship-desc">Gestion en double entrée pour une traçabilité totale. Suivi par numéro de série, lots de péremption, gestion des transferts inter-dépôts et commandes fournisseurs automatisées.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Gestion multi-dépôts et emplacements</li>
+            <li><i class="lni lni-checkmark-circle"></i> Règles de réapprovisionnement automatique</li>
+            <li><i class="lni lni-checkmark-circle"></i> Bons de réception et contrôles qualité</li>
+            <li><i class="lni lni-checkmark-circle"></i> Valorisation des stocks en temps réel (FIFO, PMP)</li>
+          </ul>
+        </div>
+
+        <!-- Module RH & Paie -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box purple"><i class="lni lni-users"></i></div>
+            <span class="badge-pill purple">Ressources Humaines</span>
+          </div>
+          <h3 class="flagship-title">RH & Paie Marocaine</h3>
+          <p class="flagship-desc">Gérez vos collaborateurs, leurs contrats, leurs congés et éditez les bulletins de paie conformes aux cotisations sociales marocaines (CNSS, AMO, CIMR, IGR).</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Calcul automatique des charges et de l'IGR</li>
+            <li><i class="lni lni-checkmark-circle"></i> Gestion des demandes de congés et validations</li>
+            <li><i class="lni lni-checkmark-circle"></i> Pointage horaire et heures supplémentaires</li>
+            <li><i class="lni lni-checkmark-circle"></i> Génération des fichiers de virement bancaire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDBO Methodology Steps -->
+  <section class="section-padding" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Méthodologie Éprouvée</span>
+        <h2>Notre Processus d'Intégration Odoo</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Un accompagnement rigoureux garantissant le succès de votre transition numérique.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h4>Cadrage & Audit Métier</h4>
+          <p>Analyse détaillée de vos processus actuels, définition du cahier des charges et identification des gains d'efficacité.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h4>Paramétrage & Dev Spécifique</h4>
+          <p>Configuration de votre instance Odoo, développement des modules sur mesure et adaptation des rapports d'impression.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h4>Reprise de Données</h4>
+          <p>Nettoyage et migration sécurisée de vos données historiques : clients, fournisseurs, catalogues articles et écritures comptables.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h4>Formation & Support Continu</h4>
+          <p>Formation pratique des utilisateurs finaux, mise en production accompagnée et assistance technique réactive dédiée.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section-padding" id="audit-odoo" style="background: var(--darker);">
+    <div class="container">
+      <div class="contact-container reveal glass" style="padding: 50px;">
+        <div class="contact-info">
+          <span class="badge-pill purple" style="margin-bottom: 15px;">Partenaire Odoo Maroc</span>
+          <h3>Planifiez votre Audit Odoo Gratuit</h3>
+          <p style="margin-bottom: 25px; color: var(--gray);">Échangez avec l'un de nos consultants certifiés Odoo pour évaluer vos besoins et obtenir une estimation budgétaire transparente.</p>
+          
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-phone"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Téléphone / WhatsApp</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="tel:+212661605369">+212 6 61 60 53 69</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-envelope"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Email Dédié Odoo</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-map-marker"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Siège & Équipe Technique</div>
+              <span style="font-weight: 700;">Tanger, Maroc</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" method="post" data-web3forms-access-key="">
+          <div class="contact-form__hp" aria-hidden="true">
+            <input type="text" id="contactWebsite" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
+          <label class="visually-hidden" for="name-odoo">Nom complet</label>
+          <input id="name-odoo" name="name" type="text" placeholder="Votre Nom & Prénom" required>
+          
+          <label class="visually-hidden" for="company-odoo">Société</label>
+          <input id="company-odoo" name="company" type="text" placeholder="Nom de votre Entreprise" required>
+          
+          <label class="visually-hidden" for="tel-odoo">Téléphone / WhatsApp</label>
+          <input id="tel-odoo" name="phone" type="tel" placeholder="Téléphone / WhatsApp" required>
+          
+          <label class="visually-hidden" for="modules-odoo">Modules d'intérêt</label>
+          <select id="modules-odoo" name="modules_interest" required>
+            <option value="ERP Complet (Compta + Ventes + Stock)">Projet ERP Complet (Comptabilité + Ventes + Stocks)</option>
+            <option value="Comptabilité Marocaine seule">Comptabilité Marocaine & Facturation</option>
+            <option value="Module Chèques Bancaires seuls">Module Impression Chèques Bancaires Maroc</option>
+            <option value="Module Direct Print seul">Module Odoo Direct Print</option>
+            <option value="Migration / Sauvetage projet Odoo">Migration ou Reprise d'un Odoo existant</option>
+          </select>
+          
+          <label class="visually-hidden" for="msg-odoo">Message</label>
+          <textarea id="msg-odoo" name="message" placeholder="Décrivez votre activité, le nombre d'utilisateurs prévus et vos logiciels actuels (Excel, Sage, Ciel...)" rows="3"></textarea>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; background: linear-gradient(135deg, var(--neon-purple), var(--secondary));">
+            <i class="lni lni-calendar"></i> Demander mon Audit & Devis Odoo
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20des%20informations%20sur%20vos%20services%20d'intégration%20Odoo%20ERP" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- Footer -->
+    <!-- ==========================================
+       Espace Revendeurs IT & Partenaires
+       ========================================== -->
+  <section class="reseller-section" id="espace-revendeurs">
+    <div class="container">
+      <div class="reseller-card-wrapper reveal">
+        
+        <!-- Header -->
+        <div class="reseller-header">
+          <div class="badge-container">
+            <span class="badge-pill blue" data-i18n="reseller_badge">Programme Revendeurs IT & Installateurs</span>
+            <span class="badge-pill purple" data-i18n="reseller_wholesale_badge">Tarifs Grossistes dès 1 200 DH</span>
+          </div>
+          <h2 data-i18n="reseller_title">Devenez Revendeur Partenaire SDBO au Maroc</h2>
+          <p data-i18n="reseller_desc">
+            Vous êtes revendeur informatique, installateur réseau, intégrateur de systèmes ou agence digitale ? Développez votre chiffre d'affaires en distribuant nos logiciels phares (Caisse SMART GEST, WebSchool AIQRAE, POS Mobile, E-Commerce, Odoo ERP) avec des marges grossistes attractives, des versions démo offertes et un support technique N2 dédié.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="reseller-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-tag"></i>
+            </div>
+            <h3 data-i18n="reseller_p1_title">Prix Grossistes dès 1 200 DH</h3>
+            <p data-i18n="reseller_p1_desc">
+              Tarifs dégressifs exceptionnels dès 3 licences commandées. Maximisez votre rentabilité sur chaque installation client.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-laptop-phone"></i>
+            </div>
+            <h3 data-i18n="reseller_p2_title">Licences Démo & PLV Offertes</h3>
+            <p data-i18n="reseller_p2_desc">
+              Accès illimité aux versions de démonstration pour vos showrooms, catalogues PDF et vidéos de démonstration prêtes pour vos clients.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-headphone-alt"></i>
+            </div>
+            <h3 data-i18n="reseller_p3_title">Support Technique Prioritaire N2</h3>
+            <p data-i18n="reseller_p3_desc">
+              Assistance directe par WhatsApp et AnyDesk sous 2h, formation certifiée pour la montée en compétence de vos équipes techniques.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-shield"></i>
+            </div>
+            <h3 data-i18n="reseller_p4_title">Facturation & Mises à Jour à Vie</h3>
+            <p data-i18n="reseller_p4_desc">
+              Factures marocaines conformes (TVA), licences pérennes sans redevances cachées et mises à jour logicielles régulières.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Action Bar -->
+        <div class="reseller-action-bar">
+          <div class="reseller-action-info">
+            <h4 data-i18n="reseller_bar_title">Prêt à distribuer les solutions logicielles SDBO ?</h4>
+            <p data-i18n="reseller_bar_desc">Rejoignez notre réseau de partenaires certifiés à Tanger, Casablanca, Rabat, Fès, Marrakech et dans tout le Maroc.</p>
+          </div>
+          <div class="reseller-buttons">
+            <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20rejoindre%20le%20programme%20revendeurs%20dès%201200%20DH" target="_blank" class="btn reseller-btn-wa">
+              <i class="lni lni-whatsapp"></i> <span data-i18n="reseller_btn_wa">Contacter le Pôle Revendeurs (WhatsApp)</span>
+            </a>
+            <a href="index.html#contact" class="btn btn-outline" style="border-color: rgba(2, 132, 199, 0.4); color: var(--primary); font-weight: 700;">
+              <i class="lni lni-envelope"></i> <span data-i18n="reseller_btn_contact">Demander la Grille Tarifaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="pro-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
+          <p data-i18n="footer_desc">Smart Digital Business Office — Éditeur de solutions logicielles métiers innovantes et intégrateur IT de référence à Tanger, Maroc.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_sol">Nos Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="solution-caisse-restaurant.html" data-i18n="sol_caisse">SDBO SMART GEST (Caisse)</a></li>
+            <li><a href="solution-school-aiqrae.html" data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</a></li>
+            <li><a href="solution-pos-vendeur.html" data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</a></li>
+            <li><a href="offre-ecommerce.html" data-i18n="sol_ecom">Solution E-Commerce</a></li>
+            <li><a href="solution-odoo-erp.html" data-i18n="sol_odoo">Intégrateur Odoo ERP</a></li>
+            <li><a href="service-solutions.html" data-i18n="sol_custom">Développement Sur Mesure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_srv">Services IT</h4>
+          <ul class="footer-links">
+            <li><a href="service-ia.html" data-i18n="srv_ai">Intelligence Artificielle</a></li>
+            <li><a href="service-hardware.html" data-i18n="srv_hardware">Matériel Informatique</a></li>
+            <li><a href="service-integration.html" data-i18n="srv_integration">Intégration de SI</a></li>
+            <li><a href="service-consulting.html" data-i18n="srv_consulting">Consulting & Audit</a></li>
+            <li><a href="service-formation.html" data-i18n="srv_formation">Formation IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_contact">Contact Tanger</h4>
+          <p style="margin-bottom: 10px;"><strong>Téléphone :</strong> +212 6 61 60 53 69</p>
+          <p style="margin-bottom: 10px;"><strong>Email :</strong> sdbocontact@gmail.com</p>
+          <p style="margin-bottom: 15px;"><strong>Adresse :</strong> <span data-i18n="contact_loc_val">Tanger, Maroc</span></p>
+          <a href="https://wa.me/212661605369" target="_blank" class="btn-sm-action btn-sm-primary" style="background: #25d366;">
+            <i class="lni lni-whatsapp"></i> WhatsApp Direct
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2026 SDBO - Smart Digital Business Office. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

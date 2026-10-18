@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDBO SMART GEST | Logiciel Caisse Tactile Restauration, Snack & Textile — Dès 1 200 DH</title>
+  <meta name="description"
+    content="Logiciel de caisse tactile professionnel pour Restaurants, Snacks, Pizzerias, Cafés et Boutiques Textile. Licence à vie dès 1 200 DH, tarifs revendeurs sur mesure, commandes, stocks, tickets et remises WhatsApp, PC Windows & APK Android.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Multilingual Engine -->
+  <script src="assets/js/i18n.js"></script>
+
+  <style>
+    /* Specific styles for SDBO SMART GEST Showcase */
+    .tab-switch-container {
+      display: inline-flex;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 50px;
+      padding: 5px;
+      margin-bottom: 25px;
+      gap: 6px;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 40px;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);
+    }
+
+    /* POS Screen Mockup in Hero */
+    .pos-mockup-wrapper {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35);
+      margin-top: 40px;
+      color: #f8fafc;
+      text-align: left;
+    }
+
+    .pos-mockup-bar {
+      background: #1e293b;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .pos-mockup-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .pos-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .pos-mockup-body {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      min-height: 440px;
+    }
+
+    .pos-catalog-area {
+      padding: 20px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pos-cat-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .pos-cat-pill {
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .pos-cat-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .pos-grid-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 12px;
+    }
+
+    .pos-item-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pos-item-card:hover {
+      background: rgba(2, 132, 199, 0.15);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .pos-item-icon {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .pos-item-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pos-item-price {
+      font-size: 0.78rem;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    .pos-cart-area {
+      background: #131d2e;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pos-cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .pos-cart-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.84rem;
+      flex: 1;
+    }
+
+    .pos-cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+    }
+
+    .pos-cart-totals {
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin-top: 15px;
+    }
+
+    .pos-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      color: #94a3b8;
+    }
+
+    .pos-total-row.grand-total {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-top: 8px;
+    }
+
+    .pos-cart-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    /* Pricing Section Styles */
+    .pricing-card-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .pricing-card-box:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12);
+    }
+
+    .pricing-card-box.reseller-glow {
+      border: 2px solid var(--neon-purple);
+      background: linear-gradient(180deg, rgba(237, 233, 254, 0.3) 0%, #ffffff 100%);
+      box-shadow: 0 15px 40px rgba(124, 58, 237, 0.1);
+    }
+
+    .pricing-card-box.reseller-glow:hover {
+      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2);
+    }
+
+    .pricing-price-val {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+      margin: 15px 0 6px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .pricing-price-val span {
+      font-size: 1.1rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* FAQ Accordion */
+    .faq-item-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question-btn i {
+      transition: transform 0.3s ease;
+      color: var(--primary);
+    }
+
+    .faq-answer-content {
+      padding: 0 24px 20px 24px;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      display: none;
+    }
+
+    .faq-item-box.active .faq-answer-content {
+      display: block;
+    }
+
+    .faq-item-box.active .faq-question-btn i {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 900px) {
+      .pos-mockup-body {
+        grid-template-columns: 1fr;
+      }
+      .pos-catalog-area {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header id="header" class="sticky">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+        <nav>
+          <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="mainNav">
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="a-propos.html" data-i18n="nav_about">À propos</a></li>
+            <li class="dropdown">
+              <a href="#" style="color: var(--primary); font-weight: 700;"><span data-i18n="nav_solutions">Nos Solutions</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="solution-caisse-restaurant.html" style="font-weight: 700; color: var(--primary);"><i class="lni lni-restaurant"></i> <span data-i18n="sol_caisse">Caisse Restauration & Textile</span></a>
+                <a href="solution-school-aiqrae.html"><i class="lni lni-graduation"></i> <span data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</span></a>
+                <a href="solution-pos-vendeur.html"><i class="lni lni-mobile"></i> <span data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</span></a>
+                <a href="offre-ecommerce.html"><i class="lni lni-cart"></i> <span data-i18n="sol_ecom">Solution E-Commerce</span></a>
+                <a href="solution-odoo-erp.html"><i class="lni lni-cog"></i> <span data-i18n="sol_odoo">Intégrateur Odoo ERP</span></a>
+                <a href="service-solutions.html"><i class="lni lni-dev"></i> <span data-i18n="sol_custom">Solutions Sur Mesure</span></a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="index.html#services"><span data-i18n="nav_services">Services IT</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="service-ia.html"><span data-i18n="srv_ai">Intelligence Artificielle</span></a>
+                <a href="service-hardware.html"><span data-i18n="srv_hardware">Matériel Informatique</span></a>
+                <a href="service-integration.html"><span data-i18n="srv_integration">Intégration de SI</span></a>
+                <a href="service-consulting.html"><span data-i18n="srv_consulting">Consulting & Audit</span></a>
+                <a href="service-formation.html"><span data-i18n="srv_formation">Formation IT</span></a>
+              </div>
+            </li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-action" style="display: flex; align-items: center; gap: 12px;">
+          <!-- 3-Language Selector FR / AR / EN -->
+          <div class="lang-selector" id="langSelector" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="#tarifs" class="btn btn-primary"><i class="lni lni-tag"></i> <span data-i18n="sol1_price_badge">Dès 1 200 DH</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="sub-hero" style="padding-bottom: 60px;">
+    <div class="container">
+      
+      <!-- Mode Switcher Tabs -->
+      <div class="tab-switch-container">
+        <button type="button" class="tab-btn active" id="btnModeResto" onclick="switchHeroMode('resto')">
+          <i class="lni lni-restaurant"></i> <span data-i18n="caisse_tab_resto">Restauration, Snacks & Cafés</span>
+        </button>
+        <button type="button" class="tab-btn" id="btnModeTextile" onclick="switchHeroMode('textile')">
+          <i class="lni lni-tshirt"></i> <span data-i18n="caisse_tab_textile">Textile, Prêt-à-Porter & Commerce</span>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+        <span class="badge-pill blue"><i class="lni lni-display"></i> <span data-i18n="caisse_hero_badge_pc">Caisse Tactile PC & Android</span></span>
+        <span class="badge-pill emerald"><i class="lni lni-whatsapp"></i> <span data-i18n="caisse_hero_badge_wa">Module WhatsApp Remises</span></span>
+        <span class="badge-pill amber"><i class="lni lni-tag"></i> <span data-i18n="caisse_hero_badge_price">Dès 1 200 DH • Sans Abonnement</span></span>
+      </div>
+
+      <h1 id="heroMainTitle" data-i18n="caisse_hero_title">SDBO SMART GEST<br><span class="highlight">Logiciel Caisse Restauration & Textile</span></h1>
+      
+      <p id="heroMainDesc" data-i18n="caisse_hero_desc" style="max-width: 820px; margin: 0 auto 25px auto;">
+        Solution tout-en-un certifiée pour Restaurants, Pizzerias, Snacks, Cafés et Boutiques. Encaissement tactile rapide, gestion dynamique des tables, suivi des recettes au gramme près, et envoi instantané des tickets de caisse et remises sur WhatsApp.
+      </p>
+
+      <div style="display: flex; gap: 14px; justify-content: center; margin-top: 25px; flex-wrap: wrap;">
+        <a href="#telechargement" class="btn btn-primary"><i class="lni lni-download"></i> <span data-i18n="caisse_btn_pc">Télécharger l'Installateur PC (97 Mo)</span></a>
+        <a href="downloads/SMART_Caisse.apk" download class="btn glass hero-secondary-btn" style="background: #10b981; color: #fff; border: none;">
+          <i class="lni lni-android"></i> <span data-i18n="caisse_btn_apk">Télécharger l'APK Android (4.2 Mo)</span>
+        </a>
+        <a href="apps/caisse-restaurant/index.html" target="_blank" class="btn btn-sm-outline">
+          <i class="lni lni-play"></i> <span data-i18n="caisse_btn_demo">Lancer la Démo Web</span>
+        </a>
+        <a href="#tarifs" class="btn btn-sm-outline" style="border-color: var(--neon-purple); color: var(--neon-purple);">
+          <i class="lni lni-users"></i> <span data-i18n="caisse_btn_resellers">Espace Revendeurs IT</span>
+        </a>
+      </div>
+
+      <!-- Live Interactive POS Screen Mockup -->
+      <div class="pos-mockup-wrapper reveal">
+        <div class="pos-mockup-bar">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="pos-mockup-dots">
+              <span class="pos-dot" style="background: #ef4444;"></span>
+              <span class="pos-dot" style="background: #f59e0b;"></span>
+              <span class="pos-dot" style="background: #10b981;"></span>
+            </div>
+            <span id="mockupHeaderTitle">SDBO_SMART_GEST_CAISSE v2026 — Mode Vente Restauration Tactile</span>
+          </div>
+          <div style="color: #38bdf8;">
+            <i class="lni lni-network"></i> Réseau LAN Actif • Port 8123 • Table 04
+          </div>
+        </div>
+
+        <div class="pos-mockup-body">
+          <!-- Catalog Area -->
+          <div class="pos-catalog-area">
+            <div class="pos-cat-pills" id="mockupCatPills">
+              <span class="pos-cat-pill active" onclick="filterMockup('all')">Tous</span>
+              <span class="pos-cat-pill" onclick="filterMockup('pizzas')">Pizzas</span>
+              <span class="pos-cat-pill" onclick="filterMockup('burgers')">Burgers & Tacos</span>
+              <span class="pos-cat-pill" onclick="filterMockup('boissons')">Boissons</span>
+              <span class="pos-cat-pill" onclick="filterMockup('desserts')">Desserts</span>
+            </div>
+
+            <div class="pos-grid-items" id="mockupGridItems">
+              <!-- Item 1 -->
+              <div class="pos-item-card" onclick="addMockupItem('Pizza 4 Fromages', 55)">
+                <div class="pos-item-icon">🍕</div>
+                <div class="pos-item-name">4 Fromages</div>
+                <div class="pos-item-price">55.00 DH</div>
+              </div>
+              <!-- Item 2 -->
+              <div class="pos-item-card" onclick="addMockupItem('Pizza Fruits de Mer', 75)">
+                <div class="pos-item-icon">🍤</div>
+                <div class="pos-item-name">Fruits de Mer</div>
+                <div class="pos-item-price">75.00 DH</div>
+              </div>
+              <!-- Item 3 -->
+              <div class="pos-item-card" onclick="addMockupItem('Burger Gourmet Beef', 48)">
+                <div class="pos-item-icon">🍔</div>
+                <div class="pos-item-name">Burger Beef</div>
+                <div class="pos-item-price">48.00 DH</div>
+              </div>
+              <!-- Item 4 -->
+              <div class="pos-item-card" onclick="addMockupItem('Tacos Mixte XL', 42)">
+                <div class="pos-item-icon">🌮</div>
+                <div class="pos-item-name">Tacos XL</div>
+                <div class="pos-item-price">42.00 DH</div>
+              </div>
+              <!-- Item 5 -->
+              <div class="pos-item-card" onclick="addMockupItem('Salade César Poulet', 38)">
+                <div class="pos-item-icon">🥗</div>
+                <div class="pos-item-name">Salade César</div>
+                <div class="pos-item-price">38.00 DH</div>
+              </div>
+              <!-- Item 6 -->
+              <div class="pos-item-card" onclick="addMockupItem('Jus d\'Orange Frais', 18)">
+                <div class="pos-item-icon">🍹</div>
+                <div class="pos-item-name">Jus d'Orange</div>
+                <div class="pos-item-price">18.00 DH</div>
+              </div>
+              <!-- Item 7 -->
+              <div class="pos-item-card" onclick="addMockupItem('Café Expresso Lavazza', 12)">
+                <div class="pos-item-icon">☕</div>
+                <div class="pos-item-name">Café Expresso</div>
+                <div class="pos-item-price">12.00 DH</div>
+              </div>
+              <!-- Item 8 -->
+              <div class="pos-item-card" onclick="addMockupItem('Tiramisu Artisanal', 25)">
+                <div class="pos-item-icon">🍰</div>
+                <div class="pos-item-name">Tiramisu</div>
+                <div class="pos-item-price">25.00 DH</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Cart Area -->
+          <div class="pos-cart-area">
+            <div>
+              <div class="pos-cart-header">
+                <div>
+                  <strong>Commande #0482</strong>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Serveur: Omar • Table 04 (Salle)</div>
+                </div>
+                <span class="badge-pill emerald" style="padding: 3px 8px; font-size: 0.72rem;">En cours</span>
+              </div>
+
+              <ul class="pos-cart-items" id="mockupCartList">
+                <li class="pos-cart-item">
+                  <span>1x Pizza 4 Fromages</span>
+                  <strong>55.00 DH</strong>
+                </li>
+                <li class="pos-cart-item">
+                  <span>1x Burger Beef + Frites</span>
+                  <strong>48.00 DH</strong>
+                </li>
+                <li class="pos-cart-item">
+                  <span>2x Jus d'Orange Frais</span>
+                  <strong>36.00 DH</strong>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pos-cart-totals">
+              <div class="pos-total-row">
+                <span>Sous-total HT</span>
+                <span id="mockupSubtotal">139.00 DH</span>
+              </div>
+              <div class="pos-total-row" style="color: #4ade80;">
+                <span>Remise VIP WhatsApp (-10%)</span>
+                <span>-13.90 DH</span>
+              </div>
+              <div class="pos-total-row grand-total">
+                <span>Total Net à Payer</span>
+                <span id="mockupTotal">125.10 DH</span>
+              </div>
+
+              <div class="pos-cart-actions">
+                <button type="button" class="btn-sm-action btn-sm-outline" style="border-color: rgba(255,255,255,0.2); color: #fff;" onclick="alert('Ticket envoyé aux imprimantes Cuisine et Bar !')">
+                  <i class="lni lni-printer"></i> Bon Cuisine
+                </button>
+                <button type="button" class="btn-sm-action btn-sm-primary" style="background: #10b981; border: none;" onclick="alert('Paiement validé avec succès ! Reçu WhatsApp transmis au client.')">
+                  <i class="lni lni-checkmark-circle"></i> Encaisser (Espèces)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing & Resellers Section (Demande Expresse) -->
+  <section class="section-padding" id="tarifs" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Investissement Rentable & Transparent</span>
+        <h2>Tarifs Clairs & Programme Revendeurs</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray); max-width: 700px; margin-left: auto; margin-right: auto;">
+          Licence logicielle définitive sans abonnement mensuel contraignant. Prix dégressifs et partenariats exclusifs pour revendeurs informatiques.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 30px; margin-top: 40px;">
+        
+        <!-- Plan 1: Software License -->
+        <div class="pricing-card-box reveal">
+          <span class="badge-pill blue" style="width: fit-content;">Licence Définitive à Vie</span>
+          <h3 style="font-size: 1.5rem; margin-top: 14px; margin-bottom: 4px;">Licence SMART GEST</h3>
+          <p style="color: #64748b; font-size: 0.9rem;">Idéal si vous possédez déjà votre PC tactile ou ordinateur de caisse.</p>
+          
+          <div class="pricing-price-val">
+            1 200 <span>DH / Licence</span>
+          </div>
+          <div style="color: #059669; font-size: 0.85rem; font-weight: 700; margin-bottom: 25px;">
+            <i class="lni lni-checkmark-circle"></i> Paiement unique • Zéro frais mensuels
+          </div>
+
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle"></i> 1 Poste Caisse principal Windows PC</li>
+            <li><i class="lni lni-checkmark-circle"></i> 20 tickets de démonstration offerts pour tester</li>
+            <li><i class="lni lni-checkmark-circle"></i> Gestion complète des tables (Sur place, Emporter, Livraison)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Module WhatsApp Remises & Tickets dématérialisés</li>
+            <li><i class="lni lni-checkmark-circle"></i> Connexion serveur mobile Android / iOS (LAN)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Impression tickets thermique & bons cuisine</li>
+            <li><i class="lni lni-checkmark-circle"></i> Clôture Z journalière et rapports exportables</li>
+          </ul>
+
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20commander%20la%20licence%20SMART%20GEST%20à%201200%20DH" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">
+            <i class="lni lni-whatsapp"></i> Commander à 1 200 DH
+          </a>
+        </div>
+
+        <!-- Plan 2: Complete Hardware Pack -->
+        <div class="pricing-card-box reveal">
+          <span class="badge-pill emerald" style="width: fit-content;">Pack Clé en Main Tanger & Maroc</span>
+          <h3 style="font-size: 1.5rem; margin-top: 14px; margin-bottom: 4px;">Pack Caisse + Matériel</h3>
+          <p style="color: #64748b; font-size: 0.9rem;">Prêt à brancher avec installation et formation de vos équipes sur place.</p>
+          
+          <div class="pricing-price-val">
+            Sur Devis <span>/ Pack Complet</span>
+          </div>
+          <div style="color: #0284c7; font-size: 0.85rem; font-weight: 700; margin-bottom: 25px;">
+            <i class="lni lni-checkmark-circle"></i> Matériel garanti 1 an avec assistance
+          </div>
+
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle"></i> Terminal POS tactile professionnel capacitif</li>
+            <li><i class="lni lni-checkmark-circle"></i> Imprimante thermique 80mm découpe automatique</li>
+            <li><i class="lni lni-checkmark-circle"></i> Tiroir-caisse automatique robuste métal</li>
+            <li><i class="lni lni-checkmark-circle"></i> Logiciel SMART GEST pré-installé et configuré</li>
+            <li><i class="lni lni-checkmark-circle"></i> Saisie intégrale de votre menu et de vos prix</li>
+            <li><i class="lni lni-checkmark-circle"></i> Formation du gérant et des serveurs sur site</li>
+            <li><i class="lni lni-checkmark-circle"></i> Support technique prioritaire 7j/7</li>
+          </ul>
+
+          <a href="#contact-solution" class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); width: 100%; text-align: center;">
+            <i class="lni lni-envelope"></i> Demander un Devis Pack Matériel
+          </a>
+        </div>
+
+        <!-- Plan 3: Resellers Space (Demande Express) -->
+        <div class="pricing-card-box reseller-glow reveal">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-pill purple">Espace Partenaires IT</span>
+            <span style="font-size: 0.78rem; font-weight: 800; color: var(--neon-purple); background: #ede9fe; padding: 4px 10px; border-radius: 20px;">MARGE ÉLEVÉE</span>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-top: 14px; margin-bottom: 4px;">Programme Revendeurs</h3>
+          <p style="color: #64748b; font-size: 0.9rem;">Pour prestataires informatiques, installateurs et intégrateurs partout au Maroc.</p>
+          
+          <div class="pricing-price-val" style="color: var(--neon-purple); font-size: 2.3rem;">
+            Tarifs Grossiste <span>Sur Mesure</span>
+          </div>
+          <div style="color: var(--neon-purple); font-size: 0.85rem; font-weight: 700; margin-bottom: 25px;">
+            <i class="lni lni-star-filled"></i> Remises importantes dès la 1ère commande
+          </div>
+
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> <strong>Tarifs revendeurs préférentiels</strong> très compétitifs</li>
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> Marge commerciale attractive et récurrente</li>
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> <strong>Pack Démo offert</strong> pour vos démonstrations clients</li>
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> Génération rapide des clés d'activation à distance</li>
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> Support technique de niveau 2 dédié revendeurs 7j/7</li>
+            <li><i class="lni lni-checkmark-circle" style="color: var(--neon-purple);"></i> Matériel POS disponible à prix de gros (écrans, imprimantes)</li>
+          </ul>
+
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur/prestataire%20informatique%20et%20je%20souhaite%20connaître%20vos%20tarifs%20revendeurs%20SMART%20GEST" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary)); width: 100%; text-align: center; border: none;">
+            <i class="lni lni-whatsapp"></i> Contacter l'Espace Revendeurs
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Reseller Banner Callout -->
+      <div class="banner-highlight reveal" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(2, 132, 199, 0.08) 100%); border-color: rgba(124, 58, 237, 0.3); margin-top: 40px;">
+        <div style="font-size: 3rem; color: var(--neon-purple);"><i class="lni lni-handshake"></i></div>
+        <div style="flex: 1;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 6px;">Vous êtes installateur ou revendeur informatique au Maroc ?</h4>
+          <p style="color: #64748b; font-size: 0.95rem;">
+            Développez votre chiffre d'affaires avec une solution de caisse éprouvée, facile à installer et plébiscitée par les commerçants. Contactez directement notre responsable partenariat revendeurs au <strong>+212 6 61 60 53 69</strong>.
+          </p>
+        </div>
+        <div>
+          <a href="https://wa.me/212661605369?text=Bonjour,%20je%20souhaite%20rejoindre%20le%20réseau%20revendeurs%20SDBO" target="_blank" class="btn btn-primary" style="background: #25d366; border: none; white-space: nowrap;">
+            <i class="lni lni-whatsapp"></i> Échanger sur WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Complete 6 Core Features Section -->
+  <section class="section-padding" id="fonctionnalites" style="background: var(--darker);">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Performance & Fiabilité</span>
+        <h2>Conçu pour Accélérer vos Ventes au Quotidien</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Des fonctionnalités pensées pour les professionnels les plus exigeants de la restauration et du commerce.</p>
+      </div>
+
+      <div class="solutions-showcase-grid">
+        <!-- Feature 1 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box">
+              <i class="lni lni-display"></i>
+            </div>
+            <span class="badge-pill blue">Prise Tactile</span>
+          </div>
+          <h3 class="flagship-title">Prise de Commande Ultra-Rapide</h3>
+          <p class="flagship-desc">Interface tactile fluide optimisée au millimètre. Ajoutez des produits en un clic, appliquez des remises, saisissez le poids des produits pesables et encaissez en moins de 3 secondes.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Saisie express et gestion des suppléments</li>
+            <li><i class="lni lni-checkmark-circle"></i> Clavier virtuel numérique tactile intégré</li>
+            <li><i class="lni lni-checkmark-circle"></i> Gestion multi-devises et monnaie à rendre</li>
+            <li><i class="lni lni-checkmark-circle"></i> Droits d'accès caissiers et administrateurs</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box emerald">
+              <i class="lni lni-restaurant"></i>
+            </div>
+            <span class="badge-pill emerald">Plan de Salle</span>
+          </div>
+          <h3 class="flagship-title">Gestion Visuelle des Tables</h3>
+          <p class="flagship-desc">Basculez instantanément entre Sur Place, Emporter et Livraison. Visualisez l'état en direct des tables (Libre, Occupée, Active), enregistrez les commandes en attente et imprimez l'addition à tout moment.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Plan des tables 1 à 16 et Terrasses</li>
+            <li><i class="lni lni-checkmark-circle"></i> Transfert et fusion de tables en 1 clic</li>
+            <li><i class="lni lni-checkmark-circle"></i> Séparation et partage de l'addition</li>
+            <li><i class="lni lni-checkmark-circle"></i> Historique des tables de la session</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box amber">
+              <i class="lni lni-mobile"></i>
+            </div>
+            <span class="badge-pill amber">LAN Wi-Fi</span>
+          </div>
+          <h3 class="flagship-title">Serveur Mobile & QR Code (LAN)</h3>
+          <p class="flagship-desc">Vos serveurs prennent les commandes directement en salle depuis leur smartphone ou tablette (Android/iOS). Synchronisation en temps réel via le réseau Wi-Fi local sans connexion internet requise.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Prise de commande mobile en terrasse</li>
+            <li><i class="lni lni-checkmark-circle"></i> Connexion express par scan de QR Code</li>
+            <li><i class="lni lni-checkmark-circle"></i> Zéro coût internet pour le service</li>
+            <li><i class="lni lni-checkmark-circle"></i> Notification directe sur l'écran de caisse</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box purple">
+              <i class="lni lni-printer"></i>
+            </div>
+            <span class="badge-pill purple">Bons & Tickets</span>
+          </div>
+          <h3 class="flagship-title">Impression Thermique ESC/POS</h3>
+          <p class="flagship-desc">Impression automatique des bons de commande en Cuisine, Bar et tickets d'addition au comptoir. Compatible avec toutes les imprimantes thermiques 80mm et 58mm (USB, Réseau Ethernet et Bluetooth).</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Routage séparé : Cuisine, Grill, Bar, Caisse</li>
+            <li><i class="lni lni-checkmark-circle"></i> Ouverture automatique du tiroir-caisse</li>
+            <li><i class="lni lni-checkmark-circle"></i> Impression de logo et en-tête personnalisés</li>
+            <li><i class="lni lni-checkmark-circle"></i> Support complet découpe papier et bips sonores</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box indigo">
+              <i class="lni lni-stats-up"></i>
+            </div>
+            <span class="badge-pill blue">Contrôle Total</span>
+          </div>
+          <h3 class="flagship-title">Rapports Financiers X & Z Certifiés</h3>
+          <p class="flagship-desc">Consultez votre chiffre d'affaires en direct avec le Rapport X utilisateur et clôturez la journée en toute sécurité grâce au Rapport Z avec répartition des modes de paiement et export CSV/Excel.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Rapport X utilisateur en cours de journée</li>
+            <li><i class="lni lni-checkmark-circle"></i> Rapport Z de clôture journalière inviolable</li>
+            <li><i class="lni lni-checkmark-circle"></i> Ventilation Espèces, Carte TPE, Chèques</li>
+            <li><i class="lni lni-checkmark-circle"></i> Export comptable CSV compatible Excel</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box">
+              <i class="lni lni-shield"></i>
+            </div>
+            <span class="badge-pill blue">Sécurité & Confidentialité</span>
+          </div>
+          <h3 class="flagship-title">100% Autonome & Hors-Ligne</h3>
+          <p class="flagship-desc">Vos données restent stockées en toute sécurité sur votre machine locale. Aucune dépendance au cloud, aucun risque d'arrêt en cas de coupure internet et zéro frais mensuels cachés.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Données stockées localement en SQLite sécurisé</li>
+            <li><i class="lni lni-checkmark-circle"></i> Fonctionnement garanti en cas de panne internet</li>
+            <li><i class="lni lni-checkmark-circle"></i> Sauvegarde et restauration de la base en 1 clic</li>
+            <li><i class="lni lni-checkmark-circle"></i> Zéro frais d'abonnement ou de renouvellement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Spotlight Section (Édition Textile & Commerce) -->
+  <section class="section-padding" id="whatsapp-module" style="background: #ffffff;">
+    <div class="container">
+      <div class="whatsapp-box reveal">
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+          <div>
+            <span class="badge-pill emerald" style="margin-bottom: 15px;"><i class="lni lni-whatsapp"></i> EXCLUSIVITÉ SDBO CAISSE & COMMERCE</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #065f46;">Partagez vos Reçus, Catalogues et Remises directement sur WhatsApp !</h2>
+            <p style="color: #1f2937; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+              Révolutionnez la relation avec vos clients ! SMART GEST intègre un module natif d'envoi WhatsApp permettant de transmettre instantanément le ticket de caisse dématérialisé, les remises accordées et les catalogues de nouveautés sans surcoût de papier.
+            </p>
+            <ul class="feature-list-block">
+              <li><i class="lni lni-checkmark" style="color: #059669;"></i> <strong>Envoi automatique du reçu :</strong> Détails des articles, remises et total réglé transmis en 1 clic sur le WhatsApp du client.</li>
+              <li><i class="lni lni-checkmark" style="color: #059669;"></i> <strong>Partage de catalogues & promotions :</strong> Diffusez vos arrivages de saison ou nouveaux plats avec photos et prix.</li>
+              <li><i class="lni lni-checkmark" style="color: #059669;"></i> <strong>Gestion textile avancée :</strong> Variantes de tailles (S, M, L, XL), pointures et coloris.</li>
+              <li><i class="lni lni-checkmark" style="color: #059669;"></i> <strong>Scan code-barres express :</strong> Compatible douchettes laser et lecteurs USB.</li>
+            </ul>
+
+            <div style="margin-top: 25px;">
+              <a href="downloads/SMART-GEST-CAISSE-TEXTILE.exe" download class="btn btn-primary" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); border: none;">
+                <i class="lni lni-download"></i> Télécharger l'Édition Textile (.exe)
+              </a>
+            </div>
+          </div>
+
+          <!-- WhatsApp Chat Simulation Mockup -->
+          <div>
+            <div style="background: #111b21; border-radius: 24px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.3); color: #fff;">
+              <div style="display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #202c33; margin-bottom: 16px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff;">
+                  SG
+                </div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem;">RESTAURANT / BOUTIQUE VIP</div>
+                  <div style="font-size: 0.75rem; color: #4ade80;">En ligne • Reçu Vérifié SDBO</div>
+                </div>
+              </div>
+
+              <!-- Message Bubble 1 -->
+              <div style="background: #005c4b; padding: 14px 16px; border-radius: 12px 12px 0 12px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.6;">
+                <strong>🎉 Bonjour Mme Salma !</strong><br>
+                Merci pour votre visite chez <em>Vital Gusto Tanger</em>.<br><br>
+                🧾 <strong>Détail de votre commande #0482 :</strong><br>
+                • 1x Pizza 4 Fromages : 55.00 DH<br>
+                • 1x Burger Gourmet Beef : 48.00 DH<br>
+                • 2x Jus d'Orange Frais : 36.00 DH<br><br>
+                🎁 <strong>Remise spéciale fidélité :</strong> -13.90 DH (10%)<br>
+                💳 <strong>Total Réglé : 125.10 DH</strong> (Espèces)<br><br>
+                ⭐ <em>À très bientôt ! Profitez de -15% lors de votre prochain passage avec le code GUSTO15.</em>
+                <div style="text-align: right; font-size: 0.7rem; opacity: 0.7; margin-top: 4px;">17:42 ✓✓</div>
+              </div>
+
+              <!-- Message Bubble 2 -->
+              <div style="background: #202c33; padding: 10px 14px; border-radius: 12px 12px 12px 0; font-size: 0.82rem; color: #cbd5e1;">
+                <strong>🍽️ Découvrez notre Carte du Mois :</strong><br>
+                Cliquez ici pour consulter nos spécialités du chef et nos offres spéciales week-end.
+                <div style="text-align: right; font-size: 0.7rem; opacity: 0.7; margin-top: 4px;">17:43 ✓✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Downloads Center -->
+  <section class="section-padding" id="telechargement" style="background: var(--darker);">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Centre de Téléchargement</span>
+        <h2>Téléchargez Gratuitement et Testez Immédiatement</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">20 tickets complets offerts pour essayer toutes les fonctionnalités sans limite avant activation.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 35px;">
+        
+        <!-- PC Restaurant Installer -->
+        <div class="download-widget reveal" style="background: #ffffff; flex-direction: column; align-items: stretch;">
+          <div class="download-widget-info">
+            <div class="download-icon" style="background: linear-gradient(135deg, #0284c7, #2563eb);">
+              <i class="lni lni-windows"></i>
+            </div>
+            <div>
+              <span class="badge-pill blue" style="font-size: 0.72rem; padding: 3px 8px;">Restauration & Snacks</span>
+              <div class="download-title">SMART Caisse Windows PC</div>
+              <div class="download-meta">
+                <span><i class="lni lni-display"></i> Windows 11/10/8/7 (64-bit)</span>
+                <span><i class="lni lni-save"></i> 97.3 Mo</span>
+                <span><i class="lni lni-tag"></i> v2026 Stable</span>
+              </div>
+            </div>
+          </div>
+          <p style="color: #64748b; font-size: 0.88rem; margin: 15px 0;">Installateur tout-en-un pour PC tactile et ordinateurs de caisse. Configure automatiquement le pare-feu et dépose les raccourcis bureau.</p>
+          <a href="downloads/INSTALLATEUR_SMART_CAISSE.exe" download class="btn btn-primary" style="text-align: center;">
+            <i class="lni lni-download"></i> Télécharger l'Exécutable (.exe)
+          </a>
+        </div>
+
+        <!-- Android APK -->
+        <div class="download-widget reveal" style="background: #ffffff; flex-direction: column; align-items: stretch;">
+          <div class="download-widget-info">
+            <div class="download-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+              <i class="lni lni-android"></i>
+            </div>
+            <div>
+              <span class="badge-pill emerald" style="font-size: 0.72rem; padding: 3px 8px;">Android Serveurs</span>
+              <div class="download-title">SMART Caisse APK Mobile</div>
+              <div class="download-meta">
+                <span><i class="lni lni-mobile"></i> Android 5.0 à 14+</span>
+                <span><i class="lni lni-save"></i> 4.2 Mo</span>
+                <span><i class="lni lni-tag"></i> v2.1 Mobile</span>
+              </div>
+            </div>
+          </div>
+          <p style="color: #64748b; font-size: 0.88rem; margin: 15px 0;">Application mobile pour serveurs. Prise de commande en salle et terrasse avec synchronisation instantanée sur le réseau local Wi-Fi.</p>
+          <a href="downloads/SMART_Caisse.apk" download class="btn btn-primary" style="background: #059669; border: none; text-align: center;">
+            <i class="lni lni-download"></i> Télécharger l'APK Android
+          </a>
+        </div>
+
+        <!-- Textile Windows Pack -->
+        <div class="download-widget reveal" style="background: #ffffff; flex-direction: column; align-items: stretch;">
+          <div class="download-widget-info">
+            <div class="download-icon" style="background: linear-gradient(135deg, #7c3aed, #4f46e5);">
+              <i class="lni lni-tshirt"></i>
+            </div>
+            <div>
+              <span class="badge-pill purple" style="font-size: 0.72rem; padding: 3px 8px;">Mode & Prêt-à-Porter</span>
+              <div class="download-title">SMART Gest Textile PC</div>
+              <div class="download-meta">
+                <span><i class="lni lni-windows"></i> Windows 11/10/8</span>
+                <span><i class="lni lni-save"></i> 10.4 Mo</span>
+                <span><i class="lni lni-whatsapp"></i> Module WhatsApp</span>
+              </div>
+            </div>
+          </div>
+          <p style="color: #64748b; font-size: 0.88rem; margin: 15px 0;">Version dédiée au textile avec gestion des variantes (tailles, couleurs), codes-barres et partage WhatsApp des remises et catalogues.</p>
+          <a href="downloads/SMART-GEST-CAISSE-TEXTILE.exe" download class="btn btn-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary)); border: none; text-align: center;">
+            <i class="lni lni-download"></i> Télécharger Pack Textile (.exe)
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Live Web Demo Launcher -->
+      <div class="banner-highlight reveal" style="margin-top: 35px; background: #ffffff;">
+        <div style="font-size: 3rem; color: var(--primary);"><i class="lni lni-play"></i></div>
+        <div style="flex: 1;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 4px;">Vous préférez tester en direct sans rien installer ?</h4>
+          <p style="color: #64748b; font-size: 0.95rem;">Lancez la démo web interactive complète directement dans votre navigateur et testez la prise de commande dès maintenant.</p>
+        </div>
+        <div>
+          <a href="apps/caisse-restaurant/index.html" target="_blank" class="btn btn-primary">
+            <i class="lni lni-enter"></i> Lancer la Démo Web
+          </a>
+        </div>
+      </div>
+
+  <!-- Complete Pricing & Reseller Section -->
+  <section class="section-padding" id="tarifs" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> <span data-i18n="sol1_badge">Caisse & WhatsApp</span></span>
+        <h2 data-i18n="caisse_pricing_title">Des Tarifs Clairs et Sans Surprise</h2>
+        <div class="underline"></div>
+        <p data-i18n="caisse_pricing_sub" style="margin-top: 15px; color: var(--gray); max-width: 750px; margin-left: auto; margin-right: auto;">
+          Licence définitive à vie, sans abonnement mensuel obligatoire. Matériel certifié et prix grossistes pour revendeurs.
+        </p>
+      </div>
+
+      <!-- Reseller IT Callout Banner -->
+      <div class="banner-highlight reveal" style="margin-bottom: 45px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(2, 132, 199, 0.08) 100%); border: 2px dashed rgba(124, 58, 237, 0.35); padding: 30px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; gap: 25px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="font-size: 3rem; color: var(--neon-purple);"><i class="lni lni-users"></i></div>
+          <div>
+            <span class="badge-pill purple" style="margin-bottom: 8px; display: inline-block;">Programme Partenaires & Revendeurs IT</span>
+            <h4 data-i18n="caisse_reseller_call" style="font-size: 1.25rem; margin-bottom: 6px; color: #0f172a;">
+              Revendeurs IT, Intégrateurs & Installateurs : Contactez-nous pour vos tarifs grossistes
+            </h4>
+            <p style="color: #64748b; font-size: 0.92rem; margin: 0; max-width: 750px;">
+              Tarifs dégressifs grossistes dès 3 licences, packs de démonstration offerts pour vos showrooms, formation de vos équipes techniques et support N2 direct sous 2h.
+            </p>
+          </div>
+        </div>
+        <div>
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20obtenir%20la%20grille%20tarifaire%20grossiste%20SMART%20GEST" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary)); border: none; white-space: nowrap;">
+            <i class="lni lni-whatsapp"></i> <span data-i18n="caisse_contact_reseller_btn">Contacter le Pôle Revendeurs</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px;">
+        
+        <!-- Card 1: Licence Seule -->
+        <div class="pricing-card-box reveal">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span class="badge-pill blue" data-i18n="caisse_plan1_title">Licence Seule</span>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 4px 10px; border-radius: 20px;">Paiement Unique</span>
+          </div>
+          <div class="pricing-price-val" style="margin-bottom: 6px;" data-i18n="caisse_plan1_price">1 200 DH</div>
+          <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">HT • Licence définitive à vie</div>
+          <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 25px;" data-i18n="caisse_plan1_desc">
+            Idéal si vous possédez déjà votre PC ou écran tactile Windows.
+          </p>
+          <div style="height: 1px; background: #e2e8f0; margin-bottom: 25px;"></div>
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle"></i> Licence définitive PC Windows (64-bit)</li>
+            <li><i class="lni lni-checkmark-circle"></i> 1 Poste de caisse + Connexions mobiles LAN</li>
+            <li><i class="lni lni-checkmark-circle"></i> Module WhatsApp (Tickets & Remises)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Gestion tables, stocks ingrédients & statistiques</li>
+            <li><i class="lni lni-checkmark-circle"></i> Zéro abonnement mensuel obligatoire</li>
+            <li><i class="lni lni-checkmark-circle"></i> Assistance à l'installation par AnyDesk</li>
+          </ul>
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20commander%20la%20Licence%20Seule%20SMART%20GEST%20(1200%20DH)" target="_blank" class="btn btn-primary" style="text-align: center;">
+            <i class="lni lni-cart"></i> Commander la Licence (1 200 DH)
+          </a>
+        </div>
+
+        <!-- Card 2: Pack Tout-en-Un (Featured) -->
+        <div class="pricing-card-box featured-glow reveal" style="border: 2px solid var(--primary); background: #ffffff;">
+          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 4px 18px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);">
+            Pack Recommandé Clé en Main
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 10px;">
+            <span class="badge-pill emerald" data-i18n="caisse_plan2_title">Pack Caisse Tout-en-Un</span>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #059669; background: #d1fae5; padding: 4px 10px; border-radius: 20px;">Matériel Inclus</span>
+          </div>
+          <div class="pricing-price-val" style="margin-bottom: 6px; color: var(--primary);" data-i18n="caisse_plan2_price">4 900 DH</div>
+          <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">HT • Matériel Pro + Logiciel à Vie</div>
+          <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 25px;" data-i18n="caisse_plan2_desc">
+            Poste tactile complet prêt à l'emploi : écran, tiroir-caisse, imprimante 80mm et logiciel installé.
+          </p>
+          <div style="height: 1px; background: #e2e8f0; margin-bottom: 25px;"></div>
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle"></i> <strong>Licence SMART GEST à vie incluse</strong></li>
+            <li><i class="lni lni-checkmark-circle"></i> Écran Tactile Résistif/Capacitif Haute Définition</li>
+            <li><i class="lni lni-checkmark-circle"></i> Imprimante thermique 80mm auto-cutter (USB/LAN)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Tiroir-caisse métallique robuste RJ11 automatique</li>
+            <li><i class="lni lni-checkmark-circle"></i> Saisie et paramétrage de votre menu offerts</li>
+            <li><i class="lni lni-checkmark-circle"></i> Formation sur place ou à distance de votre équipe</li>
+            <li><i class="lni lni-checkmark-circle"></i> Garantie matériel 1 an avec échange standard</li>
+          </ul>
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20commander%20le%20Pack%20Caisse%20Tout-en-Un%20(4900%20DH)" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #0284c7, #2563eb); text-align: center; box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);">
+            <i class="lni lni-rocket"></i> Commander le Pack Complet (4 900 DH)
+          </a>
+        </div>
+
+        <!-- Card 3: Espace Revendeurs IT -->
+        <div class="pricing-card-box reseller-glow reveal">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span class="badge-pill purple" data-i18n="caisse_plan3_title">Programme Revendeurs IT</span>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #7c3aed; background: #ede9fe; padding: 4px 10px; border-radius: 20px;">Partenariat B2B</span>
+          </div>
+          <div class="pricing-price-val" style="margin-bottom: 6px; font-size: 2.2rem; color: var(--neon-purple);" data-i18n="caisse_plan3_price">Tarifs Grossistes</div>
+          <div style="color: #64748b; font-size: 0.85rem; margin-bottom: 20px;">Dès 3 licences • Marge garantie</div>
+          <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 25px;" data-i18n="caisse_plan3_desc">
+            Tarifs exclusifs dès 3 licences pour revendeurs, intégrateurs et installateurs avec formation technique et support N2.
+          </p>
+          <div style="height: 1px; background: #e2e8f0; margin-bottom: 25px;"></div>
+          <ul class="flagship-features" style="flex: 1; margin-bottom: 30px;">
+            <li><i class="lni lni-checkmark-circle"></i> Grille tarifaire grossiste ultra-compétitive</li>
+            <li><i class="lni lni-checkmark-circle"></i> Pack licence démo complète offert pour vos démos</li>
+            <li><i class="lni lni-checkmark-circle"></i> Personnalisation marque blanche / vos coordonnées</li>
+            <li><i class="lni lni-checkmark-circle"></i> Support technique niveau 2 prioritaire 7j/7</li>
+            <li><i class="lni lni-checkmark-circle"></i> Générateur de licences instantané pour vos clients</li>
+            <li><i class="lni lni-checkmark-circle"></i> Fourniture de matériel POS certifié à prix grossiste</li>
+          </ul>
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20rejoindre%20le%20programme%20partenaires%20SMART%20GEST" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, var(--neon-purple), var(--secondary)); border: none; text-align: center;">
+            <i class="lni lni-users"></i> Rejoindre le Réseau Revendeurs
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Activation Section -->
+  <section class="section-padding" id="activation" style="background: #ffffff;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center;">
+        <div>
+          <span class="badge-pill amber" style="margin-bottom: 15px;"><i class="lni lni-key"></i> ACTIVATION DE LICENCE</span>
+          <h2 style="font-size: 2.3rem; margin-bottom: 16px;">Comment Activer votre Logiciel Définitivement ?</h2>
+          <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 30px;">
+            Votre version d'essai inclut 20 tickets complets pour tout tester. Pour activer votre licence à vie sans aucune limite, suivez ces 3 étapes simples :
+          </p>
+
+          <div class="steps-grid" style="grid-template-columns: 1fr; gap: 20px;">
+            <div class="step-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 22px;">
+              <div class="step-number" style="margin-bottom: 0; flex-shrink: 0;">1</div>
+              <div>
+                <h4 style="margin-bottom: 6px;">Installez et lancez l'application</h4>
+                <p style="margin-bottom: 0;">Téléchargez l'installateur PC ou l'APK Android ci-dessus et lancez SMART GEST sur votre terminal.</p>
+              </div>
+            </div>
+
+            <div class="step-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 22px;">
+              <div class="step-number" style="margin-bottom: 0; flex-shrink: 0; background: linear-gradient(135deg, #059669, #10b981);">2</div>
+              <div>
+                <h4 style="margin-bottom: 6px;">Relevez votre Identifiant Matériel (Hardware ID)</h4>
+                <p style="margin-bottom: 0;">Dans l'écran d'activation ou le menu Paramètres, copiez votre identifiant unique (ex: <code>SDBO-XXXX-XXXX</code>).</p>
+              </div>
+            </div>
+
+            <div class="step-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 22px;">
+              <div class="step-number" style="margin-bottom: 0; flex-shrink: 0; background: linear-gradient(135deg, #7c3aed, #4f46e5);">3</div>
+              <div>
+                <h4 style="margin-bottom: 6px;">Contactez-nous sur WhatsApp pour votre clé</h4>
+                <p style="margin-bottom: 0;">Transmettez votre code au <strong>+212 6 61 60 53 69</strong>. Votre clé définitive à vie vous est transmise instantanément par nos conseillers !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Box Direct Activation -->
+        <div class="visual-card" style="border: 2px solid rgba(2, 132, 199, 0.3); text-align: center;">
+          <div style="font-size: 3.5rem; color: var(--primary); margin-bottom: 12px;"><i class="lni lni-headphone-alt"></i></div>
+          <h3 style="font-size: 1.4rem; margin-bottom: 8px;">Activation & Support 7j/7</h3>
+          <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 24px;">Assistance technique, activation de licence et conseils revendeurs par nos spécialistes SDBO.</p>
+
+          <div style="background: #f8fafc; border-radius: 14px; padding: 20px; text-align: left; margin-bottom: 24px;">
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 14px;">
+              <i class="lni lni-phone" style="font-size: 1.3rem; color: var(--primary);"></i>
+              <div>
+                <div style="font-size: 0.78rem; color: #64748b; text-transform: uppercase;">Téléphone / WhatsApp Direct</div>
+                <strong>+212 6 61 60 53 69</strong>
+              </div>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 14px;">
+              <i class="lni lni-envelope" style="font-size: 1.3rem; color: var(--primary);"></i>
+              <div>
+                <div style="font-size: 0.78rem; color: #64748b; text-transform: uppercase;">Email Professionnel</div>
+                <strong>sdbocontact@gmail.com</strong>
+              </div>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <i class="lni lni-map-marker" style="font-size: 1.3rem; color: var(--primary);"></i>
+              <div>
+                <div style="font-size: 0.78rem; color: #64748b; text-transform: uppercase;">Localisation Showroom</div>
+                <strong>Tanger, Maroc</strong>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20activer%20ma%20licence%20SMART%20GEST" target="_blank" class="btn btn-primary" style="background: #25d366; border: none; width: 100%; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">
+            <i class="lni lni-whatsapp"></i> Activer sur WhatsApp (0661605369)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete FAQ Accordion Section -->
+  <section class="section-padding" id="faq" style="background: var(--darker);">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Questions Fréquentes</span>
+        <h2>Tout Savoir sur l'Utilisation de SMART GEST</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Retrouvez les réponses aux questions techniques, pratiques et commerciales les plus courantes.</p>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item-box active">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>1. Comment installer l'application sur mon PC Windows ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            Téléchargez simplement le fichier <strong>INSTALLATEUR_SMART_CAISSE.exe</strong> depuis notre centre de téléchargement. Double-cliquez sur l'exécutable : l'assistant installe automatiquement l'application dans <code>C:\SMART_Caisse</code>, configure les autorisations de pare-feu pour le serveur mobile et dépose des raccourcis prêts à l'emploi sur votre Bureau et dans le menu Démarrer.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item-box">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>2. Quel est le prix de la licence et proposez-vous des tarifs revendeurs ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            La licence logicielle définitive démarre à <strong>1 200 DH</strong> en paiement unique, à vie, sans aucun abonnement mensuel. Pour les <strong>revendeurs, prestataires et intégrateurs informatiques</strong>, nous proposons un programme revendeur avec des remises grossistes très avantageuses, des packs démo offerts et un support technique dédié 7j/7. Contactez-nous directement sur WhatsApp au <strong>+212 6 61 60 53 69</strong> pour obtenir la grille tarifaire revendeur.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item-box">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>3. Comment ouvrir une session de caisse et démarrer la journée ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            Au premier lancement, connectez-vous avec le code PIN par défaut (<strong>0000</strong> pour l'administrateur ou <strong>1234</strong> pour le caissier). Cliquez sur le bouton vert <em>« Ouvrir la journée »</em>, saisissez le montant de votre fond de caisse initial (ex: 200 DH), puis validez. L'interface de vente devient immédiatement active et prête à enregistrer les commandes.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item-box">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>4. Comment gérer les tables (Sur place, Emporter, Livraison) ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            Sélectionnez la catégorie en haut de l'écran, puis touchez les articles pour les ajouter au panier. Cliquez sur le bouton <em>« Table »</em> pour choisir le numéro de table (Table 1 à 16 ou Terrasses). Vous pouvez basculer d'un clic entre <strong>Sur place</strong>, <strong>À emporter</strong> et <strong>Livraison</strong>. Les tables occupées apparaissent avec leur montant en cours et peuvent être reprises à tout instant pour encaissement ou ajout de consommations.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item-box">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>5. Comment fonctionne le module d'envoi WhatsApp ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            Lors de l'encaissement ou depuis la fiche client, vous pouvez saisir le numéro WhatsApp du client (ou sélectionner un client régulier enregistré). Un message pré-formaté avec le logo de votre enseigne, le détail complet du ticket de caisse, le récapitulatif des remises et un bon promotionnel est généré et transmis en 1 clic sans surcoût.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item-box">
+          <button class="faq-question-btn" type="button" onclick="toggleFaq(this)">
+            <span>6. Comment connecter les smartphones des serveurs en salle ?</span>
+            <i class="lni lni-chevron-down"></i>
+          </button>
+          <div class="faq-answer-content">
+            Assurez-vous que le PC de caisse et les smartphones des serveurs sont connectés au même réseau Wi-Fi local. Installez l'APK <strong>SMART_Caisse.apk</strong> sur les téléphones Android (ou scannez le QR code affiché dans le logiciel). Les serveurs accèdent directement à l'interface mobile de prise de commande, et chaque commande envoyée s'affiche en temps réel sur la caisse centrale et s'imprime en cuisine.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Form -->
+  <section class="section-padding" id="contact-solution" style="background: #ffffff;">
+    <div class="container">
+      <div class="contact-container reveal glass" style="padding: 50px;">
+        <div class="contact-info">
+          <span class="badge-pill blue" style="margin-bottom: 15px;">Équipe Commerciale SDBO</span>
+          <h3>Équipez votre Établissement ou Devenez Revendeur</h3>
+          <p style="margin-bottom: 25px; color: var(--gray);">
+            Que vous soyez propriétaire d'un restaurant, d'un café, d'une boutique ou un prestataire informatique souhaitant revendre nos solutions, nos conseillers à Tanger sont à votre disposition.
+          </p>
+          
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-phone"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Ligne Directe / WhatsApp</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="tel:+212661605369">+212 6 61 60 53 69</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-envelope"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Email</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-map-marker"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Adresse Showroom</div>
+              <span style="font-weight: 700;">Tanger, Maroc</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" method="post" data-web3forms-access-key="">
+          <div class="contact-form__hp" aria-hidden="true">
+            <input type="text" id="contactWebsite" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
+          <label class="visually-hidden" for="name-caisse">Nom complet</label>
+          <input id="name-caisse" name="name" type="text" placeholder="Votre Nom & Prénom" required>
+          
+          <label class="visually-hidden" for="tel-caisse">Téléphone</label>
+          <input id="tel-caisse" name="phone" type="tel" placeholder="Numéro de Téléphone / WhatsApp" required>
+          
+          <label class="visually-hidden" for="profil-caisse">Vous êtes</label>
+          <select id="profil-caisse" name="user_profile" required>
+            <option value="Revendeur / Partenaire Informatique">Revendeur / Prestataire Informatique (Tarifs spéciaux)</option>
+            <option value="Restaurant / Snack / Fast-food">Restaurant / Snack / Fast-Food</option>
+            <option value="Café / Salon de thé">Café / Salon de thé</option>
+            <option value="Pizzeria / Pâtisserie">Pizzeria / Boulangerie</option>
+            <option value="Boutique Textile / Mode">Boutique Textile / Prêt-à-Porter</option>
+            <option value="Autre commerce">Autre type de commerce</option>
+          </select>
+          
+          <label class="visually-hidden" for="type-offre">Offre souhaitée</label>
+          <select id="type-offre" name="offer_type">
+            <option value="Licence seule à 1 200 DH">Licence logicielle seule (1 200 DH)</option>
+            <option value="Devenir Revendeur Agréé">Partenariat Revendeur (Tarifs grossiste)</option>
+            <option value="Pack Matériel Clé en Main">Pack Matériel Complet + Logiciel</option>
+          </select>
+          
+          <label class="visually-hidden" for="msg-caisse">Message</label>
+          <textarea id="msg-caisse" name="message" placeholder="Détaillez votre demande (nombre de postes, ville, besoins spécifiques...)" rows="3"></textarea>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="lni lni-envelope"></i> Envoyer ma Demande
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20des%20informations%20sur%20SMART%20GEST%20Caisse%20(Tarif%201200%20DH%20/%20Revendeurs)" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- Footer -->
+    <!-- ==========================================
+       Espace Revendeurs IT & Partenaires
+       ========================================== -->
+  <section class="reseller-section" id="espace-revendeurs">
+    <div class="container">
+      <div class="reseller-card-wrapper reveal">
+        
+        <!-- Header -->
+        <div class="reseller-header">
+          <div class="badge-container">
+            <span class="badge-pill blue" data-i18n="reseller_badge">Programme Revendeurs IT & Installateurs</span>
+            <span class="badge-pill purple" data-i18n="reseller_wholesale_badge">Tarifs Grossistes dès 1 200 DH</span>
+          </div>
+          <h2 data-i18n="reseller_title">Devenez Revendeur Partenaire SDBO au Maroc</h2>
+          <p data-i18n="reseller_desc">
+            Vous êtes revendeur informatique, installateur réseau, intégrateur de systèmes ou agence digitale ? Développez votre chiffre d'affaires en distribuant nos logiciels phares (Caisse SMART GEST, WebSchool AIQRAE, POS Mobile, E-Commerce, Odoo ERP) avec des marges grossistes attractives, des versions démo offertes et un support technique N2 dédié.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="reseller-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-tag"></i>
+            </div>
+            <h3 data-i18n="reseller_p1_title">Prix Grossistes dès 1 200 DH</h3>
+            <p data-i18n="reseller_p1_desc">
+              Tarifs dégressifs exceptionnels dès 3 licences commandées. Maximisez votre rentabilité sur chaque installation client.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-laptop-phone"></i>
+            </div>
+            <h3 data-i18n="reseller_p2_title">Licences Démo & PLV Offertes</h3>
+            <p data-i18n="reseller_p2_desc">
+              Accès illimité aux versions de démonstration pour vos showrooms, catalogues PDF et vidéos de démonstration prêtes pour vos clients.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-headphone-alt"></i>
+            </div>
+            <h3 data-i18n="reseller_p3_title">Support Technique Prioritaire N2</h3>
+            <p data-i18n="reseller_p3_desc">
+              Assistance directe par WhatsApp et AnyDesk sous 2h, formation certifiée pour la montée en compétence de vos équipes techniques.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-shield"></i>
+            </div>
+            <h3 data-i18n="reseller_p4_title">Facturation & Mises à Jour à Vie</h3>
+            <p data-i18n="reseller_p4_desc">
+              Factures marocaines conformes (TVA), licences pérennes sans redevances cachées et mises à jour logicielles régulières.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Action Bar -->
+        <div class="reseller-action-bar">
+          <div class="reseller-action-info">
+            <h4 data-i18n="reseller_bar_title">Prêt à distribuer les solutions logicielles SDBO ?</h4>
+            <p data-i18n="reseller_bar_desc">Rejoignez notre réseau de partenaires certifiés à Tanger, Casablanca, Rabat, Fès, Marrakech et dans tout le Maroc.</p>
+          </div>
+          <div class="reseller-buttons">
+            <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20rejoindre%20le%20programme%20revendeurs%20dès%201200%20DH" target="_blank" class="btn reseller-btn-wa">
+              <i class="lni lni-whatsapp"></i> <span data-i18n="reseller_btn_wa">Contacter le Pôle Revendeurs (WhatsApp)</span>
+            </a>
+            <a href="index.html#contact" class="btn btn-outline" style="border-color: rgba(2, 132, 199, 0.4); color: var(--primary); font-weight: 700;">
+              <i class="lni lni-envelope"></i> <span data-i18n="reseller_btn_contact">Demander la Grille Tarifaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="pro-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
+          <p data-i18n="footer_desc">Smart Digital Business Office — Éditeur de solutions logicielles métiers innovantes et intégrateur IT de référence à Tanger, Maroc.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_sol">Nos Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="solution-caisse-restaurant.html" data-i18n="sol_caisse">SDBO SMART GEST (Caisse)</a></li>
+            <li><a href="solution-school-aiqrae.html" data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</a></li>
+            <li><a href="solution-pos-vendeur.html" data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</a></li>
+            <li><a href="offre-ecommerce.html" data-i18n="sol_ecom">Solution E-Commerce</a></li>
+            <li><a href="solution-odoo-erp.html" data-i18n="sol_odoo">Intégrateur Odoo ERP</a></li>
+            <li><a href="service-solutions.html" data-i18n="sol_custom">Développement Sur Mesure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_srv">Services IT</h4>
+          <ul class="footer-links">
+            <li><a href="service-ia.html" data-i18n="srv_ai">Intelligence Artificielle</a></li>
+            <li><a href="service-hardware.html" data-i18n="srv_hardware">Matériel Informatique</a></li>
+            <li><a href="service-integration.html" data-i18n="srv_integration">Intégration de SI</a></li>
+            <li><a href="service-consulting.html" data-i18n="srv_consulting">Consulting & Audit</a></li>
+            <li><a href="service-formation.html" data-i18n="srv_formation">Formation IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_contact">Contact Tanger</h4>
+          <p style="margin-bottom: 10px;"><strong>Téléphone :</strong> +212 6 61 60 53 69</p>
+          <p style="margin-bottom: 10px;"><strong>Email :</strong> sdbocontact@gmail.com</p>
+          <p style="margin-bottom: 15px;"><strong>Adresse :</strong> <span data-i18n="contact_loc_val">Tanger, Maroc</span></p>
+          <a href="https://wa.me/212661605369" target="_blank" class="btn-sm-action btn-sm-primary" style="background: #25d366;">
+            <i class="lni lni-whatsapp"></i> WhatsApp Direct
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2026 SDBO - Smart Digital Business Office. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    // FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item-box');
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item-box').forEach(el => el.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // Hero Mode Switcher
+    function switchHeroMode(mode) {
+      const btnResto = document.getElementById('btnModeResto');
+      const btnTextile = document.getElementById('btnModeTextile');
+      const title = document.getElementById('heroMainTitle');
+      const desc = document.getElementById('heroMainDesc');
+      const mockupTitle = document.getElementById('mockupHeaderTitle');
+      const mockupPills = document.getElementById('mockupCatPills');
+      const mockupGrid = document.getElementById('mockupGridItems');
+
+      if (mode === 'textile') {
+        btnTextile.classList.add('active');
+        btnResto.classList.remove('active');
+        title.innerHTML = `SDBO SMART GEST<br><span class="highlight">Caisse Tactile Prêt-à-Porter & Textile</span>`;
+        desc.textContent = `La solution de caisse conçue pour les boutiques de mode, vêtements, chaussures et accessoires. Gestion des tailles (S, M, L, XL), coloris, lecture code-barres et partage WhatsApp des remises.`;
+        mockupTitle.textContent = `SDBO_SMART_GEST_TEXTILE v2026 — Mode Vente Boutique & Prêt-à-Porter`;
+        
+        mockupPills.innerHTML = `
+          <span class="pos-cat-pill active">Tous</span>
+          <span class="pos-cat-pill">Femmes</span>
+          <span class="pos-cat-pill">Hommes</span>
+          <span class="pos-cat-pill">Chaussures</span>
+          <span class="pos-cat-pill">Accessoires</span>
+        `;
+
+        mockupGrid.innerHTML = `
+          <div class="pos-item-card" onclick="addMockupItem('Robe Soirée Satin (M)', 450)">
+            <div class="pos-item-icon">👗</div>
+            <div class="pos-item-name">Robe Satin</div>
+            <div class="pos-item-price">450.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Costume Homme Slim', 850)">
+            <div class="pos-item-icon">👔</div>
+            <div class="pos-item-name">Costume Slim</div>
+            <div class="pos-item-price">850.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Sac à Main Cuir', 250)">
+            <div class="pos-item-icon">👜</div>
+            <div class="pos-item-name">Sac Cuir</div>
+            <div class="pos-item-price">250.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Sneakers Sport White (42)', 320)">
+            <div class="pos-item-icon">👟</div>
+            <div class="pos-item-name">Sneakers White</div>
+            <div class="pos-item-price">320.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Chemise Lin Blanc (L)', 180)">
+            <div class="pos-item-icon">👕</div>
+            <div class="pos-item-name">Chemise Lin</div>
+            <div class="pos-item-price">180.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Ceinture Cuir Véritable', 95)">
+            <div class="pos-item-icon">🪢</div>
+            <div class="pos-item-name">Ceinture Cuir</div>
+            <div class="pos-item-price">95.00 DH</div>
+          </div>
+        `;
+      } else {
+        btnResto.classList.add('active');
+        btnTextile.classList.remove('active');
+        title.innerHTML = `SDBO SMART GEST<br><span class="highlight">Logiciel Caisse Restauration & Textile</span>`;
+        desc.textContent = `Solution tout-en-un certifiée pour Restaurants, Pizzerias, Snacks, Cafés et Boutiques. Encaissement tactile rapide, gestion dynamique des tables, suivi des recettes au gramme près, et envoi instantané des tickets de caisse et remises sur WhatsApp.`;
+        mockupTitle.textContent = `SDBO_SMART_GEST_CAISSE v2026 — Mode Vente Restauration Tactile`;
+        
+        mockupPills.innerHTML = `
+          <span class="pos-cat-pill active">Tous</span>
+          <span class="pos-cat-pill">Pizzas</span>
+          <span class="pos-cat-pill">Burgers & Tacos</span>
+          <span class="pos-cat-pill">Boissons</span>
+          <span class="pos-cat-pill">Desserts</span>
+        `;
+
+        mockupGrid.innerHTML = `
+          <div class="pos-item-card" onclick="addMockupItem('Pizza 4 Fromages', 55)">
+            <div class="pos-item-icon">🍕</div>
+            <div class="pos-item-name">4 Fromages</div>
+            <div class="pos-item-price">55.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Pizza Fruits de Mer', 75)">
+            <div class="pos-item-icon">🍤</div>
+            <div class="pos-item-name">Fruits de Mer</div>
+            <div class="pos-item-price">75.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Burger Gourmet Beef', 48)">
+            <div class="pos-item-icon">🍔</div>
+            <div class="pos-item-name">Burger Beef</div>
+            <div class="pos-item-price">48.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Tacos Mixte XL', 42)">
+            <div class="pos-item-icon">🌮</div>
+            <div class="pos-item-name">Tacos XL</div>
+            <div class="pos-item-price">42.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Salade César Poulet', 38)">
+            <div class="pos-item-icon">🥗</div>
+            <div class="pos-item-name">Salade César</div>
+            <div class="pos-item-price">38.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Jus d\'Orange Frais', 18)">
+            <div class="pos-item-icon">🍹</div>
+            <div class="pos-item-name">Jus d'Orange</div>
+            <div class="pos-item-price">18.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Café Expresso Lavazza', 12)">
+            <div class="pos-item-icon">☕</div>
+            <div class="pos-item-name">Café Expresso</div>
+            <div class="pos-item-price">12.00 DH</div>
+          </div>
+          <div class="pos-item-card" onclick="addMockupItem('Tiramisu Artisanal', 25)">
+            <div class="pos-item-icon">🍰</div>
+            <div class="pos-item-name">Tiramisu</div>
+            <div class="pos-item-price">25.00 DH</div>
+          </div>
+        `;
+      }
+    }
+
+    // Interactive item addition in mockup cart
+    let currentTotal = 139.0;
+    function addMockupItem(name, price) {
+      const list = document.getElementById('mockupCartList');
+      const li = document.createElement('li');
+      li.className = 'pos-cart-item';
+      li.innerHTML = `<span>1x ${name}</span><strong>${price.toFixed(2)} DH</strong>`;
+      list.appendChild(li);
+
+      currentTotal += price;
+      const discount = currentTotal * 0.10;
+      const net = currentTotal - discount;
+
+      document.getElementById('mockupSubtotal').textContent = `${currentTotal.toFixed(2)} DH`;
+      document.getElementById('mockupTotal').textContent = `${net.toFixed(2)} DH`;
+    }
+
+    function filterMockup(cat) {
+      document.querySelectorAll('.pos-cat-pill').forEach(p => p.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+@echo off\r\ntitle SDBO SMART GEST - Site Web\r\nstart "" "%~dp0index.html"\r\n

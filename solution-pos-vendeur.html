@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDBO POS Mobile | Application Caisse & Vente pour Vendeurs Modernes</title>
+  <meta name="description"
+    content="Découvrez SDBO POS Mobile, l'application tout-en-un pour gérer votre commerce sur smartphone et tablette Android : caisse rapide, stock, clients, tickets Bluetooth et WhatsApp. Téléchargez l'APK.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Multilingual Engine -->
+  <script src="assets/js/i18n.js"></script>
+</head>
+
+<body>
+  <div class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header id="header" class="sticky">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo"><a href="index.html"><img src="assets/images/logo.svg" alt="SDBO Logo"></a></div>
+        <nav>
+          <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="mainNav">
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="a-propos.html" data-i18n="nav_about">À propos</a></li>
+            <li class="dropdown">
+              <a href="#" style="color: var(--primary); font-weight: 700;"><span data-i18n="nav_solutions">Nos Solutions</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="solution-caisse-restaurant.html"><i class="lni lni-restaurant"></i> <span data-i18n="sol_caisse">Caisse Restauration & Textile</span></a>
+                <a href="solution-school-aiqrae.html"><i class="lni lni-graduation"></i> <span data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</span></a>
+                <a href="solution-pos-vendeur.html" style="font-weight: 700; color: var(--primary);"><i class="lni lni-mobile"></i> <span data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</span></a>
+                <a href="offre-ecommerce.html"><i class="lni lni-cart"></i> <span data-i18n="sol_ecom">Solution E-Commerce</span></a>
+                <a href="solution-odoo-erp.html"><i class="lni lni-cog"></i> <span data-i18n="sol_odoo">Intégrateur Odoo ERP</span></a>
+                <a href="service-solutions.html"><i class="lni lni-dev"></i> <span data-i18n="sol_custom">Solutions Sur Mesure</span></a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="index.html#services"><span data-i18n="nav_services">Services IT</span> <i class="lni lni-chevron-down" style="font-size: 0.75rem;"></i></a>
+              <div class="dropdown-menu">
+                <a href="service-ia.html"><span data-i18n="srv_ai">Intelligence Artificielle</span></a>
+                <a href="service-hardware.html"><span data-i18n="srv_hardware">Matériel Informatique</span></a>
+                <a href="service-integration.html"><span data-i18n="srv_integration">Intégration de SI</span></a>
+                <a href="service-consulting.html"><span data-i18n="srv_consulting">Consulting & Audit</span></a>
+                <a href="service-formation.html"><span data-i18n="srv_formation">Formation IT</span></a>
+              </div>
+            </li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-action" style="display: flex; align-items: center; gap: 12px;">
+          <!-- 3-Language Selector FR / AR / EN -->
+          <div class="lang-selector" id="langSelector" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <a href="#telecharger-apk" class="btn btn-primary"><i class="lni lni-download"></i> <span data-i18n="sol3_apk">Télécharger APK</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub Hero -->
+  <section class="sub-hero">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <span class="badge-pill emerald"><i class="lni lni-android"></i> <span data-i18n="sol3_badge">Application Android APK</span></span>
+        <span class="badge-pill blue"><i class="lni lni-cart"></i> Vendeurs Nomades & Boutiques</span>
+        <span class="badge-pill amber"><i class="lni lni-cloud-sync"></i> Mode Hors-Ligne</span>
+      </div>
+      <h1 data-i18n="pos_hero_title">SDBO POS Mobile<br><span class="highlight">La Caisse Intelligente dans votre Poche</span></h1>
+      <p data-i18n="pos_hero_desc">Transformez n'importe quel smartphone ou tablette Android en terminal point de vente professionnel. Scannez vos articles, gérez votre stock en temps réel et imprimez vos tickets où que vous soyez.</p>
+      
+      <div style="display: flex; gap: 15px; justify-content: center; margin-top: 35px; flex-wrap: wrap;">
+        <a href="#telecharger-apk" class="btn btn-primary"><i class="lni lni-download"></i> <span data-i18n="pos_btn_apk">Télécharger l'APK Android (71 Mo)</span></a>
+        <a href="apps/pos-vendeur/index.html" target="_blank" class="btn glass hero-secondary-btn"><i class="lni lni-play"></i> <span data-i18n="pos_btn_demo">Tester la Démo Interactive</span></a>
+        <a href="#installation" class="btn btn-sm-outline"><i class="lni lni-help"></i> Guide d'Installation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section class="section-padding" style="background: #ffffff;">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Vente Rapide & Sans Matériel Lourd</span>
+        <h2>Tout votre commerce piloté depuis votre smartphone</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Parfait pour magasins, supérettes, vendeurs ambulants, stands d'exposition et livreurs.</p>
+      </div>
+
+      <div class="solutions-showcase-grid">
+        <!-- Feature 1: Mobile POS -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box emerald">
+              <i class="lni lni-mobile"></i>
+            </div>
+            <span class="badge-pill emerald">0 DH Matériel Requis</span>
+          </div>
+          <h3 class="flagship-title">Caisse Rapide sur Téléphone</h3>
+          <p class="flagship-desc">Pas besoin d'investir dans une caisse enregistreuse encombrante à plusieurs milliers de dirhams. Votre smartphone personnel devient votre terminal de vente complet.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Interface épurée et ultra-rapide</li>
+            <li><i class="lni lni-checkmark-circle"></i> Panier d'achat en quelques clics</li>
+            <li><i class="lni lni-checkmark-circle"></i> Calcul automatique de la monnaie à rendre</li>
+            <li><i class="lni lni-checkmark-circle"></i> Multi-utilisateurs avec code PIN sécurisé</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2: Barcode Scanner -->
+        <div class="flagship-card featured-glow reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box">
+              <i class="lni lni-line-double"></i>
+            </div>
+            <span class="badge-pill blue">Scan Instantané</span>
+          </div>
+          <h3 class="flagship-title">Lecture Code-Barres Intégrée</h3>
+          <p class="flagship-desc">Scannez directement les codes-barres et QR codes de vos produits grâce à l'appareil photo de votre smartphone ou en connectant une douchette laser Bluetooth ultra-rapide.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Reconnaissance EAN-13, EAN-8, UPC, Code 128</li>
+            <li><i class="lni lni-checkmark-circle"></i> Détection automatique en faible luminosité</li>
+            <li><i class="lni lni-checkmark-circle"></i> Ajout direct au panier sans intervention manuelle</li>
+            <li><i class="lni lni-checkmark-circle"></i> Création et impression d'étiquettes personnalisées</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3: Real-Time Stock -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box amber">
+              <i class="lni lni-package"></i>
+            </div>
+            <span class="badge-pill amber">Stock en Direct</span>
+          </div>
+          <h3 class="flagship-title">Gestion de Stock & Inventaires</h3>
+          <p class="flagship-desc">Suivez précisément vos quantités disponibles. Recevez des notifications immédiates lorsque le stock d'un produit passe sous le seuil critique pour commander à temps.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Entrées et sorties de marchandises faciles</li>
+            <li><i class="lni lni-checkmark-circle"></i> Inventaire tournant directement depuis les rayons</li>
+            <li><i class="lni lni-checkmark-circle"></i> Alertes stock critique et rupture</li>
+            <li><i class="lni lni-checkmark-circle"></i> Historique de valorisation du stock</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4: Bluetooth Printing & WhatsApp -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box emerald">
+              <i class="lni lni-printer"></i>
+            </div>
+            <span class="badge-pill emerald">Impression & WhatsApp</span>
+          </div>
+          <h3 class="flagship-title">Tickets Thermiques & Reçus Digitaux</h3>
+          <p class="flagship-desc">Imprimez instantanément vos tickets sur n'importe quelle mini-imprimante thermique Bluetooth (58mm / 80mm) ou envoyez le reçu au client directement par WhatsApp.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Connexion Bluetooth sans fil instantanée</li>
+            <li><i class="lni lni-checkmark-circle"></i> Reçu personnalisé avec logo et coordonnées</li>
+            <li><i class="lni lni-checkmark-circle"></i> Partage WhatsApp en 1 clic sans imprimer</li>
+            <li><i class="lni lni-checkmark-circle"></i> Archivage numérique de tous les reçus émis</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5: Sales Reports & Profits -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box indigo">
+              <i class="lni lni-bar-chart"></i>
+            </div>
+            <span class="badge-pill blue">Statistiques</span>
+          </div>
+          <h3 class="flagship-title">Statistiques & Bénéfices en Direct</h3>
+          <p class="flagship-desc">Gardez les yeux rivés sur votre rentabilité. Consultez en un coup d'œil le chiffre d'affaires du jour, la marge réalisée, les produits les plus rentables et vos meilleurs clients.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Chiffre d'affaires journalier, hebdomadaire, mensuel</li>
+            <li><i class="lni lni-checkmark-circle"></i> Calcul automatique de la marge brute par article</li>
+            <li><i class="lni lni-checkmark-circle"></i> Classement des meilleures ventes (Top Produits)</li>
+            <li><i class="lni lni-checkmark-circle"></i> Export des rapports sous format Excel et PDF</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6: Offline-First -->
+        <div class="flagship-card reveal">
+          <div class="flagship-card-header">
+            <div class="flagship-icon-box purple">
+              <i class="lni lni-signal"></i>
+            </div>
+            <span class="badge-pill purple">100% Fonctionnel</span>
+          </div>
+          <h3 class="flagship-title">Fonctionnement 100% Hors-Ligne</h3>
+          <p class="flagship-desc">Une coupure d'électricité ou pas de réseau 4G ? Aucun problème. L'application continue d'enregistrer vos ventes localement et se synchronise automatiquement dès le retour du réseau.</p>
+          <ul class="flagship-features">
+            <li><i class="lni lni-checkmark-circle"></i> Zéro dépendance à une connexion permanente</li>
+            <li><i class="lni lni-checkmark-circle"></i> Base de données locale sécurisée sur le mobile</li>
+            <li><i class="lni lni-checkmark-circle"></i> Synchronisation cloud automatique en arrière-plan</li>
+            <li><i class="lni lni-checkmark-circle"></i> Sauvegarde automatique prévenant toute perte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download APK Widget Section -->
+  <section class="section-padding" id="telecharger-apk" style="background: var(--darker);">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="badge"><span class="badge-dot"></span> Version Officielle</span>
+        <h2>Téléchargez l'Application SDBO POS</h2>
+        <div class="underline"></div>
+        <p style="margin-top: 15px; color: var(--gray);">Téléchargez directement le fichier APK Android officiel et commencez à vendre immédiatement.</p>
+      </div>
+
+      <div class="download-widget reveal" style="max-width: 800px; margin: 0 auto; background: #ffffff;">
+        <div class="download-widget-info">
+          <div class="download-icon" style="background: linear-gradient(135deg, #10b981, #059669); width: 70px; height: 70px;">
+            <i class="lni lni-android"></i>
+          </div>
+          <div>
+            <div class="download-title" style="font-size: 1.4rem;">SDBO POS Mobile — Release APK</div>
+            <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 8px;">Application officielle de caisse et gestion pour vendeurs sur Android.</p>
+            <div class="download-meta">
+              <span><i class="lni lni-mobile"></i> Android 8.0 et supérieur</span>
+              <span><i class="lni lni-save"></i> 71.3 Mo</span>
+              <span><i class="lni lni-shield"></i> Vérifié & Signé</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="downloads/SDBO_POS_Mobile.apk" download class="btn btn-primary" style="background: #059669; border: none; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);">
+            <i class="lni lni-download"></i> Télécharger le fichier APK
+          </a>
+          <a href="apps/pos-vendeur/index.html" target="_blank" class="btn btn-sm-outline" style="text-align: center;">
+            <i class="lni lni-play"></i> Tester la Démo Web
+          </a>
+        </div>
+      </div>
+
+      <!-- Installation Guide Steps -->
+      <div id="installation" style="margin-top: 70px;">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 10px;">Installation rapide en 3 étapes</h3>
+        <p style="text-align: center; color: var(--gray); font-size: 0.95rem;">Suivez ces étapes simples pour installer l'application sur votre smartphone ou tablette Android.</p>
+        
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number" style="background: linear-gradient(135deg, #10b981, #059669);">1</div>
+            <h4>Téléchargez le fichier APK</h4>
+            <p>Cliquez sur le bouton « Télécharger le fichier APK » ci-dessus depuis votre téléphone Android pour obtenir le fichier d'installation officiel.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number" style="background: linear-gradient(135deg, #0284c7, #2563eb);">2</div>
+            <h4>Autorisez l'installation</h4>
+            <p>Ouvrez le fichier téléchargé. Si Android vous le demande, autorisez l'installation depuis cette source dans les paramètres de sécurité de votre smartphone.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number" style="background: linear-gradient(135deg, #7c3aed, #4f46e5);">3</div>
+            <h4>Configurez & Encaissez !</h4>
+            <p>Lancez l'application SDBO POS. Ajoutez vos premiers articles et commencez à encaisser vos clients dès la première minute !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section-padding" id="contact-pos" style="background: #ffffff;">
+    <div class="container">
+      <div class="contact-container reveal glass" style="padding: 50px;">
+        <div class="contact-info">
+          <span class="badge-pill emerald" style="margin-bottom: 15px;">Support & Matériel POS</span>
+          <h3>Besoin d'une Imprimante ou d'un Pack Complet ?</h3>
+          <p style="margin-bottom: 25px; color: var(--gray);">SDBO vous propose également des imprimantes thermiques Bluetooth, douchettes code-barres et supports de tablettes pour un point de vente clé en main.</p>
+          
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-phone"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Téléphone / WhatsApp</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="tel:+212661605369">+212 6 61 60 53 69</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-envelope"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Email</div>
+              <a style="color: var(--light); text-decoration: none; font-weight: 700;" href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon-box"><i class="lni lni-map-marker"></i></div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--gray); text-transform: uppercase;">Showroom</div>
+              <span style="font-weight: 700;">Tanger, Maroc</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" method="post" data-web3forms-access-key="">
+          <div class="contact-form__hp" aria-hidden="true">
+            <input type="text" id="contactWebsite" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
+          <label class="visually-hidden" for="name-pos">Nom complet</label>
+          <input id="name-pos" name="name" type="text" placeholder="Votre Nom & Prénom" required>
+          
+          <label class="visually-hidden" for="tel-pos">Téléphone / WhatsApp</label>
+          <input id="tel-pos" name="phone" type="tel" placeholder="Téléphone / WhatsApp" required>
+          
+          <label class="visually-hidden" for="commerce-pos">Type de commerce</label>
+          <select id="commerce-pos" name="commerce_type" required>
+            <option value="Boutique / Magasin">Boutique / Magasin de détail</option>
+            <option value="Supérette / Épicerie">Supérette / Épicerie</option>
+            <option value="Vendeur nomade / Ambulant">Vendeur nomade / Distribution ambulante</option>
+            <option value="Grossiste / Dépôt">Grossiste / Dépôt de stock</option>
+            <option value="Autre commerce">Autre activité commerciale</option>
+          </select>
+          
+          <label class="visually-hidden" for="besoin-pos">Équipements souhaités</label>
+          <select id="besoin-pos" name="equipment_needed">
+            <option value="App seule (sur mes smartphones)">Application seule (sur mes téléphones)</option>
+            <option value="Pack App + Imprimante Bluetooth">Pack Application + Imprimante Bluetooth</option>
+            <option value="Pack Complet (App + Imprimante + Douchette)">Pack Complet (App + Imprimante + Douchette laser)</option>
+          </select>
+          
+          <label class="visually-hidden" for="msg-pos">Message</label>
+          <textarea id="msg-pos" name="message" placeholder="Votre message ou questions particulières..." rows="3"></textarea>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; background: #059669;">
+            <i class="lni lni-whatsapp"></i> Contacter un Conseiller Commercial
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20des%20informations%20sur%20SDBO%20POS%20Mobile" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- Footer -->
+    <!-- ==========================================
+       Espace Revendeurs IT & Partenaires
+       ========================================== -->
+  <section class="reseller-section" id="espace-revendeurs">
+    <div class="container">
+      <div class="reseller-card-wrapper reveal">
+        
+        <!-- Header -->
+        <div class="reseller-header">
+          <div class="badge-container">
+            <span class="badge-pill blue" data-i18n="reseller_badge">Programme Revendeurs IT & Installateurs</span>
+            <span class="badge-pill purple" data-i18n="reseller_wholesale_badge">Tarifs Grossistes dès 1 200 DH</span>
+          </div>
+          <h2 data-i18n="reseller_title">Devenez Revendeur Partenaire SDBO au Maroc</h2>
+          <p data-i18n="reseller_desc">
+            Vous êtes revendeur informatique, installateur réseau, intégrateur de systèmes ou agence digitale ? Développez votre chiffre d'affaires en distribuant nos logiciels phares (Caisse SMART GEST, WebSchool AIQRAE, POS Mobile, E-Commerce, Odoo ERP) avec des marges grossistes attractives, des versions démo offertes et un support technique N2 dédié.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid -->
+        <div class="reseller-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-tag"></i>
+            </div>
+            <h3 data-i18n="reseller_p1_title">Prix Grossistes dès 1 200 DH</h3>
+            <p data-i18n="reseller_p1_desc">
+              Tarifs dégressifs exceptionnels dès 3 licences commandées. Maximisez votre rentabilité sur chaque installation client.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-laptop-phone"></i>
+            </div>
+            <h3 data-i18n="reseller_p2_title">Licences Démo & PLV Offertes</h3>
+            <p data-i18n="reseller_p2_desc">
+              Accès illimité aux versions de démonstration pour vos showrooms, catalogues PDF et vidéos de démonstration prêtes pour vos clients.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-headphone-alt"></i>
+            </div>
+            <h3 data-i18n="reseller_p3_title">Support Technique Prioritaire N2</h3>
+            <p data-i18n="reseller_p3_desc">
+              Assistance directe par WhatsApp et AnyDesk sous 2h, formation certifiée pour la montée en compétence de vos équipes techniques.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="reseller-benefit-card">
+            <div class="reseller-icon-box">
+              <i class="lni lni-shield"></i>
+            </div>
+            <h3 data-i18n="reseller_p4_title">Facturation & Mises à Jour à Vie</h3>
+            <p data-i18n="reseller_p4_desc">
+              Factures marocaines conformes (TVA), licences pérennes sans redevances cachées et mises à jour logicielles régulières.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Action Bar -->
+        <div class="reseller-action-bar">
+          <div class="reseller-action-info">
+            <h4 data-i18n="reseller_bar_title">Prêt à distribuer les solutions logicielles SDBO ?</h4>
+            <p data-i18n="reseller_bar_desc">Rejoignez notre réseau de partenaires certifiés à Tanger, Casablanca, Rabat, Fès, Marrakech et dans tout le Maroc.</p>
+          </div>
+          <div class="reseller-buttons">
+            <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20suis%20revendeur%20IT%20et%20je%20souhaite%20rejoindre%20le%20programme%20revendeurs%20dès%201200%20DH" target="_blank" class="btn reseller-btn-wa">
+              <i class="lni lni-whatsapp"></i> <span data-i18n="reseller_btn_wa">Contacter le Pôle Revendeurs (WhatsApp)</span>
+            </a>
+            <a href="index.html#contact" class="btn btn-outline" style="border-color: rgba(2, 132, 199, 0.4); color: var(--primary); font-weight: 700;">
+              <i class="lni lni-envelope"></i> <span data-i18n="reseller_btn_contact">Demander la Grille Tarifaire</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="pro-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/logo.svg" alt="SDBO" class="footer-logo">
+          <p data-i18n="footer_desc">Smart Digital Business Office — Éditeur de solutions logicielles métiers innovantes et intégrateur IT de référence à Tanger, Maroc.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_sol">Nos Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="solution-caisse-restaurant.html" data-i18n="sol_caisse">SDBO SMART GEST (Caisse)</a></li>
+            <li><a href="solution-school-aiqrae.html" data-i18n="sol_school">WebSchool AIQRAE (Scolaire IA)</a></li>
+            <li><a href="solution-pos-vendeur.html" data-i18n="sol_pos">SDBO POS Mobile (Vendeurs)</a></li>
+            <li><a href="offre-ecommerce.html" data-i18n="sol_ecom">Solution E-Commerce</a></li>
+            <li><a href="solution-odoo-erp.html" data-i18n="sol_odoo">Intégrateur Odoo ERP</a></li>
+            <li><a href="service-solutions.html" data-i18n="sol_custom">Développement Sur Mesure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_srv">Services IT</h4>
+          <ul class="footer-links">
+            <li><a href="service-ia.html" data-i18n="srv_ai">Intelligence Artificielle</a></li>
+            <li><a href="service-hardware.html" data-i18n="srv_hardware">Matériel Informatique</a></li>
+            <li><a href="service-integration.html" data-i18n="srv_integration">Intégration de SI</a></li>
+            <li><a href="service-consulting.html" data-i18n="srv_consulting">Consulting & Audit</a></li>
+            <li><a href="service-formation.html" data-i18n="srv_formation">Formation IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_contact">Contact Tanger</h4>
+          <p style="margin-bottom: 10px;"><strong>Téléphone :</strong> +212 6 61 60 53 69</p>
+          <p style="margin-bottom: 10px;"><strong>Email :</strong> sdbocontact@gmail.com</p>
+          <p style="margin-bottom: 15px;"><strong>Adresse :</strong> <span data-i18n="contact_loc_val">Tanger, Maroc</span></p>
+          <a href="https://wa.me/212661605369" target="_blank" class="btn-sm-action btn-sm-primary" style="background: #25d366;">
+            <i class="lni lni-whatsapp"></i> WhatsApp Direct
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">&copy; 2026 SDBO - Smart Digital Business Office. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

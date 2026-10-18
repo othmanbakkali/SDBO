@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDBO SMART GEST | Logiciel Caisse Tactile Restauration & Textile Commerce</title>
+  <meta name="description" content="Logiciel de caisse tactile professionnel pour Restaurants, Snacks, Cafés et Boutiques de Prêt-à-Porter. Prise de commande mobile, envoi WhatsApp des remises et tickets, gestion des stocks. Téléchargement PC & APK Android.">
+  <meta name="keywords" content="caisse tactile, logiciel restaurant, snack, pizzeria, textile, vetements, whatsapp remises, caisse maroc, pos android, sdbo smart gest">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  
+  <!-- Google Fonts: Outfit & Inter (Latin) + Cairo (Arabe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambience -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="logo-area">
+        <div class="logo-icon-box">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title">SDBO SMART GEST</span>
+          <span class="logo-subtitle" data-i18n="logo_sub">Solutions de Gestion & Caisse</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#solutions" data-i18n="nav_solutions">Solutions</a></li>
+          <li><a href="#features" data-i18n="nav_features">Fonctionnalités</a></li>
+          <li><a href="#whatsapp-module" data-i18n="nav_whatsapp">Module WhatsApp</a></li>
+          <li><a href="#downloads" data-i18n="nav_downloads">Téléchargements</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">Guide & FAQ</a></li>
+          <li><a href="#activation" data-i18n="nav_contact">Activation</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Sélecteur Bilingue FR / AR -->
+        <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Langue">
+          <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="ar">العربية</button>
+        </div>
+
+        <a href="https://wa.me/212661605369?text=Bonjour%20SDBO%2C%20je%20souhaite%20activer%20ma%20licence%20SMART%20CAISSE" target="_blank" class="btn-wa-header">
+          <span>💬</span>
+          <span data-i18n="header_wa_btn">Activer Licence</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-pill-badge">
+          <span>🚀</span>
+          <span data-i18n="hero_pill">Version 2026 : Caisse Tactile PC & Prise de Commande Mobile</span>
+        </div>
+
+        <h1 class="hero-title" id="heroTitle">
+          <span data-i18n="hero_title_prefix">Le Système de Caisse Tactile Ultime pour</span><br>
+          <span class="highlight-teal" id="heroTitleHighlight" data-i18n="hero_title_highlight">Restaurants, Snacks & Cafés</span>
+        </h1>
+
+        <p class="hero-desc" id="heroDesc" data-i18n="hero_desc">
+          Une application puissante, intuitive et 100% autonome. Prise de commande ultra-rapide, gestion des tables, synchronisation mobile sans fil et module Textile avec partage de catalogues et remises directes par WhatsApp.
+        </p>
+
+        <!-- Sélecteur de Solution (Restauration vs Textile) -->
+        <div class="solution-tabs-container" id="solutions">
+          <div class="solution-tabs">
+            <button type="button" class="solution-tab active-resto" id="tabResto">
+              <span>🍔</span>
+              <span data-i18n="tab_resto">SMART Caisse (Restauration & Snacks)</span>
+            </button>
+            <button type="button" class="solution-tab" id="tabTextile">
+              <span>👗</span>
+              <span data-i18n="tab_textile">SMART Textile (Mode & Commerce WhatsApp)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="downloads/INSTALLATEUR_SMART_CAISSE.exe" class="btn-primary-download" id="heroDownloadBtn">
+            <span>💻</span>
+            <span id="heroDownloadText" data-i18n="hero_download_pc">Télécharger Installateur PC (97 Mo)</span>
+          </a>
+
+          <a href="downloads/SMART_Caisse.apk" class="btn-secondary-apk" id="heroApkBtn">
+            <span>📱</span>
+            <span data-i18n="hero_download_apk">Télécharger APK Mobile (4 Mo)</span>
+          </a>
+
+          <a href="https://wa.me/212661605369?text=Bonjour%20SDBO%2C%20je%20souhaite%20obtenir%20une%20cl%C3%A9%20d%27activation%20pour%20SMART%20CAISSE" target="_blank" class="btn-wa-activation">
+            <span>💬</span>
+            <span data-i18n="hero_cta_wa">Activation Immédiate sur WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Hero Showcase Mockup -->
+        <div class="hero-mockup-wrapper">
+          <div class="mockup-inner">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span class="mockup-dot dot-red"></span>
+                <span class="mockup-dot dot-yellow"></span>
+                <span class="mockup-dot dot-green"></span>
+              </div>
+              <span class="mockup-title" id="mockupTitle">SDBO_SMART_GEST_CAISSE v2026 - Mode Vente Tactile</span>
+              <span class="mockup-badge" data-i18n="mockup_sync">● Live Sync Wi-Fi Actif</span>
+            </div>
+
+            <div class="mockup-content">
+              <div class="mockup-col-left">
+                <!-- Catégories Mockup -->
+                <div class="mockup-cats" id="mockupCats">
+                  <span class="mockup-cat-pill active">🍽️ Tous</span>
+                  <span class="mockup-cat-pill">🍔 Fast-Food</span>
+                  <span class="mockup-cat-pill">🍕 Pizzas</span>
+                  <span class="mockup-cat-pill">🍹 Jus & Boissons</span>
+                  <span class="mockup-cat-pill">🥞 Desserts</span>
+                </div>
+
+                <!-- Grille d'articles Mockup -->
+                <div class="mockup-items-grid" id="mockupGrid">
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">🍔</div>
+                    <div class="mockup-item-name">Burger Spécial SDBO</div>
+                    <div class="mockup-item-price">45.00 DH</div>
+                  </div>
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">🍕</div>
+                    <div class="mockup-item-name">Pizza 4 Saisons</div>
+                    <div class="mockup-item-price">60.00 DH</div>
+                  </div>
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">🌮</div>
+                    <div class="mockup-item-name">Tacos Viande Hachée</div>
+                    <div class="mockup-item-price">35.00 DH</div>
+                  </div>
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">🍹</div>
+                    <div class="mockup-item-name">Jus Panaché Royal</div>
+                    <div class="mockup-item-price">22.00 DH</div>
+                  </div>
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">☕</div>
+                    <div class="mockup-item-name">Café Crème</div>
+                    <div class="mockup-item-price">14.00 DH</div>
+                  </div>
+                  <div class="mockup-item-card">
+                    <div class="mockup-item-icon">🥞</div>
+                    <div class="mockup-item-name">Crêpe Nutella Amandes</div>
+                    <div class="mockup-item-price">25.00 DH</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mockup-col-right">
+                <div class="mockup-ticket">
+                  <div class="ticket-header">
+                    <strong>RESTAURANT SNACK GOURMET</strong><br>
+                    <small>Table: T 04 | Serveur: Ahmed</small>
+                  </div>
+                  <div class="ticket-row">
+                    <span>1x Burger Spécial</span>
+                    <strong>45.00 DH</strong>
+                  </div>
+                  <div class="ticket-row">
+                    <span>1x Pizza 4 Saisons</span>
+                    <strong>60.00 DH</strong>
+                  </div>
+                  <div class="ticket-row">
+                    <span>2x Jus Panaché</span>
+                    <strong>44.00 DH</strong>
+                  </div>
+                  <div class="ticket-total ticket-row">
+                    <span>TOTAL À PAYER:</span>
+                    <span>149.00 DH</span>
+                  </div>
+                  <div style="margin-top: 12px; font-size: 11px; text-align: center; color: #64748b;">
+                    [ Sur Place ] - Prêt pour encaissement
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="feat_tag">Performance & Fiabilité</span>
+          <h2 class="section-title" data-i18n="feat_title">Conçu pour Accélérer vos Ventes au Quotidien</h2>
+          <p class="section-subtitle" data-i18n="feat_sub">Des fonctionnalités pensées pour les professionnels les plus exigeants, sans abonnement contraignant.</p>
+        </div>
+
+        <div class="features-grid" id="featuresGrid">
+          <!-- Carte 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title" data-i18n="f1_title">Prise de Commande Ultra-Rapide</h3>
+            <p class="feature-desc" data-i18n="f1_desc">Interface tactile fluide optimisée au millimètre. Ajoutez des produits en un clic, appliquez des remises, saisissez le poids des produits pesables et encaissez en quelques secondes.</p>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">🪑</div>
+            <h3 class="feature-title" data-i18n="f2_title">Gestion Visuelle des Tables</h3>
+            <p class="feature-desc" data-i18n="f2_desc">Basculez entre Sur Place, Emporter et Livraison. Visualisez l'état des tables (Libre, Occupée, Active), enregistrez les commandes en attente et imprimez l'addition à tout moment.</p>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title" data-i18n="f3_title">Serveur Mobile & QR Code (LAN)</h3>
+            <p class="feature-desc" data-i18n="f3_desc">Vos serveurs prennent les commandes directement en salle depuis leur smartphone ou tablette (Android/iOS). Synchronisation en temps réel via le réseau Wi-Fi local sans connexion internet requise.</p>
+          </div>
+
+          <!-- Carte 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">🖨️</div>
+            <h3 class="feature-title" data-i18n="f4_title">Impression Thermique ESC/POS</h3>
+            <p class="feature-desc" data-i18n="f4_desc">Impression automatique des bons de commande en Cuisine, Bar et tickets d'addition au comptoir. Compatible avec toutes les imprimantes thermiques 80mm et 58mm (USB et Réseau).</p>
+          </div>
+
+          <!-- Carte 5 -->
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title" data-i18n="f5_title">Rapports Financiers X & Z Certifiés</h3>
+            <p class="feature-desc" data-i18n="f5_desc">Consultez votre chiffre d'affaires en direct avec le Rapport X utilisateur et clôturez la journée en toute sécurité grâce au Rapport Z avec répartition des modes de paiement et export CSV.</p>
+          </div>
+
+          <!-- Carte 6 -->
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title" data-i18n="f6_title">100% Autonome & Hors-Ligne</h3>
+            <p class="feature-desc" data-i18n="f6_desc">Vos données restent stockées en toute sécurité sur votre machine locale. Aucune dépendance au cloud, aucun risque d'arrêt en cas de coupure internet et zéro frais mensuels cachés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Textile & WhatsApp Section -->
+    <section class="whatsapp-spotlight" id="whatsapp-module">
+      <div class="container">
+        <div class="spotlight-box">
+          <div class="spotlight-content">
+            <span class="section-tag" style="color: #4ade80;">EXCLUSIVITÉ ÉDITION TEXTILE & COMMERCE</span>
+            <h3 data-i18n="wa_spot_title">Partagez vos Catalogues et Remises directement sur WhatsApp !</h3>
+            <p data-i18n="wa_spot_desc">
+              Révolutionnez la relation avec vos clients ! L'édition Textile de SMART GEST intègre un module natif d'envoi WhatsApp permettant de transmettre instantanément le ticket de caisse, les remises accordées et les catalogues de nouveautés sans surcoût.
+            </p>
+
+            <ul class="spotlight-bullets">
+              <li>
+                <span class="bullet-check">✔</span>
+                <span data-i18n="wa_b1">Envoi du reçu d'achat et détails de la remise sur le WhatsApp du client</span>
+              </li>
+              <li>
+                <span class="bullet-check">✔</span>
+                <span data-i18n="wa_b2">Partage du catalogue complet ou par catégorie avec photos, prix et tailles</span>
+              </li>
+              <li>
+                <span class="bullet-check">✔</span>
+                <span data-i18n="wa_b3">Gestion des variantes textile : tailles (S, M, L, XL), pointures et coloris</span>
+              </li>
+              <li>
+                <span class="bullet-check">✔</span>
+                <span data-i18n="wa_b4">Compatible douchette code-barres et lecteur laser pour un encaissement express</span>
+              </li>
+            </ul>
+
+            <a href="downloads/SMART-GEST-CAISSE-TEXTILE.zip" class="btn-primary-download" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+              <span>👗</span>
+              <span data-i18n="btn_dl_textile_wa">Télécharger l'Édition Textile (250 Mo)</span>
+            </a>
+          </div>
+
+          <!-- Phone Simulation -->
+          <div class="phone-mockup">
+            <div class="phone-header">
+              <div class="phone-avatar">SG</div>
+              <div class="phone-user-info">
+                <span class="phone-user-name">BOUTIQUE ÉLÉGANCE</span>
+                <span class="phone-user-status">En ligne</span>
+              </div>
+            </div>
+
+            <div class="phone-chat-bubble">
+              <strong>🎉 Bonjour Mme Salma !</strong><br>
+              Merci pour votre achat chez <em>Boutique Élégance</em>.<br><br>
+              📋 <strong>Détail de votre achat :</strong><br>
+              • Robe Soirée Satin (Taille M) : 450 DH<br>
+              • Sac à main Cuir Noir : 250 DH<br>
+              🎁 <strong>Remise spéciale fidélité :</strong> -70 DH (10%)<br><br>
+              💰 <strong>Total Réglé : 630.00 DH</strong><br>
+              À très bientôt ! ✨
+              <div class="phone-chat-time">17:42 ✓✓</div>
+            </div>
+
+            <div class="phone-chat-bubble" style="background: #1f2c34;">
+              <strong>🛍️ Découvrez notre Nouvelle Collection :</strong><br>
+              Cliquez pour voir nos arrivages de saison avec remises exclusives pour nos clients fidèles.
+              <div class="phone-chat-time">17:43 ✓✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section" id="downloads">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="dl_tag">Centre de Téléchargement</span>
+          <h2 class="section-title" data-i18n="dl_title">Téléchargez Gratuitement et Testez Immédiatement</h2>
+          <p class="section-subtitle" data-i18n="dl_sub">20 tickets complets offerts pour essayer toutes les options sans limite avant activation.</p>
+        </div>
+
+        <div class="downloads-grid">
+          <!-- Carte Download Restaurant PC -->
+          <div class="download-card highlighted">
+            <div>
+              <div class="download-icon">🍔</div>
+              <span class="download-badge badge-resto">Restauration & Snacks</span>
+              <h3 class="download-title">SMART Caisse Windows</h3>
+              <p class="download-desc" data-i18n="dl1_desc">Installateur tout-en-un pour PC tactile et ordinateurs de caisse. Configure automatiquement le pare-feu et les raccourcis bureau.</p>
+              
+              <ul class="download-specs">
+                <li><span>Système :</span> <strong>Windows 11 / 10 / 8 / 7 (64-bit)</strong></li>
+                <li><span>Taille :</span> <strong>97.3 Mo</strong></li>
+                <li><span>Version :</span> <strong>v2026 Stable</strong></li>
+                <li><span>Format :</span> <strong>Exécutable (.exe)</strong></li>
+              </ul>
+            </div>
+
+            <a href="downloads/INSTALLATEUR_SMART_CAISSE.exe" class="btn-download-action teal">
+              <span>💻</span>
+              <span data-i18n="btn_dl_resto">Télécharger pour PC (.exe)</span>
+            </a>
+          </div>
+
+          <!-- Carte Download Mobile APK -->
+          <div class="download-card">
+            <div>
+              <div class="download-icon">📱</div>
+              <span class="download-badge badge-apk">Android Mobile</span>
+              <h3 class="download-title">SMART Caisse APK</h3>
+              <p class="download-desc" data-i18n="dl2_desc">Application mobile Android pour serveurs et serveuses. Prise de commande en salle et synchronisation instantanée avec le PC de caisse.</p>
+              
+              <ul class="download-specs">
+                <li><span>Système :</span> <strong>Android 5.0 à 14+</strong></li>
+                <li><span>Taille :</span> <strong>4.2 Mo</strong></li>
+                <li><span>Version :</span> <strong>v2.1 PWA Native</strong></li>
+                <li><span>Format :</span> <strong>Paquet APK (.apk)</strong></li>
+              </ul>
+            </div>
+
+            <a href="downloads/SMART_Caisse.apk" class="btn-download-action amber">
+              <span>📱</span>
+              <span data-i18n="btn_dl_apk">Télécharger l'APK Android</span>
+            </a>
+          </div>
+
+          <!-- Carte Download Textile PC -->
+          <div class="download-card textile-card">
+            <div>
+              <div class="download-icon">👗</div>
+              <span class="download-badge badge-textile">Mode & Commerce Retail</span>
+              <h3 class="download-title">SMART Gest Textile</h3>
+              <p class="download-desc" data-i18n="dl3_desc">Version dédiée au textile avec gestion des tailles, couleurs, codes-barres et partage WhatsApp des remises et catalogues.</p>
+              
+              <ul class="download-specs">
+                <li><span>Système :</span> <strong>Windows 11 / 10 / 8 / 7</strong></li>
+                <li><span>Taille :</span> <strong>250 Mo (Pack Complet)</strong></li>
+                <li><span>Module :</span> <strong>WhatsApp Remises Inclus</strong></li>
+                <li><span>Format :</span> <strong>Archive ZIP & Exe</strong></li>
+              </ul>
+            </div>
+
+            <a href="downloads/SMART-GEST-CAISSE-TEXTILE.zip" class="btn-download-action indigo">
+              <span>📦</span>
+              <span data-i18n="btn_dl_textile">Télécharger le Pack Textile (.zip)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activation Section -->
+    <section class="activation-section" id="activation">
+      <div class="container">
+        <div class="activation-box">
+          <div>
+            <span class="section-tag" style="color: var(--accent-gold);">ACTIVATION DE LICENCE</span>
+            <h2 style="font-size: 32px; margin-bottom: 14px;" data-i18n="act_title">Comment Activer votre Logiciel Définitivement ?</h2>
+            <p data-i18n="act_desc">Votre version de démonstration inclut 20 tickets pour tout tester sans engagement. Pour passer en version complète et illimitée, suivez ces 3 étapes simples :</p>
+
+            <div class="steps-list">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <h4 data-i18n="step1_title">Installez et lancez l'application</h4>
+                  <p data-i18n="step1_desc">Téléchargez l'installateur ci-dessus et suivez l'assistant d'installation sur votre ordinateur.</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <h4 data-i18n="step2_title">Relevez votre Identifiant Matériel (Hardware ID)</h4>
+                  <p data-i18n="step2_desc">Sur l'écran de verrouillage ou dans le menu de licence, copiez votre code unique (ex: SDBO-XXXX-XXXX).</p>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <h4 data-i18n="step3_title">Contactez-nous sur WhatsApp pour votre clé</h4>
+                  <p data-i18n="step3_desc">Envoyez-nous votre identifiant. Votre clé d'activation à vie vous est transmise instantanément par nos conseillers !</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Box -->
+          <div class="contact-card">
+            <div style="font-size: 42px; margin-bottom: 10px;">🔑</div>
+            <h3 data-i18n="card_act_title">Activation Immédiate</h3>
+            <p data-i18n="card_act_sub">Assistance technique et fourniture de licence 7j/7 par nos experts SDBO.</p>
+
+            <div class="contact-direct-info">
+              <div class="contact-row">
+                <span>📞</span>
+                <div>
+                  <small style="color: var(--text-dim); display:block;">Téléphone / WhatsApp</small>
+                  <strong>+212 661-605369</strong>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span>✉️</span>
+                <div>
+                  <small style="color: var(--text-dim); display:block;">Email Officiel</small>
+                  <strong>sdbocontact@gmail.com</strong>
+                </div>
+              </div>
+              <div class="contact-row">
+                <span>🌐</span>
+                <div>
+                  <small style="color: var(--text-dim); display:block;">Site Web</small>
+                  <strong>www.sdbo.ma</strong>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/212661605369?text=Bonjour%20SDBO%2C%20je%20souhaite%20activer%20ma%20licence%20SMART%20CAISSE" target="_blank" class="btn-wa-activation" style="width: 100%; justify-content: center;">
+              <span>💬</span>
+              <span data-i18n="btn_contact_wa">Contacter sur WhatsApp (0661605369)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (Bilingue FR/AR) -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="faq_tag">Guide Pratique & FAQ</span>
+          <h2 class="section-title" data-i18n="faq_title">Tout Savoir sur l'Utilisation de l'Application</h2>
+          <p class="section-subtitle" data-i18n="faq_sub">Découvrez les réponses aux questions les plus fréquentes et les étapes pas-à-pas.</p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q1">1. Comment installer l'application sur mon PC Windows ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a1">
+                Téléchargez simplement le fichier <strong>INSTALLATEUR_SMART_CAISSE.exe</strong> depuis la section téléchargement. Double-cliquez sur l'exécutable : l'assistant installe automatiquement l'application dans <code>C:\SMART_Caisse</code>, configure les autorisations de pare-feu pour le serveur mobile et dépose des raccourcis prêts à l'emploi sur votre Bureau et dans le menu Démarrer.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q2">2. Comment ouvrir une session de caisse et démarrer la journée ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a2">
+                Au premier lancement, connectez-vous avec le code PIN par défaut (<strong>0000</strong> pour l'administrateur ou <strong>1234</strong> pour le caissier). Cliquez sur le bouton vert <em>"Ouvrir la journée"</em>, saisissez le montant de votre fond de caisse initial (ex: 200 DH), puis validez. L'interface de vente devient immédiatement active.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q3">3. Comment prendre une commande et gérer les tables (Sur place, Emporter, Livraison) ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a3">
+                Sélectionnez la catégorie en haut de l'écran, puis touchez les articles souhaités pour les ajouter au panier. Cliquez sur le bouton <em>"🪑 Table"</em> pour choisir le numéro de table (Table 1 à 16 ou Terrasses). Vous pouvez basculer le mode entre <strong>Sur place</strong>, <strong>À emporter</strong> et <strong>Livraison</strong>. Les tables occupées apparaissent avec leur montant en cours et peuvent être reprises à tout instant.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q4">4. Comment imprimer le ticket de caisse et l'addition ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a4">
+                Pour imprimer l'addition provisoire d'une table sans encaisser, cliquez sur le bouton <em>"🧾 Addition"</em> dans le panier. Lors du paiement final, cliquez sur <em>"Espèces"</em> ou <em>"Carte TPE"</em> : le ticket de caisse définitif et le bon de cuisine sont automatiquement envoyés à vos imprimantes thermiques ESC/POS configurées.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q5">5. Comment utiliser l'accès mobile sur smartphone ou tablette pour les serveurs ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a5">
+                Sur le PC de caisse, cliquez sur le bouton <em>"📱 Accès Mobile"</em> ou lancez <code>LANCER_SERVEUR_MOBILE.bat</code>. Un QR Code s'affiche. Connectez le smartphone au même réseau Wi-Fi que le PC et scannez le QR Code (ou entrez l'adresse IP affichée). Le serveur peut alors prendre des commandes directement en salle, qui apparaissent en direct sur le PC de caisse !
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q6">6. Comment clôturer la caisse en fin de journée (Rapports X et Z) ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a6">
+                En cours de service, vous pouvez imprimer un <strong>Rapport X</strong> pour vérifier le total provisoire sans fermer la session. En fin de journée, allez dans le menu Actions et choisissez <strong>Rapport Z</strong> : le système calcule le chiffre d'affaires, le montant espèces/carte, imprime le récapitulatif fiscal officiel et clôture la journée de manière sécurisée.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q7">7. Comment fonctionne l'envoi de remises et du catalogue par WhatsApp (Édition Textile) ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a7">
+                Dans l'édition Textile, après avoir appliqué une remise personnalisée ou sélectionné des articles, cliquez sur le bouton <em>"Partager WhatsApp"</em>. L'application génère un message préformaté avec le détail des articles, les tailles choisies, la réduction fidélité et le total à payer, et ouvre WhatsApp Web ou l'application WhatsApp directement sur le numéro de votre client !
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8 -->
+          <div class="faq-item">
+            <button class="faq-trigger" type="button" aria-expanded="false">
+              <span class="faq-question" data-i18n="q8">8. Comment activer définitivement la licence après les 20 tickets d'essai ?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-content">
+              <div class="faq-answer" data-i18n="a8">
+                Lorsque la limite d'essai approche, relevez votre <strong>Identifiant Matériel</strong> (Hardware ID) affiché sur l'écran d'activation. Cliquez sur le bouton WhatsApp du support SDBO (+212 661-605369) pour transmettre cet identifiant. Vous recevrez immédiatement votre clé d'activation permanente (format XXXX-XXXX-XXXX-XXXX) à coller dans le champ d'activation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp Action Widget -->
+  <a href="https://wa.me/212661605369?text=Bonjour%20SDBO%2C%20je%20souhaite%20activer%20ma%20licence%20SMART%20CAISSE" target="_blank" class="floating-wa-btn" aria-label="Support WhatsApp Direct" title="Contacter SDBO sur WhatsApp">
+    <span>💬</span>
+    <span class="floating-wa-tooltip" data-i18n="wa_tooltip">Contact WhatsApp Direct</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <div class="logo-icon-box">⚡</div>
+            <div class="logo-text">
+              <span class="logo-title">SDBO SMART GEST</span>
+              <span class="logo-subtitle">Solutions Tactiles & Commerce</span>
+            </div>
+          </div>
+          <p data-i18n="footer_desc">Éditeur de logiciels de caisse tactile et solutions de gestion commerciale pour restaurants, snacks, cafés et boutiques de textile au Maroc et à l'international.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_prod">Solutions</h4>
+          <ul>
+            <li><a href="#solutions" data-i18n="tab_resto">SMART Caisse Restauration</a></li>
+            <li><a href="#solutions" data-i18n="tab_textile">SMART Gest Textile & Mode</a></li>
+            <li><a href="#whatsapp-module" data-i18n="nav_whatsapp">Module WhatsApp Remises</a></li>
+            <li><a href="#downloads" data-i18n="nav_downloads">Prise de Commande APK</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_dl">Téléchargements</h4>
+          <ul>
+            <li><a href="downloads/INSTALLATEUR_SMART_CAISSE.exe">Installateur PC Restaurant (.exe)</a></li>
+            <li><a href="downloads/SMART_Caisse.apk">Application Mobile Android (.apk)</a></li>
+            <li><a href="downloads/SMART-GEST-CAISSE-TEXTILE.zip">Pack Textile & Prêt-à-Porter (.zip)</a></li>
+            <li><a href="#activation">Demander Clé d'Activation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_support">Support & Contact</h4>
+          <ul>
+            <li><strong>Tél / WhatsApp :</strong> <a href="https://wa.me/212661605369" target="_blank">+212 661-605369</a></li>
+            <li><strong>Email :</strong> <a href="mailto:sdbocontact@gmail.com">sdbocontact@gmail.com</a></li>
+            <li><strong>Site Web :</strong> <a href="http://www.sdbo.ma" target="_blank">www.sdbo.ma</a></li>
+            <li><span>Disponibilité : 7j/7</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 SDBO SMART GEST CAISSE. Tous droits réservés.</div>
+        <div>Conçu avec excellence pour les professionnels de la restauration et du commerce.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

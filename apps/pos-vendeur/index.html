@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBO POS Mobile - L'Application de Vente pour Vendeurs Modernes</title>
+    <meta name="description" content="Découvrez SDBO POS Mobile, l'application tout-en-un pour gérer votre commerce : caisse rapide, stock, clients et statistiques de vente. Téléchargez l'APK Android.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <i data-lucide="shopping-bag"></i>
+                </div>
+                <span>SDBO<span>POS</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#mockup-section">Aperçu App</a>
+                <a href="#installation">Installation</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Changer de thème">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <a href="./app-release.apk" class="btn btn-primary btn-sm">
+                    <i data-lucide="download"></i>
+                    <span>Télécharger l'APK</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu Mobile">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav">
+        <a href="#features" class="mobile-link">Fonctionnalités</a>
+        <a href="#mockup-section" class="mobile-link">Aperçu App</a>
+        <a href="#installation" class="mobile-link">Installation</a>
+        <a href="./app-release.apk" class="btn btn-primary w-full justify-center">
+            <i data-lucide="download"></i>
+            <span>Télécharger l'APK</span>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i data-lucide="sparkles"></i>
+                    <span>Version 1.0.0 disponible</span>
+                </div>
+                <h1 class="hero-title">Gérez votre point de vente <span>du bout des doigts</span></h1>
+                <p class="hero-description">
+                    SDBO POS Mobile est l'application de caisse moderne, rapide et ultra-intuitive conçue spécialement pour les vendeurs. Gérez vos ventes, suivez vos stocks en temps réel et fidélisez vos clients, même hors-ligne.
+                </p>
+                <div class="hero-actions">
+                    <a href="./app-release.apk" class="btn btn-primary btn-lg download-btn">
+                        <i data-lucide="download"></i>
+                        <div class="btn-text-wrapper">
+                            <span class="btn-title">Télécharger pour Android</span>
+                            <span class="btn-subtitle">APK Direct • ~68 Mo</span>
+                        </div>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-lg">
+                        <span>En savoir plus</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Sans publicité</span>
+                    </div>
+                    <div class="meta-item">
+                        <i data-lucide="wifi-off"></i>
+                        <span>100% Hors-ligne</span>
+                    </div>
+                    <div class="meta-item">
+                        <i data-lucide="database"></i>
+                        <span>SQLite Local</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="visual-glow"></div>
+                <!-- Interactive Phone Mockup -->
+                <div class="phone-frame-container">
+                    <div class="phone-frame">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-camera"></div>
+                        <div class="phone-screen">
+                            <!-- App Header -->
+                            <div class="app-header">
+                                <div class="app-status-bar">
+                                    <span class="status-time">12:30</span>
+                                    <div class="status-icons">
+                                        <i data-lucide="wifi" style="width: 12px; height: 12px;"></i>
+                                        <i data-lucide="battery" style="width: 14px; height: 14px;"></i>
+                                    </div>
+                                </div>
+                                <div class="app-navbar">
+                                    <div class="app-logo">
+                                        <i data-lucide="shopping-bag" class="app-logo-icon"></i>
+                                        <span class="app-title">SDBO POS</span>
+                                    </div>
+                                    <div class="app-profile">
+                                        <div class="profile-avatar">V</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen Contents (Switched by JS) -->
+                            <div class="app-content">
+                                <!-- Dashboard Screen -->
+                                <div id="app-screen-dashboard" class="app-screen active">
+                                    <div class="screen-scroll">
+                                        <div class="welcome-box">
+                                            <p class="welcome-label">Bonjour, Vendeur</p>
+                                            <h4 class="welcome-name">Boutique Centrale</h4>
+                                        </div>
+                                        
+                                        <!-- Stats Cards Grid -->
+                                        <div class="app-stats-grid">
+                                            <div class="app-stat-card primary-gradient">
+                                                <span class="stat-label">Chiffre d'Affaires</span>
+                                                <span class="stat-value">124 500 F</span>
+                                                <span class="stat-trend"><i data-lucide="trending-up"></i> +12% vs hier</span>
+                                            </div>
+                                            <div class="app-stat-card">
+                                                <span class="stat-label">Ventes du jour</span>
+                                                <span class="stat-value">38</span>
+                                                <span class="stat-sub">Commandes</span>
+                                            </div>
+                                            <div class="app-stat-card">
+                                                <span class="stat-label">Stock faible</span>
+                                                <span class="stat-value text-warning">4</span>
+                                                <span class="stat-sub">Articles</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mini Chart Container -->
+                                        <div class="app-chart-card">
+                                            <div class="chart-header">
+                                                <span class="chart-title">Activité des Ventes</span>
+                                                <span class="chart-legend">Aujourd'hui</span>
+                                            </div>
+                                            <div class="mock-chart">
+                                                <svg viewBox="0 0 100 30" class="chart-svg">
+                                                    <defs>
+                                                        <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                                                            <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.3"/>
+                                                            <stop offset="100%" stop-color="var(--primary)" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                    <path d="M 0,25 C 10,20 15,28 25,18 C 35,8 45,15 55,10 C 65,5 75,18 85,8 C 90,3 95,5 100,2" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
+                                                    <path d="M 0,25 C 10,20 15,28 25,18 C 35,8 45,15 55,10 C 65,5 75,18 85,8 C 90,3 95,5 100,2 L 100,30 L 0,30 Z" fill="url(#chart-grad)"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <!-- Recent Sales -->
+                                        <div class="app-list-section">
+                                            <h5 class="list-section-title">Dernières ventes</h5>
+                                            <div class="app-list-item">
+                                                <div class="item-icon"><i data-lucide="shopping-cart"></i></div>
+                                                <div class="item-info">
+                                                    <span class="item-title">Commande #1042</span>
+                                                    <span class="item-desc">Il y a 10 min • Espèces</span>
+                                                </div>
+                                                <span class="item-amount">+12 500 F</span>
+                                            </div>
+                                            <div class="app-list-item">
+                                                <div class="item-icon"><i data-lucide="shopping-cart"></i></div>
+                                                <div class="item-info">
+                                                    <span class="item-title">Commande #1041</span>
+                                                    <span class="item-desc">Il y a 25 min • Mobile</span>
+                                                </div>
+                                                <span class="item-amount">+8 200 F</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- POS Screen -->
+                                <div id="app-screen-pos" class="app-screen">
+                                    <div class="screen-scroll">
+                                        <div class="pos-search-bar">
+                                            <i data-lucide="search" class="search-icon"></i>
+                                            <span class="search-placeholder">Rechercher un produit...</span>
+                                        </div>
+                                        
+                                        <!-- Categories Grid -->
+                                        <div class="pos-categories">
+                                            <span class="cat-pill active">Tous</span>
+                                            <span class="cat-pill">Boissons</span>
+                                            <span class="cat-pill">Snacks</span>
+                                            <span class="cat-pill">Épicerie</span>
+                                        </div>
+
+                                        <!-- Products Catalog Grid -->
+                                        <div class="pos-products-grid">
+                                            <div class="pos-product-card">
+                                                <div class="prod-img">☕</div>
+                                                <div class="prod-details">
+                                                    <span class="prod-name">Café Espresso</span>
+                                                    <span class="prod-price">1 500 F</span>
+                                                </div>
+                                            </div>
+                                            <div class="pos-product-card selected">
+                                                <div class="prod-img">🥐</div>
+                                                <div class="prod-details">
+                                                    <span class="prod-name">Croissant Beurre</span>
+                                                    <span class="prod-price">1 000 F</span>
+                                                </div>
+                                                <span class="badge-count">2</span>
+                                            </div>
+                                            <div class="pos-product-card">
+                                                <div class="prod-img">🥤</div>
+                                                <div class="prod-details">
+                                                    <span class="prod-name">Soda Citron</span>
+                                                    <span class="prod-price">800 F</span>
+                                                </div>
+                                            </div>
+                                            <div class="pos-product-card">
+                                                <div class="prod-img">🥪</div>
+                                                <div class="prod-details">
+                                                    <span class="prod-name">Sandwich Club</span>
+                                                    <span class="prod-price">2 500 F</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Interactive Cart summary at bottom -->
+                                        <div class="pos-cart-summary">
+                                            <div class="cart-details">
+                                                <span class="cart-qty">2 articles</span>
+                                                <span class="cart-total">4 500 F</span>
+                                            </div>
+                                            <div class="btn-checkout">
+                                                <span>Encaisser</span>
+                                                <i data-lucide="credit-card"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Navigation Bar inside the frame -->
+                            <div class="app-bottom-bar">
+                                <button class="app-tab-btn active" data-target="dashboard">
+                                    <i data-lucide="grid"></i>
+                                    <span>Tableau</span>
+                                </button>
+                                <button class="app-tab-btn" data-target="pos">
+                                    <i data-lucide="shopping-cart"></i>
+                                    <span>Vente POS</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mockup Controls to encourage user to click -->
+                <div class="mockup-controls">
+                    <span class="control-label">Cliquez sur les onglets du téléphone pour interagir</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics / Trust Bar -->
+    <section class="trust-bar">
+        <div class="container trust-container">
+            <div class="trust-metric">
+                <span class="metric-num">3x</span>
+                <span class="metric-text">Plus rapide qu'un registre papier</span>
+            </div>
+            <div class="divider"></div>
+            <div class="trust-metric">
+                <span class="metric-num">0 F</span>
+                <span class="metric-text">Frais d'abonnement requis</span>
+            </div>
+            <div class="divider"></div>
+            <div class="trust-metric">
+                <span class="metric-num">100%</span>
+                <span class="metric-text">Sécurisé & Local (sans Cloud obligatoire)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tout ce dont vous avez besoin pour <span>gérer vos ventes</span></h2>
+                <p class="section-subtitle">Une application complète, spécialement pensée pour optimiser les performances des vendeurs sur le terrain.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature Card 1 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="shopping-bag"></i>
+                    </div>
+                    <h3 class="feat-title">Caisse Tactile POS</h3>
+                    <p class="feat-description">Une interface de vente rapide avec gestion de panier. Sélectionnez les articles, appliquez des remises de manière simple et encaissez en quelques secondes.</p>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="package"></i>
+                    </div>
+                    <h3 class="feat-title">Gestion de Catalogue & Stock</h3>
+                    <p class="feat-description">Ajoutez des produits avec photo, gérez les prix et organisez-les par catégories. Suivi automatique des niveaux de stocks et alertes de stock faible.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="feat-title">Fichier & Suivi Clients</h3>
+                    <p class="feat-description">Créez votre répertoire client. Enregistrez les coordonnées, suivez l'historique d'achat complet et gérez les soldes/crédits accordés.</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="feat-title">Rapports & Statistiques</h3>
+                    <p class="feat-description">Visualisez en temps réel votre chiffre d'affaires, vos marges et votre volume de ventes. Des graphiques clairs pour piloter au mieux votre commerce.</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="wifi-off"></i>
+                    </div>
+                    <h3 class="feat-title">Mode Hors-ligne Autonome</h3>
+                    <p class="feat-description">Pas d'Internet ? Aucun problème. L'application stocke tout localement sur une base de données SQLite haute performance. Zéro latence.</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="feature-card">
+                    <div class="feat-icon-wrapper">
+                        <i data-lucide="database-backup"></i>
+                    </div>
+                    <h3 class="feat-title">Sauvegarde & Restauration</h3>
+                    <p class="feat-description">Exportez et restaurez vos bases de données localement en un clic. Vos données commerciales vous appartiennent intégralement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Mockup Feature Detail Section -->
+    <section id="mockup-section" class="details-section">
+        <div class="container details-container">
+            <div class="details-image">
+                <div class="deco-circle"></div>
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Vendeur utilisant SDBO POS" class="img-fluid rounded-xl shadow-lg">
+            </div>
+            <div class="details-info">
+                <h2>Conçu pour les <span>tablettes et smartphones</span></h2>
+                <p>L'interface s'adapte automatiquement à l'écran de votre appareil. Sur tablette, profitez d'une vue partagée (Catalogue de produits d'un côté, Panier de vente de l'autre) pour un encaissement ultra-rapide.</p>
+                <div class="details-bullets">
+                    <div class="bullet-item">
+                        <div class="bullet-icon"><i data-lucide="check"></i></div>
+                        <div>
+                            <h4>Support des imprimantes de reçus</h4>
+                            <p>Configurez des imprimantes thermiques Bluetooth ou réseau pour éditer des tickets physiques.</p>
+                        </div>
+                    </div>
+                    <div class="bullet-item">
+                        <div class="bullet-icon"><i data-lucide="check"></i></div>
+                        <div>
+                            <h4>Export PDF et partage direct</h4>
+                            <p>Générez des factures professionnelles au format PDF et partagez-les via WhatsApp, Email ou SMS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section id="installation" class="installation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comment installer <span>l'application ?</span></h2>
+                <p class="section-subtitle">L'installation sur votre appareil Android se fait simplement en quelques étapes.</p>
+            </div>
+            
+            <div class="installation-steps">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <h3>Télécharger</h3>
+                    <p>Cliquez sur le bouton de téléchargement ci-dessous pour enregistrer le fichier <strong>app-release.apk</strong>.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <h3>Autoriser</h3>
+                    <p>Si demandé, autorisez l'installation d'applications issues de sources inconnues dans les paramètres de sécurité de votre smartphone.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <h3>Installer</h3>
+                    <p>Ouvrez le fichier téléchargé depuis vos notifications ou votre dossier de téléchargement, puis cliquez sur <strong>Installer</strong>.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <h3>Démarrer</h3>
+                    <p>Lancez <strong>SDBO POS Mobile</strong> depuis votre écran d'accueil et commencez à configurer vos produits et à vendre !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action Download Section -->
+    <section class="download-cta">
+        <div class="cta-bg-glow"></div>
+        <div class="container cta-container">
+            <div class="cta-content">
+                <h2>Prêt à booster <span>votre commerce ?</span></h2>
+                <p>Téléchargez gratuitement SDBO POS Mobile dès maintenant et profitez d'une gestion autonome et simplifiée.</p>
+                
+                <div class="cta-actions">
+                    <a href="./app-release.apk" class="btn btn-white btn-lg download-btn">
+                        <i data-lucide="download"></i>
+                        <div class="btn-text-wrapper">
+                            <span class="btn-title">Télécharger SDBO POS</span>
+                            <span class="btn-subtitle">Fichier APK • ~68 Mo</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <p class="cta-notice">Requiert un smartphone ou une tablette Android sous Android 8.0 ou supérieur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-wrapper">
+                    <i data-lucide="shopping-bag"></i>
+                    <span>SDBO<span>POS</span></span>
+                </div>
+                <p>Simplifier la gestion de vente sur le terrain pour les commerçants de toutes tailles.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="#">Accueil</a>
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#mockup-section">Aperçu</a>
+                    <a href="#installation">Installation</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ressources</h4>
+                    <a href="./app-release.apk">Télécharger l'APK</a>
+                    <a href="#">Support technique</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:sdbocontact@gmail.com" style="display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+                        <span>sdbocontact@gmail.com</span>
+                    </a>
+                    <a href="tel:0661605369" style="display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="phone" style="width: 16px; height: 16px;"></i>
+                        <span>0661605369</span>
+                    </a>
+                    <a href="https://www.sdbo.ma" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="globe" style="width: 16px; height: 16px;"></i>
+                        <span>www.sdbo.ma</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 SDBO POS Mobile. Tous droits réservés.</p>
+                <div class="footer-badges">
+                    <span>Android App</span>
+                    <span>100% Autonome</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212661605369?text=Bonjour%20SDBO,%20je%20souhaite%20avoir%20des%20informations%20sur%20l'application%20SDBO%20POS%20Mobile." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn-icon" aria-label="Retour en haut">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>

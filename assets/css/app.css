@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 /* ========================================================
    SDBO - SMART DIGITAL BUSINESS OFFICE
@@ -1374,3 +1374,737 @@ nav ul li.dropdown .dropdown-menu a:hover {
 @media (hover: none) {
     .cursor-follower { display: none; }
 }
+
+/* ========================================================
+   SDBO - CONSOLIDATED SOLUTIONS ECOSYSTEM STYLES
+   ======================================================== */
+
+.solutions-hub {
+    background: linear-gradient(180deg, var(--darker) 0%, #ffffff 100%);
+    position: relative;
+}
+
+.solutions-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.flagship-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 24px;
+    padding: 38px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.flagship-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--neon-purple));
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.flagship-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(2, 132, 199, 0.4);
+    box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12), 0 0 25px rgba(124, 58, 237, 0.06);
+}
+
+.flagship-card:hover::before {
+    opacity: 1;
+}
+
+.flagship-card.featured-glow {
+    border-color: rgba(2, 132, 199, 0.4);
+    background: linear-gradient(180deg, rgba(224, 242, 254, 0.15) 0%, #ffffff 100%);
+}
+
+.flagship-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.flagship-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 10px 20px rgba(2, 132, 199, 0.25);
+    flex-shrink: 0;
+}
+
+.flagship-icon-box.purple {
+    background: linear-gradient(135deg, var(--neon-purple), var(--secondary));
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.25);
+}
+
+.flagship-icon-box.emerald {
+    background: linear-gradient(135deg, #059669, #10b981);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);
+}
+
+.flagship-icon-box.amber {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.25);
+}
+
+.flagship-icon-box.indigo {
+    background: linear-gradient(135deg, #4f46e5, #0284c7);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-pill.blue {
+    background: rgba(2, 132, 199, 0.1);
+    color: #0284c7;
+    border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.badge-pill.purple {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.badge-pill.emerald {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-pill.amber {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.flagship-title {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.flagship-desc {
+    font-size: 0.94rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 22px;
+}
+
+.flagship-features {
+    list-style: none !important;
+    padding: 0;
+    margin: 0 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flagship-features li {
+    font-size: 0.9rem;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flagship-features li i {
+    color: #059669;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.flagship-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-sm-action {
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+}
+
+.btn-sm-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn-sm-primary:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+}
+
+.btn-sm-outline {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-sm-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(2, 132, 199, 0.05);
+    transform: translateY(-2px);
+}
+
+/* --- Download Card Widget --- */
+.download-widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.download-widget-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.download-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.3);
+}
+
+.download-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.download-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.download-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* --- Banner Box & Highlights --- */
+.banner-highlight {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+    border-radius: 20px;
+    padding: 36px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.whatsapp-box {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(18, 140, 126, 0.05) 100%);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    border-radius: 20px;
+    padding: 36px;
+    margin: 40px 0;
+}
+
+/* --- Steps Grid --- */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+    margin-top: 36px;
+}
+
+.step-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 30px 24px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 28px rgba(2, 132, 199, 0.12);
+}
+
+.step-number {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--neon-purple));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 14px rgba(2, 132, 199, 0.25);
+}
+
+.step-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- Features List Block --- */
+.feature-list-block {
+    list-style: none !important;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-list-block li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 0.98rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.feature-list-block li i {
+    color: var(--primary);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* --- Badges list --- */
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.tag-item {
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* ========================================================
+   MULTILINGUAL & RTL ARABIC / ENGLISH / FRENCH ENGINE
+   ======================================================== */
+
+.lang-selector {
+    display: inline-flex;
+    align-items: center;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    padding: 3px;
+    gap: 2px;
+}
+
+.lang-btn {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    line-height: 1;
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+}
+
+.lang-btn:hover:not(.active) {
+    color: var(--primary);
+    background: rgba(2, 132, 199, 0.08);
+}
+
+/* RTL Layout for Arabic */
+[dir="rtl"] {
+    font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: right;
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6,
+[dir="rtl"] .metric-val,
+[dir="rtl"] .download-title,
+[dir="rtl"] .flagship-title {
+    font-family: 'Cairo', 'Outfit', sans-serif;
+    letter-spacing: 0;
+}
+
+[dir="rtl"] nav ul {
+    direction: rtl;
+}
+
+[dir="rtl"] .dropdown-menu {
+    text-align: right;
+}
+
+[dir="rtl"] nav ul li.dropdown .dropdown-menu a:hover {
+    border-left: none;
+    border-right: 3px solid var(--primary);
+    padding-left: 18px;
+    padding-right: 22px;
+}
+
+[dir="rtl"] .footer-col h4::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .footer-links li a:hover {
+    transform: translateX(-5px);
+}
+
+[dir="rtl"] .flagship-features li,
+[dir="rtl"] .feature-list-block li {
+    flex-direction: row;
+    text-align: right;
+}
+
+[dir="rtl"] .flagship-features li i,
+[dir="rtl"] .feature-list-block li i {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+[dir="rtl"] .contact-item {
+    flex-direction: row;
+}
+
+[dir="rtl"] .contact-icon-box {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+[dir="rtl"] .download-widget-info {
+    flex-direction: row;
+}
+
+[dir="rtl"] .download-meta span {
+    flex-direction: row;
+}
+
+[dir="rtl"] .whatsapp-float {
+    left: 30px;
+    right: auto;
+}
+
+[dir="rtl"] .whatsapp-float .tooltip {
+    left: 74px;
+    right: auto;
+}
+
+[dir="rtl"] .btn i {
+    margin-left: 6px;
+    margin-right: 0;
+}
+
+/* ========================================================
+   Espace Revendeurs IT & Partenaires (Universal Bottom Section)
+   ======================================================== */
+.reseller-section {
+    padding: 85px 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.7) 0%, rgba(241, 245, 249, 0.98) 100%);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.reseller-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reseller-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    width: 500px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reseller-card-wrapper {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    border: 1px solid rgba(2, 132, 199, 0.22);
+    border-radius: 24px;
+    padding: 55px 45px;
+    box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.08), 0 0 30px rgba(2, 132, 199, 0.07);
+}
+
+.reseller-header {
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto 45px;
+}
+
+.reseller-header .badge-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.reseller-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.reseller-header p {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.reseller-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 40px;
+}
+
+.reseller-benefit-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 28px 22px;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.reseller-benefit-card:hover {
+    transform: translateY(-6px);
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px -5px rgba(2, 132, 199, 0.15);
+}
+
+.reseller-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(37, 99, 235, 0.12));
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    transition: var(--transition);
+}
+
+.reseller-benefit-card:hover .reseller-icon-box {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+}
+
+.reseller-benefit-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.reseller-benefit-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.reseller-action-bar {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.06), rgba(124, 58, 237, 0.06));
+    border: 1px solid rgba(2, 132, 199, 0.18);
+    border-radius: 18px;
+    padding: 26px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.reseller-action-info {
+    max-width: 640px;
+}
+
+.reseller-action-info h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.reseller-action-info p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.reseller-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.reseller-btn-wa {
+    background: #25D366 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
+}
+
+.reseller-btn-wa:hover {
+    background: #1eb954 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45) !important;
+}
+
+@media (max-width: 1024px) {
+    .reseller-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .reseller-card-wrapper {
+        padding: 35px 20px;
+    }
+    .reseller-header h2 {
+        font-size: 1.65rem;
+    }
+    .reseller-grid {
+        grid-template-columns: 1fr;
+    }
+    .reseller-action-bar {
+        padding: 22px 18px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .reseller-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+[dir="rtl"] .reseller-action-info {
+    text-align: right;
+}
+
+[dir="rtl"] .reseller-benefit-card {
+    text-align: right;
+}
+
+
+

@@ -1,0 +1,58 @@
+name: CI/CD Pipeline - Smart School Mobile Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  build-and-test:
+    name: Build & Validate Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build Docker Image
+        run: |
+          docker build -t webschool-app:${{ github.sha }} .
+
+      - name: Test Container Launch
+        run: |
+          docker run -d --name test-app -p 3008:3008 webschool-app:${{ github.sha }}
+          sleep 3
+          curl -f http://localhost:3008/ || exit 1
+          docker stop test-app
+
+  deploy:
+    name: Deploy to Production (webschool.sdbo.ma)
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH & Docker Compose
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: webschool.sdbo.ma
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /var/www/school_web
+            git fetch origin main
+            git reset --hard origin/main
+            docker-compose up -d --build --remove-orphans
+            docker system prune -f
