@@ -1,3 +1,15 @@
-scratch/
+# Operating System & Archive Artifacts
+.DS_Store
+.DS_Store?
+._*
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment and Temporary Storage
 .tempmediaStorage/
 *.log
+
+# Scratch scripts and test files
+scratch/

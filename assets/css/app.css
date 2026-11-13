@@ -168,6 +168,8 @@ header.sticky {
 
 .logo img {
     height: 86px;
+    width: auto;
+    max-width: 100%;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
     transition: var(--transition);
 }
@@ -179,6 +181,8 @@ header.sticky {
 
 .footer-logo {
     height: 94px;
+    width: auto;
+    max-width: 100%;
     margin-bottom: 15px;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
 }
@@ -1301,6 +1305,8 @@ nav ul li.dropdown .dropdown-menu a:hover {
 }
 
 @media (max-width: 768px) {
+    .logo img { height: 64px; }
+    .footer-logo { height: 76px; }
     .cursor-follower { display: none; }
     .hero h1 { font-size: 2.6rem; }
     .section-title h2 { font-size: 2.2rem; }
